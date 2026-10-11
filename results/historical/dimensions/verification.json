@@ -1,0 +1,35 @@
+[
+  {
+    "n_assets": 10,
+    "records": 3024,
+    "max_absolute_errors": {
+      "return_net": 2.7755575615628914e-17,
+      "turnover": 2.5500435096859064e-16,
+      "target_gap": 2.6020852139652106e-18,
+      "distance": 0.0,
+      "identity": 4.336808689942018e-18
+    }
+  },
+  {
+    "n_assets": 30,
+    "records": 3024,
+    "max_absolute_errors": {
+      "return_net": 2.7755575615628914e-17,
+      "turnover": 2.2898349882893854e-16,
+      "target_gap": 3.469446951953614e-18,
+      "distance": 0.0,
+      "identity": 7.37257477290143e-18
+    }
+  },
+  {
+    "n_assets": 49,
+    "records": 3024,
+    "max_absolute_errors": {
+      "return_net": 4.163336342344337e-17,
+      "turnover": 2.532696274930398e-16,
+      "target_gap": 3.469446951953614e-18,
+      "distance": 0.0,
+      "identity": 6.938893903907228e-18
+    }
+  }
+]

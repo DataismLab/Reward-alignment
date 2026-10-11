@@ -141,3 +141,31 @@ def test_mvpi_adaptation_and_zero_interest_equivalence():
         assert np.min(np.diff(meta['trace']))>-1e-12
         assert meta['residual']<1e-12
         if s==1:assert np.allclose(p.beta,solve_equilibrium(mk,1).policy.beta,atol=1e-10)
+
+
+@pytest.mark.parametrize('dimension',[1,3])
+def test_prior_variance_reward_mapping(dimension):
+    """Compare the sampled design with the known variance reward off/on the optimum."""
+    rng=np.random.default_rng(197)
+    A=rng.normal(size=(dimension,dimension))
+    sigma=A@A.T+np.eye(dimension)*.3
+    m=rng.normal(size=dimension)*.2
+    M=sigma+np.outer(m,m)
+    nu=m@np.linalg.solve(M,m)
+    phi,H=1.7,1.11
+    def qdesign(u):return H*m@u-phi*(1-nu)*H**2*(u@M@u)
+    def qvariance(u):return H*m@u-phi*H**2*(u@sigma@u)
+    optimum=np.linalg.solve(sigma,m)/(2*phi*H)
+    numerical=minimize(lambda u:-qdesign(u),np.zeros(dimension),method='BFGS',tol=1e-10)
+    assert np.allclose(numerical.x,optimum,atol=1e-6)
+    assert abs(qdesign(optimum)-qvariance(optimum))<1e-12
+    gaps=[]
+    for _ in range(20):
+        u=rng.normal(size=dimension)
+        gap=qdesign(u)-qvariance(u)
+        identity=phi*H**2*(nu*(u@sigma@u)-(1-nu)*(m@u)**2)
+        assert abs(gap-identity)<1e-11
+        assert gap>=-1e-11
+        gaps.append(gap)
+    if dimension==1:assert max(abs(g) for g in gaps)<1e-11
+    else:assert max(gaps)>.01

@@ -1,0 +1,29 @@
+[
+  {
+    "n_assets": 10,
+    "file": "data/raw/10_Industry_Portfolios_CSV.zip",
+    "sha256": "ebd937a4b995d821867aeb956a96f09a666386f38fa82516b7d1767ee4a49ae5",
+    "source": "https://mba.tuck.dartmouth.edu/pages/faculty/ken.french/ftp/10_Industry_Portfolios_CSV.zip",
+    "vintage": "202608",
+    "retrieved": "2026-09-26",
+    "months": 672
+  },
+  {
+    "n_assets": 30,
+    "file": "data/raw/30_Industry_Portfolios_CSV.zip",
+    "sha256": "8380fadbf9b1eab98ecda389c3d4f0d62756e81b8a69a639d1e8a1331a10722a",
+    "source": "https://mba.tuck.dartmouth.edu/pages/faculty/ken.french/ftp/30_Industry_Portfolios_CSV.zip",
+    "vintage": "202608",
+    "retrieved": "2026-10-01",
+    "months": 672
+  },
+  {
+    "n_assets": 49,
+    "file": "data/raw/49_Industry_Portfolios_CSV.zip",
+    "sha256": "16b3f20bf5bd1db8f5cd7a1b29f5cab1350eb0d5106c5309f77a6629590b1c0e",
+    "source": "https://mba.tuck.dartmouth.edu/pages/faculty/ken.french/ftp/49_Industry_Portfolios_CSV.zip",
+    "vintage": "202608",
+    "retrieved": "2026-10-01",
+    "months": 672
+  }
+]

@@ -1,0 +1,54 @@
+[
+  {
+    "path": "data/raw/10_Industry_Portfolios_CSV.zip",
+    "url": "https://mba.tuck.dartmouth.edu/pages/faculty/ken.french/ftp/10_Industry_Portfolios_CSV.zip",
+    "retrieved_utc": "2026-09-26T19:04:52.398722+00:00",
+    "bytes": 118996,
+    "sha256": "ebd937a4b995d821867aeb956a96f09a666386f38fa82516b7d1767ee4a49ae5"
+  },
+  {
+    "path": "data/raw/F-F_Research_Data_Factors_CSV.zip",
+    "url": "https://mba.tuck.dartmouth.edu/pages/faculty/ken.french/ftp/F-F_Research_Data_Factors_CSV.zip",
+    "retrieved_utc": "2026-09-26T19:04:52.398977+00:00",
+    "bytes": 13065,
+    "sha256": "593f4fbef03181bc0b22ff6292f217689dd1fb79355049ca905d95b262040a66"
+  },
+  {
+    "path": "literature/2026-update/jiang2024.pdf",
+    "url": "https://eprints.soton.ac.uk/495610/1/1-s2.0-S1044028324000887-main.pdf",
+    "retrieved_utc": "2026-09-26T19:04:52.399069+00:00",
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "path": "literature/2026-update/simon2026.pdf",
+    "url": "https://pubsonline.informs.org/doi/pdf/10.1287/mnsc.2025.00721",
+    "retrieved_utc": "2026-09-26T19:04:52.399141+00:00",
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "path": "literature/2026-update/gollart2025.pdf",
+    "url": "https://link.springer.com/content/pdf/10.1007/s10479-025-06649-x.pdf",
+    "retrieved_utc": "2026-09-26T19:04:52.399200+00:00",
+    "bytes": 1861479,
+    "sha256": "b6626c1a7900a6352ec5613a66eb207b8aebae68aef6152c118ea3a2e0cbf2bd"
+  },
+  {
+    "path": "literature/2026-update/grauer1991.pdf",
+    "url": "https://digicoll.lib.berkeley.edu/record/86302/files/b120984374_C044472178.pdf",
+    "retrieved_utc": "2026-09-26T19:04:53.159807+00:00",
+    "error": "not PDF/ZIP"
+  },
+  {
+    "path": "workshop/IAFM-call.pdf",
+    "url": "https://icaif2026.org/calls/workshops/IAFM-2026-Call-for-Papers.pdf",
+    "retrieved_utc": "2026-09-26T19:04:53.182091+00:00",
+    "bytes": 68669,
+    "sha256": "539ed17b3f3d923cb9eaee2abeeb4b3f6728541e6b5920baef5d4936b06c624e"
+  },
+  {
+    "path": "workshop/acmart.zip",
+    "url": "https://portalparts.acm.org/hippo/latex_templates/acmart-primary.zip",
+    "retrieved_utc": "2026-09-26T19:04:54.038265+00:00",
+    "error": "HTTP Error 403: Forbidden"
+  }
+]
