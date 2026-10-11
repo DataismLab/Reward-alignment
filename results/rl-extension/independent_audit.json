@@ -1,0 +1,202 @@
+[
+  {
+    "seed": 0,
+    "true_max": 0.0005058633554945182,
+    "model_bound": 0.000879144781027082,
+    "data_bound": 0.04121411480905142,
+    "covered": true,
+    "shift_bound_difference": 6.129808032689921e-16,
+    "shifted_uniform_bound": 52921.54535302822,
+    "audit_observations": 786432
+  },
+  {
+    "seed": 1,
+    "true_max": 0.00046579203141077944,
+    "model_bound": 0.0009186429684196927,
+    "data_bound": 0.03263312359249533,
+    "covered": true,
+    "shift_bound_difference": 7.151397529714387e-16,
+    "shifted_uniform_bound": 52917.67329439087,
+    "audit_observations": 786432
+  },
+  {
+    "seed": 2,
+    "true_max": 0.0003912935332230647,
+    "model_bound": 0.0006827933306313638,
+    "data_bound": 0.033302789798921026,
+    "covered": true,
+    "shift_bound_difference": 4.716550500855066e-16,
+    "shifted_uniform_bound": 52914.68801359928,
+    "audit_observations": 786432
+  },
+  {
+    "seed": 3,
+    "true_max": 0.0010366509954691122,
+    "model_bound": 0.0013382034598701349,
+    "data_bound": 0.03669020958542405,
+    "covered": true,
+    "shift_bound_difference": 6.336077496005288e-16,
+    "shifted_uniform_bound": 52914.97764988048,
+    "audit_observations": 786432
+  },
+  {
+    "seed": 4,
+    "true_max": 0.0008975162989572393,
+    "model_bound": 0.0010991033913704189,
+    "data_bound": 0.0337513366938766,
+    "covered": true,
+    "shift_bound_difference": 5.367884955975732e-16,
+    "shifted_uniform_bound": 52911.96145697219,
+    "audit_observations": 786432
+  },
+  {
+    "seed": 5,
+    "true_max": 0.0009246664353034253,
+    "model_bound": 0.0015924419371276593,
+    "data_bound": 0.0489362721090571,
+    "covered": true,
+    "shift_bound_difference": 7.098271623262598e-16,
+    "shifted_uniform_bound": 52921.317355900224,
+    "audit_observations": 786432
+  },
+  {
+    "seed": 6,
+    "true_max": 0.0016619220057651153,
+    "model_bound": 0.0018859917168734738,
+    "data_bound": 0.03496142348508203,
+    "covered": true,
+    "shift_bound_difference": 6.036295595313046e-16,
+    "shifted_uniform_bound": 52916.6744173295,
+    "audit_observations": 786432
+  },
+  {
+    "seed": 7,
+    "true_max": 0.00046709102576488425,
+    "model_bound": 0.000844618511763664,
+    "data_bound": 0.035139091379534894,
+    "covered": true,
+    "shift_bound_difference": 7.014245954894971e-16,
+    "shifted_uniform_bound": 52927.79985092574,
+    "audit_observations": 786432
+  },
+  {
+    "seed": 8,
+    "true_max": 0.0007229933093861637,
+    "model_bound": 0.0009142191456163524,
+    "data_bound": 0.036428422879852145,
+    "covered": true,
+    "shift_bound_difference": 1.2725280898462366e-15,
+    "shifted_uniform_bound": 52909.28287587062,
+    "audit_observations": 786432
+  },
+  {
+    "seed": 9,
+    "true_max": 0.0007281279644269474,
+    "model_bound": 0.0011052674357918029,
+    "data_bound": 0.04146613098484015,
+    "covered": true,
+    "shift_bound_difference": 9.230897296541585e-16,
+    "shifted_uniform_bound": 52932.540805937024,
+    "audit_observations": 786432
+  },
+  {
+    "seed": 10,
+    "true_max": 0.0008127331112916827,
+    "model_bound": 0.0009798688952128434,
+    "data_bound": 0.03534123882263748,
+    "covered": true,
+    "shift_bound_difference": 7.119955666712308e-16,
+    "shifted_uniform_bound": 52920.00042419227,
+    "audit_observations": 786432
+  },
+  {
+    "seed": 11,
+    "true_max": 0.0010935858179138898,
+    "model_bound": 0.0015062931514827154,
+    "data_bound": 0.03334281120647232,
+    "covered": true,
+    "shift_bound_difference": 6.746448018291051e-16,
+    "shifted_uniform_bound": 52911.89510856187,
+    "audit_observations": 786432
+  },
+  {
+    "seed": 12,
+    "true_max": 0.0019266833048664734,
+    "model_bound": 0.002624420326015932,
+    "data_bound": 0.038898827401044014,
+    "covered": true,
+    "shift_bound_difference": 1.083334810747516e-15,
+    "shifted_uniform_bound": 52915.29209413873,
+    "audit_observations": 786432
+  },
+  {
+    "seed": 13,
+    "true_max": 0.0008481699284817388,
+    "model_bound": 0.0009078213585838571,
+    "data_bound": 0.03554569419950791,
+    "covered": true,
+    "shift_bound_difference": 8.454608541041964e-16,
+    "shifted_uniform_bound": 52915.17251461195,
+    "audit_observations": 786432
+  },
+  {
+    "seed": 14,
+    "true_max": 0.0012547550440389938,
+    "model_bound": 0.0016634515157283923,
+    "data_bound": 0.03574176544077617,
+    "covered": true,
+    "shift_bound_difference": 4.731458280726741e-16,
+    "shifted_uniform_bound": 52919.82578345667,
+    "audit_observations": 786432
+  },
+  {
+    "seed": 15,
+    "true_max": 0.0008255066247681965,
+    "model_bound": 0.0010595051619778921,
+    "data_bound": 0.037911072786046086,
+    "covered": true,
+    "shift_bound_difference": 8.162958156643363e-16,
+    "shifted_uniform_bound": 52914.73218873531,
+    "audit_observations": 786432
+  },
+  {
+    "seed": 16,
+    "true_max": 0.0007501210493130177,
+    "model_bound": 0.0014354396664731503,
+    "data_bound": 0.03698441632488352,
+    "covered": true,
+    "shift_bound_difference": 1.6395305252325798e-15,
+    "shifted_uniform_bound": 52925.915628082745,
+    "audit_observations": 786432
+  },
+  {
+    "seed": 17,
+    "true_max": 0.0010533265150678248,
+    "model_bound": 0.001399131150227204,
+    "data_bound": 0.029362801722185233,
+    "covered": true,
+    "shift_bound_difference": 8.109832250191573e-16,
+    "shifted_uniform_bound": 52909.25296904073,
+    "audit_observations": 786432
+  },
+  {
+    "seed": 18,
+    "true_max": 0.0009684968671722715,
+    "model_bound": 0.001197482408927159,
+    "data_bound": 0.03010166098830646,
+    "covered": true,
+    "shift_bound_difference": 7.81384505710303e-16,
+    "shifted_uniform_bound": 52910.293394635635,
+    "audit_observations": 786432
+  },
+  {
+    "seed": 19,
+    "true_max": 0.0006968094755505158,
+    "model_bound": 0.0011044063058948009,
+    "data_bound": 0.03506455361925523,
+    "covered": true,
+    "shift_bound_difference": 1.6538419939093885e-15,
+    "shifted_uniform_bound": 52919.54788129061,
+    "audit_observations": 786432
+  }
+]

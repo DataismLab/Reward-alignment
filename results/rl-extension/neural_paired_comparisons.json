@@ -1,0 +1,62 @@
+[
+  {
+    "baseline": "myopic",
+    "metric": "D",
+    "mean_difference": -0.3719434921287389,
+    "paired_bootstrap95": [
+      -0.38827199024446124,
+      -0.35202860074312115
+    ],
+    "seeds": 5
+  },
+  {
+    "baseline": "myopic",
+    "metric": "max_deviation",
+    "mean_difference": -0.002482895264632296,
+    "paired_bootstrap95": [
+      -0.0030026816109689092,
+      -0.0021442818655301723
+    ],
+    "seeds": 5
+  },
+  {
+    "baseline": "myopic",
+    "metric": "certificate",
+    "mean_difference": -0.004244296342439588,
+    "paired_bootstrap95": [
+      -0.004986094966542731,
+      -0.0036864979764145616
+    ],
+    "seeds": 5
+  },
+  {
+    "baseline": "paired_mean",
+    "metric": "D",
+    "mean_difference": -0.003577033970537785,
+    "paired_bootstrap95": [
+      -0.004712999659754735,
+      -0.002441068281320835
+    ],
+    "seeds": 5
+  },
+  {
+    "baseline": "paired_mean",
+    "metric": "max_deviation",
+    "mean_difference": -1.6767989350803102e-05,
+    "paired_bootstrap95": [
+      -3.343727329429616e-05,
+      -1.3170633665713607e-06
+    ],
+    "seeds": 5
+  },
+  {
+    "baseline": "paired_mean",
+    "metric": "certificate",
+    "mean_difference": -0.0006626034908669398,
+    "paired_bootstrap95": [
+      -0.0011983574970070021,
+      -0.00024758302303694714
+    ],
+    "seeds": 5
+  }
+]

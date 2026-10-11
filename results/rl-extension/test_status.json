@@ -1,0 +1,9 @@
+{
+  "date": "2026-10-09",
+  "command": "PYTHONPATH=. OPENBLAS_NUM_THREADS=1 python -m pytest -q",
+  "passed": 74,
+  "failed": 0,
+  "seconds": 3.67,
+  "new_tests": 24,
+  "existing_tests": 50
+}
