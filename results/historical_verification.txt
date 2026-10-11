@@ -1,0 +1,1 @@
+PASS: 4320 decisions, past-only dates, constraints, drift/cost accounting, common-state gaps, summaries, 17 settings and 60 optimisation records.

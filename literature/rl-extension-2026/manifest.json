@@ -1,0 +1,26 @@
+[
+  {
+    "file": "schulman2017.pdf",
+    "sha256": "e78feadadbdbb0b601b3c2bcc81404722cd431a489b307545f9b7bea1e8c4f5b"
+  },
+  {
+    "file": "maurer2009.pdf",
+    "sha256": "4b06ea7eb3a832347df493948deb06a7053aa36d22eba6793d2a4e48ab3935c1"
+  },
+  {
+    "file": "guo2026.pdf",
+    "sha256": "7b95e3b7b925cd2fe4d1e90a9ae23835232c4bf62719cdc26c7bb38b8769ff85"
+  },
+  {
+    "file": "sangadi2025.pdf",
+    "sha256": "21dcb4dd773ad9ef8a53b54d696d8126128fb8819b273f824433940cb1b76ab6"
+  },
+  {
+    "file": "chen2025.pdf",
+    "sha256": "191a95d0844044f3f07a6cb900eae58f984b0f0c1a508c94f65167331790ad99"
+  },
+  {
+    "file": "lesmana2025.pdf",
+    "sha256": "911e4ecfa792461b2894b8b3e1a16a38af530197b40b7a5b5d2210cc243711d9"
+  }
+]

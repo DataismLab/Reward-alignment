@@ -1,0 +1,23 @@
+{
+  "ai4f": {
+    "pages": 8,
+    "anonymous": true,
+    "ours_last": true,
+    "results_unchanged": true,
+    "tables_appendices_visually_checked": true
+  },
+  "iafm": {
+    "pages": 8,
+    "anonymous": true,
+    "ours_last": true,
+    "results_unchanged": true,
+    "tables_appendices_visually_checked": true
+  },
+  "raiops4fin": {
+    "pages": 7,
+    "anonymous": true,
+    "ours_last": true,
+    "results_unchanged": true,
+    "tables_appendices_visually_checked": true
+  }
+}

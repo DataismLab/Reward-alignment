@@ -1,0 +1,51 @@
+\section{Reconstructing the historical experiment}
+\subsection{Information available at a decision}
+Write $R_t\in\mathbb R^{10}$ for the vector of monthly total returns and $r_{f,t}$ for the risk-free return. For a window of length $L$, the information used at month $t$ is $\{R_s,r_{f,s}:t-L\le s<t\}$. In particular, neither $R_t$ nor a full-sample covariance enters the allocation. Let $X_s=R_s-r_{f,s}\mathbf1$. The sample mean and covariance are
+\begin{align}
+ m_t&=L^{-1}\sum_{s=t-L}^{t-1}X_s,\\
+ S_t&=(L-1)^{-1}\sum_{s=t-L}^{t-1}(X_s-m_t)(X_s-m_t)^\top.
+\end{align}
+The implemented covariance is $\Sigma_t=(1-h)S_t+h\operatorname{diag}(S_t)$, with $L=120$ and $h=0.1$ in the primary experiment. The mean is not shrunk. Thus every reward sees identical estimates; differences are not attributable to different forecasting models. Positive definiteness is checked before optimisation. Historical dependence can be present in the observed returns without changing the algebra on a fixed estimated state. It does change how much confidence one should place in that estimated state as a forecast.
+
+The raw files contain percent returns, which are divided by 100 before any objective is evaluated. Monthly records are aligned by date; missing-value sentinels, duplicate dates and missing joined observations are rejected. Estimation data begin in 1970 to support the longest 240-month window at the first 1990 decision. Observations after December 2025 are excluded even though the retrieved files extend further. The saved date range therefore fixes the comparison independently of the most recent available month.
+
+\subsection{Two uses of the same historical month}
+The alignment calculation and the investment calculation answer different questions. For alignment, all rewards receive the reference strategy's pre-trade portfolio $p_t^*$. Define $u_t^*$ as the fitted target allocation and $u_t^r$ as the allocation induced by reward $r$ on that common state. We record
+\begin{equation}
+ d_t^r=\|u_t^r-u_t^*\|_2,\qquad
+ g_t^r=F_t(u_t^*)-F_t(u_t^r).
+\end{equation}
+The first measures the change in portfolio weights, while the second measures the economic cost under the stated fitted preference. A small objective gap can accompany a visible weight difference when the objective is locally flat. Neither quantity uses the month's subsequent realised return.
+
+For investment performance, each method instead carries its own pre-trade portfolio $p_t^r$. It solves its reward again on that state, giving $\bar u_t^r$. The recorded turnover and net return are
+\begin{equation}
+ T_t^r=\|\bar u_t^r-p_t^r\|_1,\qquad
+ r_t^r=(\bar u_t^r)^\top R_t-\lambda T_t^r.
+\end{equation}
+All methods start from equal weights. Before the next decision, holdings drift according to
+\begin{equation}
+ p_{t+1,i}^r=
+ \frac{\bar u_{t,i}^r(1+R_{t,i})}{1+(\bar u_t^r)^\top R_t}.
+\end{equation}
+This uses gross asset returns to update relative holdings and subtracts costs separately in the first-order portfolio-return approximation. Charging exact self-financing costs would require a different wealth-accounting model. Using each method's own holdings in the alignment calculation would mix reward disagreement with the consequences of earlier decisions; the common-state record avoids that confounding.
+
+\subsection{What the published baselines represent}
+The MVPI comparator implements the mean auxiliary of Zhang et al.\ \cite{zhang2021} in the constrained one-period setting. Starting from $y=0$, it alternates a portfolio maximisation with the update $y\leftarrow m^\top u$. The portfolio step retains the original turnover coefficient. The procedure stops when the change in $y$ is below $10^{-10}$, with a maximum of 200 iterations. It computes the reference without first inserting the reference allocation into the reward. Joint calibration, by contrast, uses the already computed reference mean to demonstrate exact alignment. Their numerical agreement is a consistency check between two constructions, not an advantage over MVPI.
+
+The Jiang et al.\ \cite{jiang2025} adaptation maximises
+\begin{equation}
+ \frac1L\sum_{s=t-L}^{t-1}\log(1+u^\top R_s)
+ -\varphi u^\top\Sigma_tu-\lambda\|u-p_t\|_1.
+\end{equation}
+Setting its variance coefficient to zero gives the log-utility comparator. Logarithmic utility uses total returns, while the fitted MV objective uses excess returns. Both formulations receive the same historical window and feasible set. This is a deliberate comparison of preferences: logarithmic utility is not an algebraic approximation to the specified MV target. Hard simplex constraints and the linear turnover charge replace the source paper's soft restrictions and log cost factor. Its published returns are not pooled with ours, and its predictive architecture is not evaluated.
+
+Equal weight supplies a fixed-allocation control. The minimum-variance control removes the expected-return term from the fitted target while retaining the risk scaling and turnover charge. It therefore tests whether using the estimated mean helps realised performance under this protocol. Its strong primary outcome is evidence that estimation quality matters even when reward alignment is exact.
+
+\subsection{Numerical and statistical resolution}
+Quadratic objectives are solved with auxiliary variables $z_i\ge |u_i-p_i|$ and simplex constraints. The implemented minimisation is scaled for numerical conditioning, but certificates are computed in the original objective units. Given a feasible iterate $x$ in the extended polytope $\mathcal P$, a separate linear programme gives the certificate
+\begin{equation}
+ C(x)=\max_{v\in\mathcal P}\nabla f(x)^\top(x-v),
+\end{equation}
+where $f$ is the convex negative reward. Convexity implies $f(x)-\min f\le C(x)$. This checks accuracy independently of the quadratic optimiser's success flag. Poorly certified iterates are retried at different scales and rejected if the certificate remains above $2\times10^{-7}$. The log comparators use a separate concave optimisation problem; the quadratic certificate is not claimed for them.
+
+Realised monthly MV is the sample mean of net excess returns minus $\varphi$ times their sample variance. Excess Sharpe annualises the monthly mean-to-standard-deviation ratio by $\sqrt{12}$. These are evaluated on each strategy's complete own-state return path. For paired MV uncertainty, the same circular 12-month blocks are sampled for both strategies, with 1,000 repetitions and seed 8128. Shared blocks retain contemporaneous dependence between strategies and some serial dependence within each path. The intervals condition on the fitted strategies' realised paths: they do not repeat estimation, select hyperparameters or quantify every source of model uncertainty.

@@ -1,0 +1,17 @@
+{
+  "primary_decisions": 4320,
+  "historical_months": 432,
+  "robustness_settings": 17,
+  "min_calibration_factor": 1.0207957495196998,
+  "max_quadratic_certificate": 4.267490920535633e-09,
+  "joint_identity_max_residual": 8.673617379884035e-18,
+  "risk_only_identity_max_residual": 8.673617379884035e-18,
+  "all_citation_keys_resolved": true,
+  "cited_references": 9,
+  "title_characters": 78,
+  "abstract_characters": 1104,
+  "llm_experiment": false,
+  "portal_author_profile_required": true,
+  "author_affiliation_and_email_supplied": true,
+  "source_sha256": "428478e99b46b67df61c53e2713048ff13b151f31f6ecd34b9f0dec3138bfc4a"
+}

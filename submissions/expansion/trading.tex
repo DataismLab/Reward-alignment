@@ -1,0 +1,26 @@
+\section{Risk and trading-cost coefficients as joint preferences}
+\subsection{A local interpretation of a second-moment reward}
+Consider the reward $Q(u)=m^\top u-\kappa u^\top Mu-\eta c(u)$, with a positive quadratic coefficient $\kappa$ and raw cost coefficient $\eta$. At an optimum $\hat u$, choose a turnover subgradient $s\in\partial c(\hat u)$. Its reward gradient, including that subgradient, can be written
+\begin{equation}
+ (1-2\kappa m^\top\hat u)m-2\kappa\Sigma\hat u-\eta s.
+\end{equation}
+If $b=1-2\kappa m^\top\hat u>0$, division by $b$ identifies sufficient effective MV coefficients
+\begin{equation}
+ \varphi_{\mathrm{eff}}=\kappa/b,\qquad
+ \lambda_{\mathrm{eff}}=\eta/b.
+\end{equation}
+The normal cone of the feasible set is unchanged by positive scaling, so the constrained first-order optimality condition is also the condition for these effective preferences. Concavity makes that condition sufficient. The interpretation requires $b>0$; it is not extended to a nonpositive denominator. Active constraints can also make several coefficient pairs select the same portfolio, so the inverse interpretation need not be unique.
+
+This calculation explains why tuning a second-moment coefficient changes more than the apparent risk aversion. The effective turnover coefficient is rescaled through the selected expected return. Holding the raw cost number fixed while changing $\kappa$ does not generally hold the economic trading preference fixed. A comparison that labels every reward with the same nominal transaction-cost parameter can therefore still compare different induced trading preferences.
+
+\subsection{The meaning of turnover in this experiment}
+For fully invested long-only weights, the L1 distance counts both purchases and sales. A transfer of weight $\delta$ from one industry to another contributes $2\delta$ to $\|u-p\|_1$. Accordingly, the primary coefficient is explicitly 10 basis points per unit of L1 turnover; it should not be read as 10 basis points per one-way transfer. Keeping this convention fixed across methods is necessary for a fair comparison.
+
+The reference-based risk-only reward adds the term $-2\varphi y^*\lambda c(u)$ after conversion into target units. When $y^*>0$, this favours staying closer to the pre-trade portfolio relative to the correctly rescaled objective. That is a statement about the reward on a fixed state. It is not a theorem that realised turnover is always lower over an entire historical path: different earlier positions alter future trade requirements, and constraints can change which assets are held. The experiment therefore measures turnover on each method's own path while auditing preference distortion on a shared state.
+
+The model treats industry returns as unaffected by the strategy's allocations. It contains neither a limit-order book nor endogenous price impact, fill probabilities or a choice of execution time. The proportional charge is useful for isolating a reward-design mechanism, but it does not identify a capacity limit or an optimal execution schedule. An execution study would need to specify those additional states and decisions before deciding which financial objective the reward should preserve.
+
+\subsection{A reusable check for trading-model comparisons}
+A practical comparison begins by writing every reward in the same return and turnover units. Next, it fixes the information set and feasible trades at a common state. Solving the stated target and each proposed reward then reveals whether changes in risk and cost coefficients alter the intended trade-off. The certificate and target-regret records distinguish an economic difference from solver noise. Only after that comparison should realised paths be used to discuss return, drawdown or turnover.
+
+This procedure is particularly helpful when a reward is modified by normalisation, rescaling or an auxiliary variable. Multiplying the entire objective by a positive constant preserves its optimum. Scaling only one term generally does not. The joint identity provides an exact instance of this principle for the present covariance-MV problem. Applying it to state-dependent execution costs, inventory constraints or endogenous impact would require a new derivation; the monthly evidence here supplies a controlled example of what should be checked.

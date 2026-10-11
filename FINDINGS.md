@@ -1,3 +1,31 @@
+# Final IAFM submission — 9 October 2026
+
+**Current:** `submissions/iafm/paper.tex` / `paper.pdf`, **Certifying Reward Alignment in Portfolio Reinforcement Learning**. Read `FINAL_RESEARCH_REPORT.md` and `results/rl-extension/final_summary.json`. The manuscript now incorporates the residual certificate, twenty-seed neural extension and ten-seed PPO comparison. 78 tests pass; 1,660 final RL records reconstructed with error below 4.45e−16. Final neural distance reduction is 59.2%, PPO 33.3%; no historical investment-superiority claim. Earlier dated material below is retained history and may describe the superseded five-seed pilot or earlier manuscript. No submission made.
+
+---
+
+# Full-text integration — 9 October 2026
+
+**Verified literature finding:** Kolm–Ritter (2025), pp. 90–91, already identifies mandate-aligned reward design as important; Exhibit 2 (p. 84) supplies a workflow to which our audit adds a quantitative check. The article is equation-free and has no original numerical strategy to benchmark. It discusses known-policy validation (p. 87), so neither recognition of reward alignment nor benchmark comparison is a first contribution here. The existing exact mismatch theorem, calibrated constructions and numerical results remain the scoped contribution. No new experiment is claimed. The abstract now states joint scaling as sufficient; the former “only when” wording did not establish universal necessity.
+
+# Latest result register — 7 October 2026
+
+- **Proved:** the prior scoped terminal mismatch theorem remains; convex deterministic-cost calibration, imperfect-anchor value/distance bounds, fitted-covariance perturbation bounds, and the explicitly restricted assetwise-downside counterexample are documented in `notes/FINITE_CALIBRATION_AND_ESTIMATION.md`. Auxiliary identities and strong-concavity arguments are credited to prior methods; no new general MVPI claim.
+- **Numerically verified:** six estimators × three industry universes, 58,320 reconstructed historical decisions; joint mean distance <1.60e−7 in all eighteen cases. Unconstrained scalar calibration worsens distance and fitted regret in all twelve larger-universe cases. One existing MVPI update reduces mean distance 97.8–98.6%; sequential exploratory comparator, not a new algorithm.
+- **Numerically verified, limited investment implication:** joint realised MV is below raw in all eighteen cases; minimum variance has the highest realised MV among their quadratic methods. All fifteen covariance-target-vs-diagonal paired 95% intervals and simultaneous bands contain zero. No empirical superiority claim.
+- **Numerically verified:** 2,160 known-covariance problems (N up to 100, L=60/120); factor benefit depends on residual specification. All fifty financing identities pass, mean full joint discrepancy 1.51e−7 versus partial scaling 0.00997. All 50 tests pass.
+- **Preliminary/open:** generalisation of one-step usefulness, predictive neural RL, point-in-time investment universe, true dependent terminal-equilibrium identification, unrestricted DSR and exhaustive priority. Kolm–Ritter 2025 was subsequently fully read on 9 October; the manuscript now uses exact full-text locators. See notes/KOLM_RITTER_2025_FULLTEXT_REVIEW.md.
+
+See `COVARIANCE_RESEARCH_REPORT.md` for exact conventions and complete tables. This entry supersedes outdated manuscript/result counts below, without altering earlier experiments.
+
+# Current IAFM revision — 1 October 2026
+
+Use **submissions/iafm/paper.pdf** and **paper.tex**: anonymous, eight pages, 18 references. This supersedes the reading instructions and named-copy descriptions below. The primary ten-industry study is now accompanied by 30/49-industry checks. Joint calibration preserves fitted alignment; scalar calibration worsens alignment in the larger universes, where joint calibration also has lower realised MV than raw. No investment-superiority claim. See [revision and reproduction notes](notes/IAFM_REVISION_2026-10-01.md), [dimension protocol](notes/DIMENSION_PROTOCOL.md), and `results/historical/dimensions/`. Verification: 35 tests; 9072 dimension-study decisions independently reconstructed. The literature ledger has 27 records, 18 cited in IAFM. Earlier proposal, report V2 and other workshop editions remain historical versions.
+
+# Current revision — 27 September 2026
+
+The current paper is **submissions/iafm/paper.pdf** (anonymous ACM sigconf for IAFM 2026). The completed historical extension, result status and reproduction steps are in [HISTORICAL_IMPLEMENTATION.md](notes/HISTORICAL_IMPLEMENTATION.md). The 21-paper ledger includes five recent primary papers. Historical calibration improves fitted policy alignment, not demonstrably realised performance. Earlier proposal/paper PDFs and the separate presentation proposal are preserved historical editions.
+
 # Current findings — 22 September 2026
 
 This file supersedes earlier claims. Historical versions are preserved in archive/2026-09-21-before-audit and the original delivered ZIP. PROVED means a mathematical derivation under the stated assumptions, not independent peer review or established publication priority. NUMERICALLY VERIFIED means verified in the specified finite experiment. PRELIMINARY means evidence limited by sampling/model scope. OPEN means unresolved. No current conjecture is used as an established premise.
@@ -69,3 +97,7 @@ Frozen iid-designed policies under AR(1) returns: design minus raw J=−.03813 (
 - Broad novelty statements are removed. Dai et al. explicitly learn equilibrium, while Bisi/Zhang explicitly analyse risk objectives/reward transformations.
 
 See proposal.pdf for the research case, paper.pdf and notes/PROOFS.md for derivations, IMPLEMENTATION_REPORT.md for protocols, literature/LITERATURE_LEDGER.md for exact comparisons, and results/experiments.json for every current numerical claim.
+
+
+## RL extension — 9 October 2026 (separate from frozen IAFM submission)
+See RL_EXTENSION_REPORT.md and notes/rl-extension/RESIDUAL_CERTIFICATE.md. Proved under finite exogenous regimes: actor/reward/critic residual certificate for one-step terminal-MV deviation, invariant to critic constants; convex-action corollary. Candidate novelty remains OPEN relative to recent equilibrium-RL and seminorm theory. Numerically verified2160tabular records and405neural checkpoints. Five-seed neural pilot:61.0% distance and81.6% deviation reduction vsmyopic comparator; centredvsordinary continuationcritic adds only1.48%/2.91%. Preliminary, not a published-algorithm replication or real-dataoutperformance. Independent-data certification feasible butsample-heavy; bestexploratorymeanbound.004911 vsactual.000902. Existing finance conclusions unchanged.

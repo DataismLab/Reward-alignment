@@ -1,3 +1,7 @@
+# Current revision — 27 September 2026
+
+The current paper is **submissions/iafm/paper.pdf** (anonymous ACM sigconf for IAFM 2026). The completed historical extension, result status and reproduction steps are in [HISTORICAL_IMPLEMENTATION.md](notes/HISTORICAL_IMPLEMENTATION.md). The 21-paper ledger includes five recent primary papers. Historical calibration improves fitted policy alignment, not demonstrably realised performance. Earlier proposal/paper PDFs and the separate presentation proposal are preserved historical editions.
+
 # Implementation and verification report — 22 September 2026
 
 ## Deliverables and provenance
@@ -26,10 +30,10 @@ Estimation: samples N={50,200,1000,10000}, seeds1000–1029; sample means and un
 
 ## Validation
 
-Original verifier: ten checks. New pytest suite: 25 checks, including an independent optimiser, exhaustive return-tree moments, one-step equilibrium deviations, analytic expansion across horizons, zero-mean and one-period exceptions, time-varying lower bound, DSR continuation counterexample, hedge correction and MVPI monotonicity. An independent two-period finite-action enumeration validates the bounded Bellman reward calculation. The hedge test caught a missing factor; the final formula and output were corrected before reporting.
+Original verifier: ten checks. New pytest suite: 31 checks, including an independent optimiser, exhaustive return-tree moments, one-step equilibrium deviations, analytic expansion across horizons, zero-mean and one-period exceptions, time-varying lower bound, DSR continuation counterexample, hedge correction and MVPI monotonicity. An independent two-period finite-action enumeration validates the bounded Bellman reward calculation. The hedge test caught a missing factor; the final formula and output were corrected before reporting.
 
-Scripts: python -m mvrl.verify; python -m pytest -q; python -m mvrl.experiments; PYTHONPATH=. python scripts/make_figures.py; python scripts/make_literature_ledger.py; python scripts/write_research_documents.py; python scripts/render_documents.py. Exact environment versions are recorded in results/environment.txt. Main research dependencies are NumPy/SciPy; tests require pytest; figures require matplotlib; PDFs require pdflatex (TeX Live/MiKTeX) or tectonic; the original Computer Modern article typography has been restored. LaTeX compilation and page rendering are verified separately from numerical experiments.
+Scripts: python -m mvrl.verify; python -m pytest -q; python -m mvrl.experiments; PYTHONPATH=. python scripts/make_figures.py; python scripts/make_literature_ledger.py; python scripts/write_research_documents.py; python scripts/render_documents.py. Exact environment versions are recorded in results/environment.txt. Main research dependencies are NumPy/SciPy; tests require pytest; figures require matplotlib; PDFs require reportlab and bundled DejaVu fonts.
 
 ## Status and limitations
 
-The central unfinished local proof, time-varying extension, finite observed-regime reference, DSR correction and missing reproducible experiments are completed at the stated scope. Unrestricted DSR, general constraints/costs/dependence, systematic publication-priority review, full published algorithm/historical replications and improved learning guarantees remain OPEN. No publication or external submission has been made.
+The central unfinished local proof, time-varying extension, finite observed-regime reference, DSR correction and missing reproducible experiments are completed at the stated scope. Unrestricted DSR, general constraints/costs/dependence, remaining full-text priority checks, full published algorithm/historical replications and improved learning guarantees remain OPEN. No publication or external submission has been made.

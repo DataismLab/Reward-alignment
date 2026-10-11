@@ -34,9 +34,11 @@ The gap is not that financial RL ignores objectives or time inconsistency. Sever
 
 Concrete positioning: Kolm–Ritter optimise an explicitly approximate quadratic increment reward for hedging. Jiang et al. choose log growth. Yang et al. train on value increments and select agents by Sharpe. Our benchmark holds the market and feasible set fixed, solves these adapted reward problems, and compares their induced policies with a prescribed mean–variance equilibrium. This tests preference alignment; it does not refute each paper’s own stated objective. [1, 2, 3]
 
-The zero-interest calibration is not a sufficient novelty claim: the finite-horizon iid reduction of Zhang’s MVPI has the same fixed point. Basak–Chabakauri also discuss recovering time-consistent objectives with the same policy, and Björk–Murgoci’s abstract states an associated-control result. The candidate contribution is the explicit quantitative obstruction and its audited removal within a concrete reward family. Priority remains OPEN. [6, 10, 12]
+The novelty audit separates correctness from priority. The zero-interest calibration follows from adapted MVPI. Czichowsky already gives the discrete continuation hedge, and Björk–Khapko–Murgoci construct equivalent objectives, including terminal-unit variance penalisation. We therefore treat the redesign as a concrete implementation of established control ideas. The candidate theoretical increment is the exact best-in-family fixed-horizon mismatch coefficient; no matching formula was located in the inspected sources, which does not prove priority. [6, 13, 14, 12]
 
-The source ledger records authors, exact titles, venue, identifiers, reward, algorithm, data, reported results, and version-specific locators for every comparison. Eleven primary versions were inspected; one additional source is explicitly abstract-only.
+Chaouki et al. already test DDPG against known controls and measure action differences (manuscript §3, Fig. 2 and Table 1). Dixon–Halperin infer quadratic portfolio rewards from demonstrations (§§3–5). Our distinction is the exact distance between the reward optimum and a separately declared equilibrium, even before an RL algorithm is trained. Neither benchmark testing nor general inverse reward design is claimed as new. [15, 16]
+
+The source ledger records authors, exact titles, venue, identifiers, reward, algorithm, data, reported results, and version-specific locators for every comparison. Fifteen primary versions were inspected at the cited sections; one additional source is explicitly abstract-only. The claim-level audit records mathematical mappings, access gaps and excluded novelty claims.
 
 # 2 · Objective, benchmark and calibration procedure
 
@@ -61,6 +63,8 @@ PROVED: conditional expected reward is strictly concave in uₜ, wealth-independ
 
 ![Figure 2 · NUMERICALLY VERIFIED. Existing MVPI adaptation agrees at zero interest but targets per-step mean-volatility away from it. With changing moments at zero interest, a common scalar penalty leaves distance 0.067715; the date-specific design gives zero.](figures/10_existing_transformations.png)
 Figure 2 · NUMERICALLY VERIFIED. Existing MVPI adaptation agrees at zero interest but targets per-step mean-volatility away from it. With changing moments at zero interest, a common scalar penalty leaves distance 0.067715; the date-specific design gives zero.
+
+Relation to earlier control theory: the expected sampled reward has the same unconstrained maximiser as terminal-unit conditional-variance penalisation. In one risky dimension the two expected rewards are identical; in several dimensions their difference is a nonnegative quadratic form that vanishes along the efficient risky direction. This algebraic mapping is proved in the audit and tested, so the redesign is not presented as a new general equivalent-objective theorem. [14]
 
 Implementation procedure: estimate or specify moments; declare the target and constraints; solve the exact reward problem where possible; report distance and terminal J; optimise reward parameters using a fixed reference occupancy; then train with the resulting reward and report its optimisation error separately.
 
@@ -133,7 +137,7 @@ u_eq(t,z) = m_z/(2φHₜ Var(P|z))
               − Cov(P,a_next(z_next)|z)/(Hₜ Var(P|z))
 ```
 
-In the observed finite-regime model, a_next is the expected terminal continuation gain. A calibration using only current conditional moments omits this covariance. Adding −2φHₜu Cov(P,a_next|z) to the terminal-unit reward recovers equilibrium. This is an oracle construction using an already solved continuation, not a model-free learning result or a novel hedging principle. [10]
+In the observed finite-regime model, a_next is the expected terminal continuation gain. A calibration using only current conditional moments omits this covariance. Adding −2φHₜu Cov(P,a_next|z) to the terminal-unit reward recovers equilibrium. This is an oracle construction using an already solved continuation, not a model-free learning result or a novel hedging principle. [10, 13]
 
 ![Figure 5 · NUMERICALLY VERIFIED exact joint return/regime recursion. At persistence .8, raw distance is .365102, local calibration .317644, hedge-corrected reward numerical zero. Raw J exceeds equilibrium J here; that is consistent with the target being equilibrium.](figures/05_dependent_returns.png)
 Figure 5 · NUMERICALLY VERIFIED exact joint return/regime recursion. At persistence .8, raw distance is .365102, local calibration .317644, hedge-corrected reward numerical zero. Raw J exceeds equilibrium J here; that is consistent with the target being equilibrium.
@@ -181,9 +185,9 @@ The fair next algorithm study must tune each reward on a separate validation bud
 |---|---|---|
 | R1 · Raw reward recursion and zero-interest match | PROVED | Known control tools; zero-interest result also follows from MVPI. |
 | R2 · Fixed-horizon mismatch coefficient | PROVED | Project derivation; literature priority not established. |
-| R3 · Terminal-unit independent-return redesign | PROVED | Unconstrained dollar actions; known moments; equilibrium target. |
+| R3 · Terminal-unit independent-return redesign | PROVED | Known control ideas plus second-moment correction; scoped implementation. |
 | R4 · Common-penalty lower bound under changing moments | PROVED | Zero interest; nonzero-mean dates; weighted dispersion formula. |
-| R5 · Observed-regime hedge and oracle correction | PROVED | Scalar risky return, exogenous observed regimes; solved continuation required. |
+| R5 · Observed-regime hedge and oracle correction | PROVED | Known continuation hedge specialised to scalar observed regimes; oracle correction. |
 | R6 · DSR algebra and finite-horizon well-posedness | PROVED | Bounded returns, positive initial EWMA variance; no infinite-horizon theorem. |
 | R7 · Reward adaptations and parameter sweeps | NUMERICALLY VERIFIED | Exact recursions / exact finite action trees in specified markets. |
 | R8 · Training and estimation evidence | PRELIMINARY | Five training seeds; thirty estimation seeds; no broad superiority claim. |
@@ -194,7 +198,7 @@ Audit an additive financial reward against a specified equilibrium, compute its 
 
 ## Remaining research, with acceptance criteria
 
-OPEN — Publication priority: obtain the full discrete-control prior and compare the exact coefficient and redesign with earlier inverse-control and risk-sensitive RL results. Claim no “first” result before this is done. Existing MVPI equivalence must remain in the final positioning.
+AUDITED WITH ACCESS LIMITS — The targeted primary-paper comparison is complete and withdraws broad novelty claims. The exact mismatch coefficient remains a candidate contribution, not a verified first result. Full-text Björk–Murgoci (2014), Ritter (2017), and theorem-level assessment of screened older approximation work remain unresolved. Maintain the explicit prior-art mappings and seek independent specialist review before a priority claim.
 
 OPEN — Constraints and costs: derive or numerically solve reward designs for wealth-dependent feasible sets, transaction costs and multiple dependent assets. Require a shared feasible benchmark and a quantified discretisation error before claiming exact recovery.
 
@@ -214,7 +218,7 @@ Figure 10 · PRELIMINARY learning decomposition (left), NUMERICALLY VERIFIED mom
 
 Main limitations: analytically simple markets and unconstrained dollar positions; moment and model knowledge; oracle continuation in the dependent redesign; small exact constrained trees; five training seeds; no transaction-cost or historical replication. These are deliberate boundaries of the evidence.
 
-The research contribution is therefore an exact, reproducible diagnostic and a conditional design result. It is stronger than an abstract framework, but narrower than a claim that a new reward generally improves financial RL.
+The candidate theoretical contribution is the exact best-in-family mismatch law. The reproducible diagnostic and reward correction are supporting contributions built from established control ideas. It is stronger than an abstract framework, but narrower than a claim that a new reward generally improves financial RL.
 
 # References and version-specific evidence · 1
 
@@ -267,3 +271,19 @@ Version/locator: Author-hosted 10-page conference paper; visually read due to en
 [12] Tomas Björk; Agatha Murgoci. A Theory of Markovian Time-Inconsistent Stochastic Control in Discrete Time. Finance and Stochastics 18(3), 545–592 (2014). https://doi.org/10.1007/s00780-014-0234-y
 
 Version/locator: Publisher metadata and abstract only; full-text verification OPEN. Not counted as a paper fully read. Publisher abstract only; no theorem number or detailed comparison asserted.
+
+[13] Christoph Czichowsky. Time-consistent mean-variance portfolio selection in discrete and continuous time. Finance and Stochastics 17(2), 227–271 (2013). https://doi.org/10.1007/s00780-012-0189-9
+
+Version/locator: 45-page arXiv:1205.4748 manuscript; relevant full-text sections inspected and saved in novelty-audit/. Publisher metadata verified. §3 Definition 3.1 and Lemma 3.2, Eq. (3.3), manuscript pp. 8–9; §2 defines the criterion and numeraire.
+
+[14] Tomas Björk; Mariana Khapko; Agatha Murgoci. Time Inconsistent Stochastic Control in Continuous Time: Theory and Examples. arXiv preprint 1612.03650v1 (2016). https://arxiv.org/abs/1612.03650
+
+Version/locator: 58-page version submitted 12 December 2016, cover dated 10 January 2016. Related shortened journal paper: On time-inconsistent stochastic control in continuous time, Finance and Stochastics 21 (2017), 331–360, DOI 10.1007/s00780-017-0327-5. Cited propositions belong to the longer preprint. §8 Proposition 8.1, Eq. (32), p. 23; §10.1 Propositions 10.1–10.2, pp. 32–33.
+
+[15] Ayman Chaouki; Stephen Hardiman; Christian Schmidt; Emmanuel Sérié; Joachim de Lataillade. Deep deterministic portfolio optimization. The Journal of Finance and Data Science 6, 16–30 (2020). https://doi.org/10.1016/j.jfds.2020.06.002
+
+Version/locator: arXiv:2003.06497v2, 9 April 2020; 25-page author manuscript saved. Publisher metadata verified. §1.1 Eqs. (1)–(5); §1.2; §2.1.1 Eqs. (9)–(12); §3 Fig. 2, Figs. 3–5 and Tables 1–3.
+
+[16] Matthew F. Dixon; Igor Halperin. G-Learner and GIRL: Goal Based Wealth Management with Reinforcement Learning. arXiv preprint 2002.10990v1 (2020). https://arxiv.org/abs/2002.10990
+
+Version/locator: 20-page version, 25 February 2020; saved. No unverified journal venue assigned. §3 Eqs. (19)–(23); §4 Eqs. (30)–(40); §5 Eqs. (41)–(46); §6 Table 1 and Fig. 2.

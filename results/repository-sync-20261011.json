@@ -1,0 +1,36 @@
+{
+  "date": "2026-10-11",
+  "baseline_commit": "b9372ef",
+  "baseline_date": "2026-09-23",
+  "source_research_version": "2026-10-09",
+  "tests": {
+    "passed": 78,
+    "failed": 0
+  },
+  "historical_primary_decisions": 4320,
+  "historical_dimension_decisions": 9072,
+  "historical_covariance_decisions": 58320,
+  "known_covariance_problems": 2160,
+  "financing_states": 50,
+  "rl_reconstruction": {
+    "neural_records": 1620,
+    "ppo_records": 40,
+    "max_error": 4.440892098500626e-16,
+    "certificate_violations": 0
+  },
+  "paper": {
+    "pages": 8,
+    "references": 29,
+    "figures": 3,
+    "tables": 2,
+    "anonymous": true,
+    "sha256": "b5e0d8cef84bcb840419a0ae5b7f81d365dba4e6081f24d579357193a8020bc7"
+  },
+  "legacy_source_guards_checked": 5,
+  "omitted_local_artifacts": [
+    "newly downloaded external-paper full texts",
+    "build caches and visual-QA scratch files",
+    "optional PPO model ZIPs"
+  ],
+  "notes": "Existing saved outcomes reconstructed; no retraining or changes to research algorithms. Numerical outputs and manuscript match the completed research workspace. Local tests precede push; CI status is separate."
+}
