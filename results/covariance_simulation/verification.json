@@ -1,0 +1,24 @@
+{
+  "simulation": [
+    {
+      "n_assets": 10,
+      "problems": 720,
+      "max_reconstruction_error": 0.0,
+      "max_identity_error": 2.3310346708438345e-18
+    },
+    {
+      "n_assets": 49,
+      "problems": 720,
+      "max_reconstruction_error": 0.0,
+      "max_identity_error": 1.7076184216646695e-18
+    },
+    {
+      "n_assets": 100,
+      "problems": 720,
+      "max_reconstruction_error": 0.0,
+      "max_identity_error": 2.1141942363467336e-18
+    }
+  ],
+  "financing_states": 50,
+  "financing_identity_error": 1.3877787807814457e-17
+}

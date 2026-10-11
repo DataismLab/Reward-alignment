@@ -1,0 +1,308 @@
+[
+  {
+    "file": "10_diag10.json",
+    "decisions": 4320,
+    "states": 432,
+    "errors": {
+      "return_net": 0.0,
+      "turnover": 0.0,
+      "distance": 0.0,
+      "target_gap": 0.0,
+      "identity": 2.0816681711721685e-17,
+      "drift": 0.0,
+      "gaussian_score": 2.842170943040401e-14
+    },
+    "max_transfer_bound_violation": 1.7180627614207886e-15,
+    "max_anchor_bound_violation": 0.0,
+    "sha256": "2781ef4b70396ec75629b2875bb8aed4c62e9de242562e7af1e5dbbc762ccd22"
+  },
+  {
+    "file": "10_ff3.json",
+    "decisions": 3024,
+    "states": 432,
+    "errors": {
+      "return_net": 0.0,
+      "turnover": 0.0,
+      "distance": 0.0,
+      "target_gap": 0.0,
+      "identity": 5.637851296924623e-18,
+      "drift": 0.0,
+      "gaussian_score": 4.263256414560601e-14
+    },
+    "max_transfer_bound_violation": 0.0,
+    "max_anchor_bound_violation": 0.0,
+    "sha256": "d9a46b9099bb07a750f2b7f4fcc2c9b339320eac148f0994d7020402ab1edeea"
+  },
+  {
+    "file": "10_lw_correlation.json",
+    "decisions": 3024,
+    "states": 432,
+    "errors": {
+      "return_net": 0.0,
+      "turnover": 0.0,
+      "distance": 0.0,
+      "target_gap": 0.0,
+      "identity": 5.204170427930421e-18,
+      "drift": 0.0,
+      "gaussian_score": 2.842170943040401e-14
+    },
+    "max_transfer_bound_violation": 0.0,
+    "max_anchor_bound_violation": 0.0,
+    "sha256": "99237cef513ecc815b7fa706898952b109b35e5431e0a3aa747d1894205a6aeb"
+  },
+  {
+    "file": "10_lw_identity.json",
+    "decisions": 3024,
+    "states": 432,
+    "errors": {
+      "return_net": 0.0,
+      "turnover": 0.0,
+      "distance": 0.0,
+      "target_gap": 0.0,
+      "identity": 5.204170427930421e-18,
+      "drift": 0.0,
+      "gaussian_score": 2.842170943040401e-14
+    },
+    "max_transfer_bound_violation": 0.0,
+    "max_anchor_bound_violation": 0.0,
+    "sha256": "2b42fdfe53819726094632d0da0129312d29e65e47ff5d42aec4e8383d599844"
+  },
+  {
+    "file": "10_market.json",
+    "decisions": 3024,
+    "states": 432,
+    "errors": {
+      "return_net": 0.0,
+      "turnover": 0.0,
+      "distance": 0.0,
+      "target_gap": 0.0,
+      "identity": 3.903127820947816e-18,
+      "drift": 0.0,
+      "gaussian_score": 4.263256414560601e-14
+    },
+    "max_transfer_bound_violation": 0.0,
+    "max_anchor_bound_violation": 0.0,
+    "sha256": "4faa1814a3ff0840651b527662f740d66cbfe02dddb489546c706dfd9a73be42"
+  },
+  {
+    "file": "10_sample.json",
+    "decisions": 3024,
+    "states": 432,
+    "errors": {
+      "return_net": 0.0,
+      "turnover": 0.0,
+      "distance": 0.0,
+      "target_gap": 0.0,
+      "identity": 4.7704895589362195e-18,
+      "drift": 0.0,
+      "gaussian_score": 8.526512829121202e-14
+    },
+    "max_transfer_bound_violation": 0.0,
+    "max_anchor_bound_violation": 0.0,
+    "sha256": "00a24303ecf503fe5de914531b56ac70b0b7c6dd5456c522f63ad359dc39f60b"
+  },
+  {
+    "file": "30_diag10.json",
+    "decisions": 4320,
+    "states": 432,
+    "errors": {
+      "return_net": 0.0,
+      "turnover": 0.0,
+      "distance": 0.0,
+      "target_gap": 0.0,
+      "identity": 4.163336342344337e-17,
+      "drift": 0.0,
+      "gaussian_score": 1.1368683772161603e-13
+    },
+    "max_transfer_bound_violation": 1.2957126691026666e-13,
+    "max_anchor_bound_violation": 0.0,
+    "sha256": "83177c9a992701ea16b96e5f749e51f0356750a1d80e87b8bbc6b76b845712ed"
+  },
+  {
+    "file": "30_ff3.json",
+    "decisions": 3024,
+    "states": 432,
+    "errors": {
+      "return_net": 0.0,
+      "turnover": 0.0,
+      "distance": 0.0,
+      "target_gap": 0.0,
+      "identity": 6.938893903907228e-18,
+      "drift": 0.0,
+      "gaussian_score": 1.1368683772161603e-13
+    },
+    "max_transfer_bound_violation": 0.0,
+    "max_anchor_bound_violation": 0.0,
+    "sha256": "78f64f6302f460c9a57378d0524a907c35d48de78dd15fd44c7d5724565da10b"
+  },
+  {
+    "file": "30_lw_correlation.json",
+    "decisions": 3024,
+    "states": 432,
+    "errors": {
+      "return_net": 0.0,
+      "turnover": 0.0,
+      "distance": 0.0,
+      "target_gap": 0.0,
+      "identity": 7.806255641895632e-18,
+      "drift": 0.0,
+      "gaussian_score": 1.1368683772161603e-13
+    },
+    "max_transfer_bound_violation": 0.0,
+    "max_anchor_bound_violation": 0.0,
+    "sha256": "8d810688baa4455d32aafe017ebacf993dba70cc3a98456bd506ce82799b5177"
+  },
+  {
+    "file": "30_lw_identity.json",
+    "decisions": 3024,
+    "states": 432,
+    "errors": {
+      "return_net": 0.0,
+      "turnover": 0.0,
+      "distance": 0.0,
+      "target_gap": 0.0,
+      "identity": 6.071532165918825e-18,
+      "drift": 0.0,
+      "gaussian_score": 1.1368683772161603e-13
+    },
+    "max_transfer_bound_violation": 0.0,
+    "max_anchor_bound_violation": 0.0,
+    "sha256": "46ef7f137128173f28a04b902db086475905ce0da2b864f46661ac16f3d86c57"
+  },
+  {
+    "file": "30_market.json",
+    "decisions": 3024,
+    "states": 432,
+    "errors": {
+      "return_net": 0.0,
+      "turnover": 0.0,
+      "distance": 0.0,
+      "target_gap": 0.0,
+      "identity": 7.806255641895632e-18,
+      "drift": 0.0,
+      "gaussian_score": 1.1368683772161603e-13
+    },
+    "max_transfer_bound_violation": 0.0,
+    "max_anchor_bound_violation": 0.0,
+    "sha256": "fe319c9f0ab2cdabb134ca002ea60a8ea3a7ce8cdcff263df892f1ecef32f412"
+  },
+  {
+    "file": "30_sample.json",
+    "decisions": 3024,
+    "states": 432,
+    "errors": {
+      "return_net": 0.0,
+      "turnover": 0.0,
+      "distance": 0.0,
+      "target_gap": 0.0,
+      "identity": 6.938893903907228e-18,
+      "drift": 0.0,
+      "gaussian_score": 4.263256414560601e-13
+    },
+    "max_transfer_bound_violation": 0.0,
+    "max_anchor_bound_violation": 0.0,
+    "sha256": "ebd744d7d8de99094c8fcb90bab5da4b90278df1f22ba21170ff144af14969c7"
+  },
+  {
+    "file": "49_diag10.json",
+    "decisions": 4320,
+    "states": 432,
+    "errors": {
+      "return_net": 0.0,
+      "turnover": 0.0,
+      "distance": 0.0,
+      "target_gap": 0.0,
+      "identity": 2.7755575615628914e-17,
+      "drift": 0.0,
+      "gaussian_score": 1.7053025658242404e-13
+    },
+    "max_transfer_bound_violation": 1.905342203456506e-13,
+    "max_anchor_bound_violation": 0.0,
+    "sha256": "e8af8d91b217f9cb187400afc7812a9e70dde2f2147130ae6e00eb241de98528"
+  },
+  {
+    "file": "49_ff3.json",
+    "decisions": 3024,
+    "states": 432,
+    "errors": {
+      "return_net": 0.0,
+      "turnover": 0.0,
+      "distance": 0.0,
+      "target_gap": 0.0,
+      "identity": 5.204170427930421e-18,
+      "drift": 0.0,
+      "gaussian_score": 2.2737367544323206e-13
+    },
+    "max_transfer_bound_violation": 0.0,
+    "max_anchor_bound_violation": 0.0,
+    "sha256": "1d588f0c147c8f01a1c92ca85192ca5cf3e0e7125606fc8c100af020d0789dff"
+  },
+  {
+    "file": "49_lw_correlation.json",
+    "decisions": 3024,
+    "states": 432,
+    "errors": {
+      "return_net": 0.0,
+      "turnover": 0.0,
+      "distance": 0.0,
+      "target_gap": 0.0,
+      "identity": 6.071532165918825e-18,
+      "drift": 0.0,
+      "gaussian_score": 2.2737367544323206e-13
+    },
+    "max_transfer_bound_violation": 0.0,
+    "max_anchor_bound_violation": 0.0,
+    "sha256": "763a095c2f53bc375db84ce9683b3e6abeddf39a070d4469cbdbebafcd828250"
+  },
+  {
+    "file": "49_lw_identity.json",
+    "decisions": 3024,
+    "states": 432,
+    "errors": {
+      "return_net": 0.0,
+      "turnover": 0.0,
+      "distance": 0.0,
+      "target_gap": 0.0,
+      "identity": 6.071532165918825e-18,
+      "drift": 0.0,
+      "gaussian_score": 2.5579538487363607e-13
+    },
+    "max_transfer_bound_violation": 0.0,
+    "max_anchor_bound_violation": 0.0,
+    "sha256": "8673405920a143d1d87abd31ecc3fb5be5f6425d5b6e13085ae75dde7f4f8de5"
+  },
+  {
+    "file": "49_market.json",
+    "decisions": 3024,
+    "states": 432,
+    "errors": {
+      "return_net": 0.0,
+      "turnover": 0.0,
+      "distance": 0.0,
+      "target_gap": 0.0,
+      "identity": 5.204170427930421e-18,
+      "drift": 0.0,
+      "gaussian_score": 2.2737367544323206e-13
+    },
+    "max_transfer_bound_violation": 0.0,
+    "max_anchor_bound_violation": 0.0,
+    "sha256": "ce9124e8b5cf9cf9104776a1c71b62da9a1b7fc2a6b1697e462327649852c67b"
+  },
+  {
+    "file": "49_sample.json",
+    "decisions": 3024,
+    "states": 432,
+    "errors": {
+      "return_net": 0.0,
+      "turnover": 0.0,
+      "distance": 0.0,
+      "target_gap": 0.0,
+      "identity": 6.938893903907228e-18,
+      "drift": 0.0,
+      "gaussian_score": 6.536993168992922e-13
+    },
+    "max_transfer_bound_violation": 0.0,
+    "max_anchor_bound_violation": 0.0,
+    "sha256": "fd506f45e4b941b1cb070f5b513956edd7f67f4675f62f318a1f7e27cec7ae26"
+  }
+]

@@ -1,0 +1,794 @@
+[
+  {
+    "n_assets": 10,
+    "window": 60,
+    "design": "correlated",
+    "estimator": "diag10",
+    "mean": 8.65661871911157e-06,
+    "ci95": [
+      -1.0006622519851037e-05,
+      2.731985995807418e-05
+    ]
+  },
+  {
+    "n_assets": 10,
+    "window": 60,
+    "design": "correlated",
+    "estimator": "ff3",
+    "mean": 7.935864582862766e-05,
+    "ci95": [
+      2.182948127688988e-05,
+      0.00013688781038036544
+    ]
+  },
+  {
+    "n_assets": 10,
+    "window": 60,
+    "design": "correlated",
+    "estimator": "lw_correlation",
+    "mean": 5.013237440112562e-05,
+    "ci95": [
+      9.167309156742587e-06,
+      9.109743964550866e-05
+    ]
+  },
+  {
+    "n_assets": 10,
+    "window": 60,
+    "design": "correlated",
+    "estimator": "lw_identity",
+    "mean": 2.332460405971119e-05,
+    "ci95": [
+      2.6255478390940623e-06,
+      4.402366028032832e-05
+    ]
+  },
+  {
+    "n_assets": 10,
+    "window": 60,
+    "design": "correlated",
+    "estimator": "market",
+    "mean": 0.00013743069719205557,
+    "ci95": [
+      7.002903500133786e-05,
+      0.00020483235938277328
+    ]
+  },
+  {
+    "n_assets": 10,
+    "window": 60,
+    "design": "correlated",
+    "estimator": "sample",
+    "mean": 0.0,
+    "ci95": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "n_assets": 10,
+    "window": 60,
+    "design": "diagonal",
+    "estimator": "diag10",
+    "mean": 9.563215309923404e-06,
+    "ci95": [
+      -6.410036751285247e-06,
+      2.5536467371132055e-05
+    ]
+  },
+  {
+    "n_assets": 10,
+    "window": 60,
+    "design": "diagonal",
+    "estimator": "ff3",
+    "mean": -2.731000636863042e-05,
+    "ci95": [
+      -5.0565745585364133e-05,
+      -4.054267151896703e-06
+    ]
+  },
+  {
+    "n_assets": 10,
+    "window": 60,
+    "design": "diagonal",
+    "estimator": "lw_correlation",
+    "mean": 2.985511682455649e-05,
+    "ci95": [
+      -1.2628756615197166e-05,
+      7.233899026431014e-05
+    ]
+  },
+  {
+    "n_assets": 10,
+    "window": 60,
+    "design": "diagonal",
+    "estimator": "lw_identity",
+    "mean": 3.485571820283096e-05,
+    "ci95": [
+      1.268386875111428e-05,
+      5.7027567654547636e-05
+    ]
+  },
+  {
+    "n_assets": 10,
+    "window": 60,
+    "design": "diagonal",
+    "estimator": "market",
+    "mean": 8.663348050203756e-07,
+    "ci95": [
+      -3.662986595376121e-05,
+      3.8362535563801955e-05
+    ]
+  },
+  {
+    "n_assets": 10,
+    "window": 60,
+    "design": "diagonal",
+    "estimator": "sample",
+    "mean": 0.0,
+    "ci95": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "n_assets": 10,
+    "window": 120,
+    "design": "correlated",
+    "estimator": "diag10",
+    "mean": 7.606765985363778e-07,
+    "ci95": [
+      -1.2728095167995886e-05,
+      1.4249448365068641e-05
+    ]
+  },
+  {
+    "n_assets": 10,
+    "window": 120,
+    "design": "correlated",
+    "estimator": "ff3",
+    "mean": 4.7066930473926966e-05,
+    "ci95": [
+      1.0209715803967e-05,
+      8.392414514388693e-05
+    ]
+  },
+  {
+    "n_assets": 10,
+    "window": 120,
+    "design": "correlated",
+    "estimator": "lw_correlation",
+    "mean": -4.205087731333563e-06,
+    "ci95": [
+      -1.324462550109752e-05,
+      4.834450038430395e-06
+    ]
+  },
+  {
+    "n_assets": 10,
+    "window": 120,
+    "design": "correlated",
+    "estimator": "lw_identity",
+    "mean": 1.2373732249580365e-06,
+    "ci95": [
+      -7.033273995249897e-06,
+      9.508020445165969e-06
+    ]
+  },
+  {
+    "n_assets": 10,
+    "window": 120,
+    "design": "correlated",
+    "estimator": "market",
+    "mean": 9.936824730157166e-05,
+    "ci95": [
+      5.811487675111032e-05,
+      0.000140621617852033
+    ]
+  },
+  {
+    "n_assets": 10,
+    "window": 120,
+    "design": "correlated",
+    "estimator": "sample",
+    "mean": 0.0,
+    "ci95": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "n_assets": 10,
+    "window": 120,
+    "design": "diagonal",
+    "estimator": "diag10",
+    "mean": 3.520653178337928e-06,
+    "ci95": [
+      -7.435537968096557e-06,
+      1.4476844324772414e-05
+    ]
+  },
+  {
+    "n_assets": 10,
+    "window": 120,
+    "design": "diagonal",
+    "estimator": "ff3",
+    "mean": 5.83197326186986e-06,
+    "ci95": [
+      -4.842175863252103e-06,
+      1.6506122386991825e-05
+    ]
+  },
+  {
+    "n_assets": 10,
+    "window": 120,
+    "design": "diagonal",
+    "estimator": "lw_correlation",
+    "mean": 2.1557779587216713e-06,
+    "ci95": [
+      -1.1061092874677858e-05,
+      1.53726487921212e-05
+    ]
+  },
+  {
+    "n_assets": 10,
+    "window": 120,
+    "design": "diagonal",
+    "estimator": "lw_identity",
+    "mean": 5.8631330651270285e-06,
+    "ci95": [
+      -2.4286824226230843e-06,
+      1.4154948552877141e-05
+    ]
+  },
+  {
+    "n_assets": 10,
+    "window": 120,
+    "design": "diagonal",
+    "estimator": "market",
+    "mean": 3.6934203849313374e-05,
+    "ci95": [
+      7.427467158884803e-06,
+      6.644094053974195e-05
+    ]
+  },
+  {
+    "n_assets": 10,
+    "window": 120,
+    "design": "diagonal",
+    "estimator": "sample",
+    "mean": 0.0,
+    "ci95": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "n_assets": 49,
+    "window": 60,
+    "design": "correlated",
+    "estimator": "diag10",
+    "mean": 4.444108204978236e-06,
+    "ci95": [
+      -8.857196468104687e-06,
+      1.7745412878061157e-05
+    ]
+  },
+  {
+    "n_assets": 49,
+    "window": 60,
+    "design": "correlated",
+    "estimator": "ff3",
+    "mean": 1.4568440970001808e-05,
+    "ci95": [
+      -1.586065700217103e-05,
+      4.4997538942174644e-05
+    ]
+  },
+  {
+    "n_assets": 49,
+    "window": 60,
+    "design": "correlated",
+    "estimator": "lw_correlation",
+    "mean": 4.5473193363064624e-05,
+    "ci95": [
+      1.633578847366856e-05,
+      7.461059825246069e-05
+    ]
+  },
+  {
+    "n_assets": 49,
+    "window": 60,
+    "design": "correlated",
+    "estimator": "lw_identity",
+    "mean": 1.0004188139301768e-05,
+    "ci95": [
+      -3.064721948901365e-06,
+      2.30730982275049e-05
+    ]
+  },
+  {
+    "n_assets": 49,
+    "window": 60,
+    "design": "correlated",
+    "estimator": "market",
+    "mean": 0.00032092487575891167,
+    "ci95": [
+      0.00025767211626904037,
+      0.00038417763524878297
+    ]
+  },
+  {
+    "n_assets": 49,
+    "window": 60,
+    "design": "correlated",
+    "estimator": "sample",
+    "mean": 0.0,
+    "ci95": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "n_assets": 49,
+    "window": 60,
+    "design": "diagonal",
+    "estimator": "diag10",
+    "mean": -1.1887553524332708e-05,
+    "ci95": [
+      -2.6544978969678884e-05,
+      2.7698719210134666e-06
+    ]
+  },
+  {
+    "n_assets": 49,
+    "window": 60,
+    "design": "diagonal",
+    "estimator": "ff3",
+    "mean": -3.1575201552747374e-05,
+    "ci95": [
+      -5.3896658556165737e-05,
+      -9.253744549329011e-06
+    ]
+  },
+  {
+    "n_assets": 49,
+    "window": 60,
+    "design": "diagonal",
+    "estimator": "lw_correlation",
+    "mean": 3.723926283471899e-05,
+    "ci95": [
+      -5.4925380791174234e-06,
+      7.99710637485554e-05
+    ]
+  },
+  {
+    "n_assets": 49,
+    "window": 60,
+    "design": "diagonal",
+    "estimator": "lw_identity",
+    "mean": 1.1476156644570426e-06,
+    "ci95": [
+      -1.5434262659661126e-05,
+      1.772949398857521e-05
+    ]
+  },
+  {
+    "n_assets": 49,
+    "window": 60,
+    "design": "diagonal",
+    "estimator": "market",
+    "mean": 0.00025373670817566824,
+    "ci95": [
+      0.0001838657549128274,
+      0.00032360766143850906
+    ]
+  },
+  {
+    "n_assets": 49,
+    "window": 60,
+    "design": "diagonal",
+    "estimator": "sample",
+    "mean": 0.0,
+    "ci95": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "n_assets": 49,
+    "window": 120,
+    "design": "correlated",
+    "estimator": "diag10",
+    "mean": -2.383325944469975e-06,
+    "ci95": [
+      -1.4020633706551103e-05,
+      9.25398181761115e-06
+    ]
+  },
+  {
+    "n_assets": 49,
+    "window": 120,
+    "design": "correlated",
+    "estimator": "ff3",
+    "mean": -6.603482915178207e-06,
+    "ci95": [
+      -2.365684889592716e-05,
+      1.0449883065570745e-05
+    ]
+  },
+  {
+    "n_assets": 49,
+    "window": 120,
+    "design": "correlated",
+    "estimator": "lw_correlation",
+    "mean": 1.2869985980409474e-05,
+    "ci95": [
+      3.828576372267767e-06,
+      2.1911395588551182e-05
+    ]
+  },
+  {
+    "n_assets": 49,
+    "window": 120,
+    "design": "correlated",
+    "estimator": "lw_identity",
+    "mean": -1.2399550837862045e-06,
+    "ci95": [
+      -7.2819384996301134e-06,
+      4.802028332057704e-06
+    ]
+  },
+  {
+    "n_assets": 49,
+    "window": 120,
+    "design": "correlated",
+    "estimator": "market",
+    "mean": 0.0002665399333505825,
+    "ci95": [
+      0.00021895091650543018,
+      0.00031412895019573486
+    ]
+  },
+  {
+    "n_assets": 49,
+    "window": 120,
+    "design": "correlated",
+    "estimator": "sample",
+    "mean": 0.0,
+    "ci95": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "n_assets": 49,
+    "window": 120,
+    "design": "diagonal",
+    "estimator": "diag10",
+    "mean": 5.656071466167921e-06,
+    "ci95": [
+      -6.172702420332535e-06,
+      1.7484845352668377e-05
+    ]
+  },
+  {
+    "n_assets": 49,
+    "window": 120,
+    "design": "diagonal",
+    "estimator": "ff3",
+    "mean": -1.5119029358639303e-05,
+    "ci95": [
+      -2.8314221617825623e-05,
+      -1.9238370994529823e-06
+    ]
+  },
+  {
+    "n_assets": 49,
+    "window": 120,
+    "design": "diagonal",
+    "estimator": "lw_correlation",
+    "mean": -3.914126177238247e-06,
+    "ci95": [
+      -1.4951718906463036e-05,
+      7.123466551986541e-06
+    ]
+  },
+  {
+    "n_assets": 49,
+    "window": 120,
+    "design": "diagonal",
+    "estimator": "lw_identity",
+    "mean": 5.718717429180964e-06,
+    "ci95": [
+      -6.256777873831052e-07,
+      1.2063112645745033e-05
+    ]
+  },
+  {
+    "n_assets": 49,
+    "window": 120,
+    "design": "diagonal",
+    "estimator": "market",
+    "mean": 0.0002987031947951232,
+    "ci95": [
+      0.00024375162269566348,
+      0.00035365476689458295
+    ]
+  },
+  {
+    "n_assets": 49,
+    "window": 120,
+    "design": "diagonal",
+    "estimator": "sample",
+    "mean": 0.0,
+    "ci95": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "n_assets": 100,
+    "window": 60,
+    "design": "correlated",
+    "estimator": "diag10",
+    "mean": -1.0002003534193742e-05,
+    "ci95": [
+      -2.272577791032645e-05,
+      2.7217708419389635e-06
+    ]
+  },
+  {
+    "n_assets": 100,
+    "window": 60,
+    "design": "correlated",
+    "estimator": "ff3",
+    "mean": -1.3928490079483044e-05,
+    "ci95": [
+      -5.141672304592568e-05,
+      2.3559742886959592e-05
+    ]
+  },
+  {
+    "n_assets": 100,
+    "window": 60,
+    "design": "correlated",
+    "estimator": "lw_correlation",
+    "mean": 7.921458751606595e-05,
+    "ci95": [
+      4.8010162856705026e-05,
+      0.00011041901217542687
+    ]
+  },
+  {
+    "n_assets": 100,
+    "window": 60,
+    "design": "correlated",
+    "estimator": "lw_identity",
+    "mean": -1.8213813076913042e-05,
+    "ci95": [
+      -3.0892560429486145e-05,
+      -5.53506572433994e-06
+    ]
+  },
+  {
+    "n_assets": 100,
+    "window": 60,
+    "design": "correlated",
+    "estimator": "market",
+    "mean": 0.00035025784821824134,
+    "ci95": [
+      0.000254940491846366,
+      0.0004455752045901167
+    ]
+  },
+  {
+    "n_assets": 100,
+    "window": 60,
+    "design": "correlated",
+    "estimator": "sample",
+    "mean": 0.0,
+    "ci95": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "n_assets": 100,
+    "window": 60,
+    "design": "diagonal",
+    "estimator": "diag10",
+    "mean": -6.059258136274319e-06,
+    "ci95": [
+      -1.8371183183236752e-05,
+      6.252666910688115e-06
+    ]
+  },
+  {
+    "n_assets": 100,
+    "window": 60,
+    "design": "diagonal",
+    "estimator": "ff3",
+    "mean": -3.331550051577851e-05,
+    "ci95": [
+      -6.183046675919328e-05,
+      -4.800534272363745e-06
+    ]
+  },
+  {
+    "n_assets": 100,
+    "window": 60,
+    "design": "diagonal",
+    "estimator": "lw_correlation",
+    "mean": 0.00010855190133656601,
+    "ci95": [
+      6.59333002031146e-05,
+      0.00015117050247001742
+    ]
+  },
+  {
+    "n_assets": 100,
+    "window": 60,
+    "design": "diagonal",
+    "estimator": "lw_identity",
+    "mean": -1.1757729936627808e-05,
+    "ci95": [
+      -2.5367854667293378e-05,
+      1.8523947940377614e-06
+    ]
+  },
+  {
+    "n_assets": 100,
+    "window": 60,
+    "design": "diagonal",
+    "estimator": "market",
+    "mean": 0.000329250458920796,
+    "ci95": [
+      0.0002635538733276665,
+      0.0003949470445139255
+    ]
+  },
+  {
+    "n_assets": 100,
+    "window": 60,
+    "design": "diagonal",
+    "estimator": "sample",
+    "mean": 0.0,
+    "ci95": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "n_assets": 100,
+    "window": 120,
+    "design": "correlated",
+    "estimator": "diag10",
+    "mean": 4.740009341332218e-06,
+    "ci95": [
+      -1.3712439009404854e-06,
+      1.085126258360492e-05
+    ]
+  },
+  {
+    "n_assets": 100,
+    "window": 120,
+    "design": "correlated",
+    "estimator": "ff3",
+    "mean": 4.428797403873529e-06,
+    "ci95": [
+      -1.3090524879018644e-05,
+      2.19481196867657e-05
+    ]
+  },
+  {
+    "n_assets": 100,
+    "window": 120,
+    "design": "correlated",
+    "estimator": "lw_correlation",
+    "mean": 3.1902492401730244e-05,
+    "ci95": [
+      1.947074912370094e-05,
+      4.433423567975955e-05
+    ]
+  },
+  {
+    "n_assets": 100,
+    "window": 120,
+    "design": "correlated",
+    "estimator": "lw_identity",
+    "mean": -1.790278037405608e-06,
+    "ci95": [
+      -5.030394005641268e-06,
+      1.4498379308300519e-06
+    ]
+  },
+  {
+    "n_assets": 100,
+    "window": 120,
+    "design": "correlated",
+    "estimator": "market",
+    "mean": 0.000516494693972875,
+    "ci95": [
+      0.0004664479805020073,
+      0.0005665414074437426
+    ]
+  },
+  {
+    "n_assets": 100,
+    "window": 120,
+    "design": "correlated",
+    "estimator": "sample",
+    "mean": 0.0,
+    "ci95": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "n_assets": 100,
+    "window": 120,
+    "design": "diagonal",
+    "estimator": "diag10",
+    "mean": 7.655364999341966e-06,
+    "ci95": [
+      2.9405139987025285e-06,
+      1.2370215999981404e-05
+    ]
+  },
+  {
+    "n_assets": 100,
+    "window": 120,
+    "design": "diagonal",
+    "estimator": "ff3",
+    "mean": -2.9138184697020923e-05,
+    "ci95": [
+      -4.5917521429714416e-05,
+      -1.235884796432743e-05
+    ]
+  },
+  {
+    "n_assets": 100,
+    "window": 120,
+    "design": "diagonal",
+    "estimator": "lw_correlation",
+    "mean": 2.823700669162462e-05,
+    "ci95": [
+      1.4783451323566172e-05,
+      4.169056205968307e-05
+    ]
+  },
+  {
+    "n_assets": 100,
+    "window": 120,
+    "design": "diagonal",
+    "estimator": "lw_identity",
+    "mean": 1.1008227743124992e-06,
+    "ci95": [
+      -1.4938578676942027e-06,
+      3.695503416319201e-06
+    ]
+  },
+  {
+    "n_assets": 100,
+    "window": 120,
+    "design": "diagonal",
+    "estimator": "market",
+    "mean": 0.00042598447443814835,
+    "ci95": [
+      0.00038143713780010795,
+      0.00047053181107618874
+    ]
+  },
+  {
+    "n_assets": 100,
+    "window": 120,
+    "design": "diagonal",
+    "estimator": "sample",
+    "mean": 0.0,
+    "ci95": [
+      0.0,
+      0.0
+    ]
+  }
+]
