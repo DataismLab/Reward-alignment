@@ -1,13 +1,12 @@
-# Final IAFM submission — 9 October 2026
+# RL pilot results — 9 October 2026
 
-**Current:** `submissions/iafm/paper.tex` / `paper.pdf`, **Certifying Reward Alignment in Portfolio Reinforcement Learning**. Read `FINAL_RESEARCH_REPORT.md` and `results/rl-extension/final_summary.json`. The manuscript now incorporates the residual certificate, twenty-seed neural extension and ten-seed PPO comparison. 78 tests pass; 1,660 final RL records reconstructed with error below 4.45e−16. Final neural distance reduction is 59.2%, PPO 33.3%; no historical investment-superiority claim. Earlier dated material below is retained history and may describe the superseded five-seed pilot or earlier manuscript. No submission made.
+**Final results:** see `FINAL_RESEARCH_REPORT.md` and `results/rl-extension/final_summary.json`. This report records the five-seed pilot; the final paper uses the twenty-seed extension.
 
 ---
 
 # Reinforcement-learning extension: results and research direction
 
-9 October 2026. This is a new research extension; the current IAFM submission
-paper and all earlier finance experiments remain unchanged.
+This report records the first RL experiment, before the final twenty-seed extension and PPO comparison. The earlier finance experiments were held fixed.
 
 ## What changed in the research question
 
@@ -273,6 +272,3 @@ the underlying backward learner itself a new general RL algorithm.
 6. Tighten sample requirements or explicitly allow the audit to abstain when data
    cannot support certification. Address dependence and policy selection before
    applying confidence claims to historical trajectories.
-7. Once these comparisons stabilise, revise the IAFM story and choose a small number
-   of informative figures. The current submission has deliberately not been
-   rewritten around an unconfirmed RL novelty claim.

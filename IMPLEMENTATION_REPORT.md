@@ -1,12 +1,8 @@
-# Current revision — 27 September 2026
-
-The current paper is **submissions/iafm/paper.pdf** (anonymous ACM sigconf for IAFM 2026). The completed historical extension, result status and reproduction steps are in [HISTORICAL_IMPLEMENTATION.md](notes/HISTORICAL_IMPLEMENTATION.md). The 21-paper ledger includes five recent primary papers. Historical calibration improves fitted policy alignment, not demonstrably realised performance. Earlier proposal/paper PDFs and the separate presentation proposal are preserved historical editions.
-
 # Implementation and verification report — 22 September 2026
 
 ## Deliverables and provenance
 
-All existing research text/code/archive contents and every supplied figure were inspected before edits. The initial inventory is notes/INITIAL_AUDIT.md. Originals are preserved under archive/2026-09-21-before-audit. No historical dataset, raw experiment output, or standalone implementation report was present initially. This report documents the new run, not a reconstruction of unavailable old outputs.
+The initial audit is recorded in notes/INITIAL_AUDIT.md. Earlier source versions remain in Git history. No historical dataset, raw experiment output, or standalone implementation report was present initially. This report documents the new run, not a reconstruction of unavailable old outputs.
 
 ## Model and algorithms
 

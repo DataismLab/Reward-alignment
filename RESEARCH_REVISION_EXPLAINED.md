@@ -1,8 +1,8 @@
-# What changed in the research: the substantive IAFM revision
+# What changed in the research: the finance and dimensionality extension
 
 Prepared for Matin Tavakoli · 5 October 2026
 
-This report explains the scientific changes between the IAFM manuscript immediately before the 1 October finance revision and the current manuscript, **When Portfolio Rewards Miss the Target: Exact Mismatch and Policy Alignment**. It excludes changes to table layout, ordering, citation presentation, fonts and other formatting. It distinguishes new experiments from earlier results that were retained and given a clearer interpretation.
+This report explains the scientific changes between the manuscript immediately before the 1 October finance revision and the current manuscript, **When Portfolio Rewards Miss the Target: Exact Mismatch and Policy Alignment**. It excludes changes to table layout, ordering, citation presentation, fonts and other formatting. It distinguishes new experiments from earlier results that were retained and given a clearer interpretation.
 
 ## 1. The main change in the argument
 
@@ -19,10 +19,10 @@ The new finance literature explains why this separation matters. The additional 
 | Empirical evidence | Found that unconstrained scalar calibration worsens alignment in both larger universes, while joint calibration still recovers the fitted policy numerically. |
 | Investment interpretation | Explicitly incorporated the unfavourable realised results rather than treating alignment as evidence of superior investment performance. |
 | Contribution | Distinguished the exact scalar-mismatch result from equivalent-objective methods that already exist in the literature. |
-| Conference connection | Rebuilt Section 7 around financial meaning, controlled tests of policy fidelity and model validation. |
+| Decision interpretation | Rebuilt Section 7 around financial meaning, controlled tests of policy fidelity and model validation. |
 | Implementation assurance | Generalised the data pipeline, added dimension tests, and independently reconstructed all 9,072 decisions in the three-universe comparison. |
 
-These substantive changes apply to the IAFM manuscript. They should not be assumed to appear in every older workshop edition.
+These substantive changes apply to the manuscript. The report describes the October finance revision; the subsequent RL extension is documented separately.
 
 ## 2. What we learned from DeMiguel, Garlappi and Uppal
 
@@ -137,7 +137,7 @@ An existing ten-industry result also illustrates why Sharpe alone is insufficien
 
 ## 6. The finance references and what each actually contributes
 
-The revision added five primary finance papers. Their role is substantive rather than simply increasing the bibliography. The current IAFM manuscript cites eighteen references; the wider project ledger contains additional inspected sources.
+The revision added five primary finance papers. Their role is substantive rather than simply increasing the bibliography. The current manuscript cites eighteen references; the wider project ledger contains additional inspected sources.
 
 **Harry Markowitz (1952), “Portfolio Selection,” The Journal of Finance 7(1), 77–91.** [DOI](https://doi.org/10.1111/j.1540-6261.1952.tb01525.x). The relevant material is on pp. 77, 81–83 and 89–91. This supplies the mean–variance foundation and the distinction between beliefs about returns and decisions made using those beliefs. It helps locate our question: even with the same beliefs, does replacing the objective with a reward change the decision? We do not claim to introduce the mean–variance objective.
 
@@ -222,11 +222,10 @@ The review supports this more precise positioning, but it is not an exhaustive c
 
 **A concise statement of the contribution:** We quantify when scalar reward tuning cannot implement a terminal mean–variance equilibrium, and show how to preserve a fitted constrained mean–variance preference by calibrating risk and costs together. Historical tests across 10, 30 and 49 industries demonstrate policy alignment while separating it from realised investment performance.
 
-## 9. Why Section 7 now fits IAFM more closely
+## 9. Financial interpretation and model validation
 
-Section 7 is now **“Financial semantics and model validation.”** Its purpose is to explain the scientific connection to the Workshop on Interpretability and Alignment of Financial Models, through the actual mechanisms and tests in the paper.
+Section 7 is now **“Financial semantics and model validation.”** It explains what changes in an allocation mean when the model, reward or numerical approximation changes.
 
-The official workshop page archived on 29 September lists financial-semantic explanations, faithful and robust evaluation with benchmarks and metrics, and model-risk management among its topics. Those archived topics informed the revision; this report is not a fresh confirmation of current workshop rules or an assurance of acceptance. [Official workshop site](https://iafm-icaif.netlify.app/).
 
 ### Interpreting a decision through its objective
 
@@ -246,7 +245,7 @@ The target-value decomposition has a reward-design term and a **signed** finite-
 
 The third subsection explains what a validator can inspect: the intended objective, the induced allocation, the numerical certificate, the proposed correction and its consequences. The dimension study supplies a particularly useful example: an aligned reward can still lead to disappointing investment outcomes, while a good backtest cannot certify that the requested preference was implemented.
 
-This is a substantive model-validation connection. It is not a claim to explain neural circuits, improve human understanding through a user study, validate an LLM, or satisfy a regulatory standard. Those experiments were not performed. The manuscript now makes its particular contribution to IAFM identifiable without pretending to cover all of the workshop's topics.
+This is a substantive model-validation connection. It is not a claim to explain neural circuits, improve human understanding through a user study, validate an LLM, or satisfy a regulatory standard. Those experiments were not performed. The interpretation is limited to the decision rules and tests actually studied.
 
 ## 10. Code, verification and supporting evidence
 
@@ -282,11 +281,10 @@ The revision is stronger because its financial foundations, experimental scope, 
 
 The following files provide the underlying record for this explanation:
 
-- [Current IAFM manuscript](</Users/matin/Desktop/Research/rl in asset alloc/claude/final output/mvrl-surrogate-gap/submissions/iafm/paper.tex>) — definitions, proofs, empirical interpretation and Section 7.
-- [Scientific revision note](</Users/matin/Desktop/Research/rl in asset alloc/claude/final output/mvrl-surrogate-gap/notes/IAFM_REVISION_2026-10-01.md>) — what was changed and what was retained.
-- [Fixed dimension protocol](</Users/matin/Desktop/Research/rl in asset alloc/claude/final output/mvrl-surrogate-gap/notes/DIMENSION_PROTOCOL.md>) — settings specified before inspecting additional outcomes.
-- [Finance-paper reading records](</Users/matin/Desktop/Research/rl in asset alloc/claude/final output/mvrl-surrogate-gap/literature/iafm-finance-update/records.json>) — exact versions, sections, tables, objectives and project roles for the five additions.
-- [Dimension results](</Users/matin/Desktop/Research/rl in asset alloc/claude/final output/mvrl-surrogate-gap/results/historical/dimensions/summary.json>) — full-precision metrics and paired intervals.
-- [Independent verification results](</Users/matin/Desktop/Research/rl in asset alloc/claude/final output/mvrl-surrogate-gap/results/historical/dimensions/verification.json>) — reconstructed decision counts and numerical residuals.
-- [Archived official IAFM scope](</Users/matin/Desktop/Research/rl in asset alloc/claude/final output/mvrl-surrogate-gap/workshop/IAFM-official-2026-09-29.html>) — workshop topics used to align the discussion.
-- [WORKLOG](</Users/matin/Desktop/Research/rl in asset alloc/claude/final output/mvrl-surrogate-gap/WORKLOG.md>) — chronological research and verification history.
+- [Current manuscript](<manuscript/paper.tex>) — definitions, proofs, empirical interpretation and Section 7.
+- [Scientific revision note](<notes/DIMENSION_STUDY_NOTES.md>) — what was changed and what was retained.
+- [Fixed dimension protocol](<notes/DIMENSION_PROTOCOL.md>) — settings specified before inspecting additional outcomes.
+- [Finance-paper reading records](<literature/finance-foundations/records.json>) — exact versions, sections, tables, objectives and project roles for the five additions.
+- [Dimension results](<results/historical/dimensions/summary.json>) — full-precision metrics and paired intervals.
+- [Independent verification results](<results/historical/dimensions/verification.json>) — reconstructed decision counts and numerical residuals.
+- [WORKLOG](<WORKLOG.md>) — chronological research and verification history.

@@ -1,31 +1,25 @@
 # Certifying Reward Alignment in Portfolio Reinforcement Learning
 
-Research code, proofs, experiments and the final IAFM manuscript for checking whether a portfolio reward and its learned policy implement a specified financial objective.
+This repository studies whether a portfolio reward and the policy learned from it implement a specified financial objective. It contains the mathematical analysis, learning algorithms, historical allocation experiments and saved outputs used in the paper.
 
-**Current research version: 9 October 2026. Repository updated: 11 October 2026.**
+[Paper](manuscript/paper.pdf) · [LaTeX source](manuscript/paper.tex) · [Research report](FINAL_RESEARCH_REPORT.md) · [Findings](FINDINGS.md) · [Literature](literature/LITERATURE_LEDGER.md)
 
-- [Final anonymous paper (PDF)](submissions/iafm/paper.pdf) · [LaTeX source](submissions/iafm/paper.tex)
-- [Research and implementation report](FINAL_RESEARCH_REPORT.md)
-- [What changed and why the contribution shifted](RESEARCH_EVOLUTION_REPORT.md)
-- [Covariance, factor and financing report](COVARIANCE_RESEARCH_REPORT.md)
-- [Findings and assumptions](FINDINGS.md) · [39-paper literature ledger](literature/LITERATURE_LEDGER.md)
+## Research question
 
-The current paper has eight pages, 29 references, three figures and two tables. Earlier root-level papers/proposals and other workshop editions are preserved historical versions. The canonical manuscript is **`submissions/iafm/paper.tex`**.
+Optimising a reward accurately does not ensure that it represents an investor's intended trade-off between return, risk and costs. We measure this discrepancy against a terminal mean–variance equilibrium and derive a bound on the gain from changing one decision while retaining the learned policy thereafter.
 
-## What the project establishes
+The bound separates actor, reward and continuation-critic errors. It uses differences between critic values across states, so a constant critic offset does not affect the certificate. Under the stated finite-state assumptions, it can be evaluated without solving for the equilibrium policy. The independent-sample version requires a fixed policy, independent conditional observations and known return bounds.
 
-The main result bounds a learned policy's **one-step financial deviation gain**: the improvement obtainable by changing one decision while retaining its future policy. In a finite exogenous-state market, actor/reward gradients and continuation-critic residual spans give an upper bound without requiring the solved equilibrium policy. The proof covers vector returns and convex action constraints under the stated assumptions. The independent-data implementation is scalar and requires a fixed policy, independent conditional samples and known bounded return support.
+## Results
 
-Earlier exact reward-mismatch and calibration results remain part of the study. A separate historical audit crosses six covariance estimators with 10, 30 and 49 industry portfolios, separating fitted-model changes, reward changes and realised performance.
-
-| Evidence | Result |
+| Experiment | Main finding |
 |---|---|
-| Shared neural actor–critic: 9 markets, 20 seeds, 3 variants | Continuation-aware centred variant reduces mean policy distance **59.2%** and maximum deviation gain **81.4%** relative to the matched myopic learner |
-| Clipped PPO: 2 markets, 10 seeds, 2 reward arms | Continuation correction reduces distance **33.3%** and maximum feasible deviation gain **49.8%** |
-| Historical covariance/reward audit: 18 configurations, 432 months | Joint calibration preserves its own fitted target, with mean allocation distance below **1.60e−7** |
-| Final verification | **78 tests**; 1,660 final neural/PPO records reconstructed with maximum discrepancy **4.44e−16** and zero tested certificate violations |
+| Neural actor–critic: nine markets, twenty seeds | Continuation correction with a centred critic reduces mean policy distance by **59.2%** and maximum deviation gain by **81.4%** relative to the matched myopic learner. |
+| Clipped PPO: two markets, ten seeds | The continuation correction reduces distance by **33.3%** and maximum feasible deviation gain by **49.8%**. |
+| Historical allocation: six covariance estimators, 10/30/49 industries | Joint risk-and-cost calibration preserves the fitted target in all eighteen configurations; mean allocation distance is below **1.60e−7**. |
+| Verification | **78 tests pass**. All 1,660 final neural/PPO records reconstruct to a maximum discrepancy of **4.44e−16**, with no tested certificate violations. |
 
-Budgets are matched within each learning comparison, not between neural and PPO panels. Historical alignment does **not** establish better investment returns. The new RL learners have not been backtested on the French industry data. The backward learner, MVPI auxiliary, critic centring and concentration inequalities build on credited prior work; no universal algorithm-superiority or first-ever priority claim is made.
+Learning budgets are matched within each experiment. The historical audit evaluates fitted allocation rules; it is not a backtest of the new RL learners. Better alignment did not establish better realised investment performance. The method builds on existing equilibrium learning, mean auxiliaries and critic centring; its contribution is the financial deviation certificate and the accompanying controlled tests.
 
 ## Install and test
 
@@ -38,7 +32,7 @@ python -m pip install -e '.[research,test]'
 python -m pytest -q
 ```
 
-For older document-rendering workflows, also install `requirements-dev.txt`. The exact environment used for the final RL runs is recorded in [final-environment.txt](results/rl-extension/final-environment.txt). It is an evidence record of the original run; the package metadata declares supported minimum dependencies.
+The exact environment used for the final RL runs is recorded in [final-environment.txt](results/rl-extension/final-environment.txt). It is an evidence record of the original run; the package metadata declares supported minimum dependencies.
 
 The core package requires only NumPy/SciPy. Running the **complete** suite requires the research extras; a lightweight installation can skip optional PPO tests or lack historical/covariance dependencies.
 
@@ -63,7 +57,7 @@ python scripts/run_certificate_refinement.py
 
 The final neural outputs contain 540 runs × three checkpoints = 1,620 records. PPO adds 40 runs. [final_summary.json](results/rl-extension/final_summary.json) records all means, paired seed-bootstrap intervals and reconstruction checks. Saved actions and critics are included; optional SB3 model ZIPs are excluded and can be regenerated by retraining.
 
-The five-seed neural pilot remains under `results/rl-extension/neural/`; the final twenty-seed study is under `neural-final/`. Pilot figures and reports must not replace the final manuscript numbers.
+The five-seed neural pilot remains under `results/rl-extension/neural/`; the final twenty-seed study is under `neural-final/`. The final paper reports the twenty-seed results.
 
 ### Historical and covariance evidence
 
@@ -86,37 +80,33 @@ python scripts/plot_final_covariance.py
 
 The checks reconstruct 58,320 covariance-study decisions and 2,160 known-covariance fitted problems. Historical estimates use the previous 120 monthly observations; evaluation runs from January 1990 through December 2025. The public input ZIPs in `data/raw/` are the archived August 2026 Kenneth French vintage. These revised research portfolios are not a point-in-time investable stock universe. Source information and hashes are retained in the historical manifests.
 
-## Build and check the paper
+## Manuscript
 
 ```bash
-cd submissions/iafm
+cd manuscript
 tectonic paper.tex --keep-logs
-cd ../..
-python scripts/check_current_submission.py
+cd ..
+python -m pip install pypdf
+python scripts/check_manuscript.py
 ```
 
-A normal LaTeX/BibTeX workflow also works with the supplied ACM class/style and figure assets. The paper checker uses pypdf (`python -m pip install pypdf`). It checks the eight-page limit, anonymity, citation placeholders, expected figures/tables, source inputs and numerical macros. The saved PDF was visually reviewed and independently rebuilt from its portable source archive.
+The source uses the supplied ACM class and bibliography style. The checker verifies page count, anonymous author fields, references, figures, tables and numerical macros. Reproduction scripts generate the paper's numerical inputs and figures from saved policies.
 
-The source is edited directly. Legacy multi-workshop generators are historical tools; guards prevent them from replacing the current IAFM manuscript. `scripts/package_iafm_revision.py` packages the current paper into the parent directory. Other packaging scripts likewise create local delivery archives rather than publishing them.
-
-## Repository map
+## Repository structure
 
 | Path | Contents |
 |---|---|
-| `mvrl/` | Independent/dependent market benchmarks, fitted historical allocation, covariance/financing methods, RL learners and certificates |
-| `tests/` | Analytical, independent numerical, data-accounting and learning tests |
-| `scripts/` | Experiment runners, independent reconstruction, figures and document tooling |
-| `data/raw/` | Archived public monthly portfolio/factor input ZIPs |
-| `results/historical/` | Original historical, dimension and covariance audits |
-| `results/covariance_simulation/` | Known-population covariance experiments |
-| `results/rl-extension/` | Tabular, pilot, final neural/PPO and independent-audit evidence |
-| `notes/` | Proofs, fixed protocols, reading records and assumptions |
-| `literature/` | Version-specific comparison ledger and provenance; downloaded newer papers are not redistributed |
-| `submissions/iafm/` | Current anonymous source, PDF, tables and figures |
-| `archive/` | Preserved earlier manuscript/research states |
+| `mvrl/` | Market models, allocation methods, RL learners and deviation certificates |
+| `tests/` | Analytical, numerical, data-accounting and learning tests |
+| `scripts/` | Experiment runners, reconstruction checks and figure generation |
+| `data/raw/` | Archived public monthly industry-portfolio and factor data |
+| `results/` | Saved experiment outputs, policies, critics and verification records |
+| `notes/` | Derivations, experiment protocols and reading notes |
+| `literature/` | Primary-paper comparison ledger and source records |
+| `manuscript/` | Paper, bibliography, tables and figures |
 
-## Scope and remaining research
+The [covariance report](COVARIANCE_RESEARCH_REPORT.md) documents the finance experiments. The [evolution report](RESEARCH_EVOLUTION_REPORT.md) explains the transition from calibration of a known optimum to certification of a learned policy. The [worklog](WORKLOG.md) records the research milestones; earlier document versions remain in their original folders and Git history. The current research entry point is `manuscript/`.
 
-The certificate bounds local equilibrium deviations, not global-policy regret. Conditional moments or qualifying audit samples are required; a nonpositive variance lower bound produces an uninformative bound. The current learned policies use one risky asset and two observed regimes. Multi-asset neural learning, hidden regimes, dependent historical audit samples, chronological real-data RL, broader hyperparameter checks and full matched SPERL/DPG-FPI reproductions remain extensions.
+## Scope
 
-The [evolution report](RESEARCH_EVOLUTION_REPORT.md) explains why the main contribution shifted from calibration of a known optimum to certification of a learned policy, and evaluates both the benefits and the trade-offs. The covariance work remains supporting evidence. Required author declarations and submission handling are separate from this code repository; no upload to a workshop is performed by the reproduction commands.
+The certificate concerns one-step equilibrium deviations, not global-policy regret. The learned-policy experiments use one risky asset and two observed regimes. Multi-asset neural learning, hidden regimes, chronological historical RL, dependent audit samples and broader architecture comparisons remain extensions. Assumptions, limitations and the status of each result are recorded in [FINDINGS.md](FINDINGS.md).

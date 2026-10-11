@@ -10,4 +10,4 @@ Read before modification: all 13 package source files; both standalone newer Pyt
 5. **Priority papers:** Moody–Saffell (DSR); Jiang–Xu–Liang (log growth); Yang–Liu–Zhong–Walid (PPO/A2C/DDPG return reward, Sharpe selection); Wang–Zhou (direct MV RL); Li–Ng and Basak–Chabakauri; discrete time-inconsistent control and potential shaping. Verify primary sources before final claims.
 6. **Experiments:** exact reward-optimum comparison; common target occupancy distances; nonzero interest redesign; phi/horizon/market sweeps; dependent-return references; bounded long-only reward adaptations; excess-return Sharpe; matched seed training and surrogate regret; DSR initialisation/eta/action-grid sensitivity; estimation and distribution robustness.
 
-Original files preserved in archive/2026-09-21-before-audit. Archive statements are historical, not current claims.
+Original versions remain in Git history; the statements reviewed here are historical, not current claims.

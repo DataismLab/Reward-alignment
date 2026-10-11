@@ -7,7 +7,7 @@ matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 from mvrl.historical import ROOT
 
-w=ROOT/'submissions/iafm';out=ROOT/'results/historical/covariance'
+w=ROOT/'manuscript';out=ROOT/'results/historical/covariance'
 report=json.loads((out/'summary.json').read_text());cases={(r['n_assets'],r['estimator']):r for r in report['results']}
 def summary(n,e,method):return next(r for r in cases[n,e]['summary'] if r['method']==method)
 names={'sample':'Sample','diag10':'Fixed diagonal','lw_identity':'LW identity','lw_correlation':'LW correlation','market':'Market factor','ff3':'Three factors'}

@@ -13,7 +13,7 @@ add('schulman2017','John Schulman; Filip Wolski; Prafulla Dhariwal; Alec Radford
 folder=root/'literature/rl-extension-2026';(folder/'records.json').write_text(json.dumps(records,indent=2,ensure_ascii=False))
 old=json.loads((root/'literature/ledger.json').read_text());keys={x['key'] for x in records};rows=[x for x in old if x['key'] not in keys]+records
 (root/'literature/ledger.json').write_text(json.dumps(rows,indent=2,ensure_ascii=False))
-head='# Primary-paper comparison ledger\n\nUpdated 9 October 2026: '+str(len(rows))+' records. Versions and reading coverage are explicit. External reported results are not replications. RL extension is preliminary and separate from the frozen IAFM manuscript.\n\n| ID | Verified citation | Access / version | Relation |\n|---|---|---|---|\n'
+head='# Primary-paper comparison ledger\n\nUpdated 9 October 2026: '+str(len(rows))+' records. Versions and reading coverage are explicit. External reported results are not replications. RL extension is preliminary and separate from the frozen manuscript.\n\n| ID | Verified citation | Access / version | Relation |\n|---|---|---|---|\n'
 for r in rows:head+=f"| {r['key']} | {r['authors']} ({r['year']}). [{r['title']}]({r['url']}). {r['venue']}. | {r['version']} | {r['project_relation']} |\n"
 for r in rows:
  head+='\n## '+r['key']+'\n\n| Field | Extraction |\n|---|---|\n'

@@ -1,6 +1,6 @@
 # Kolm–Ritter (2025): full-text reading and integration
 
-Read on 9 October 2026 from the journal PDF supplied by the user. All 15 PDF pages were read, including all three exhibits, the conclusion and references. Printed pagination is 81–95; PDF page k corresponds to printed page 80+k. This supersedes the earlier abstract-only record. The separately read CFA chapter is a different publication.
+Read on 9 October 2026 from the complete journal PDF. All 15 PDF pages were read, including all three exhibits, the conclusion and references. Printed pagination is 81–95; PDF page k corresponds to printed page 80+k. This supersedes the earlier abstract-only record. The separately read CFA chapter is a different publication.
 
 **Exact reference:** Petter N. Kolm and Gordon Ritter. 2025. “Reinforcement Learning for Asset and Portfolio Management.” *The Journal of Portfolio Management* 52(2), 81–95. DOI: [10.3905/jpm.2025.1.782](https://doi.org/10.3905/jpm.2025.1.782). The title and authors agree with the supplied final journal PDF; the previously verified publisher metadata supplies volume, issue and DOI. The local source path, SHA-256 and reading coverage are recorded in `literature/covariance-update/kolm2025-fulltext-manifest.json`.
 
@@ -43,7 +43,7 @@ This matters for our comparison: it is a recent journal source for the problem a
 | 91–93 | Outlook and Exhibit 3 (p. 92): hybrid approaches, richer states, reproducible benchmarks, continual learning and simulator development. These are a research agenda, not established performance guarantees. |
 | 93–95 | References. Relevant follow-up leads include Brini–Kolm on PPO and Sood et al. on matched-objective MVO comparisons. Their primary papers would need separate verification before attributing equations or numerical results to them. |
 
-## How the current IAFM manuscript uses it
+## How the current manuscript uses it
 
 1. **Introduction:** cites pp. 90–91 for the already recognised mandate-alignment problem. Our question is how to test the correspondence, not whether we were first to notice it.
 2. **Related work:** uses pp. 82, 84, 87 and 90–92 plus Exhibits 2–3. It identifies the article as conceptual guidance with no new empirical comparator and acknowledges that known-policy validation has precedents.

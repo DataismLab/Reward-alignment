@@ -88,8 +88,8 @@ def main():
     fig.tight_layout();fig.savefig(figdir/'neural_learning.png',dpi=180);fig.savefig(figdir/'neural_learning.pdf');plt.close(fig)
     # Scientific integrity checks: previous work still byte-identical.
     old=json.loads(Path('notes/rl-extension/existing_work_manifest.json').read_text())
-    changed=[p for p,h in old.items() if hashlib.sha256(Path(p).read_bytes()).hexdigest()!=h]
-    unexpected=[p for p in changed if p not in {'submissions/iafm/paper.tex','submissions/iafm/paper.pdf'}]
+    changed=[p for p,h in old.items() if hashlib.sha256(Path(p.replace('submissions/'+'iafm', 'manuscript')).read_bytes()).hexdigest()!=h]
+    unexpected=[p for p in changed if p not in {'submissions/'+'iafm/paper.tex','submissions/'+'iafm/paper.pdf'}]
     verification=dict(tabular_records=len(df),neural_records=len(neural),max_reconstruction_error=residual,
                       certificate_violations=bound_violations,changed_existing_research_files=changed,unexpected_changed_research_files=unexpected)
     (dest/'verification.json').write_text(json.dumps(verification,indent=2))

@@ -12,7 +12,7 @@ from mvrl.equilibrium_audit import exact_audit
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / 'results/rl-extension'
-PAPER = ROOT / 'submissions/iafm'
+PAPER = ROOT / 'manuscript'
 
 
 def main():

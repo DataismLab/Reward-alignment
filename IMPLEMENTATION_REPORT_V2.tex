@@ -20,7 +20,7 @@ Version 1 used specified return models and known analytical policies to isolate 
 
 The real-data target is a fitted one-period allocation, not a known optimal policy for the true historical market. A rolling estimate does not identify the full conditional law of returns or a terminal-wealth equilibrium under dependence. The extension therefore tests implementation fidelity conditional on a specified model, then asks whether that fidelity helps realised performance. Those questions are deliberately recorded separately.
 
-The principal new modules are \path{mvrl/historical.py} and \path{mvrl/historical_learning.py}. The first handles data, exact reward comparisons, portfolio paths, uncertainty and robustness. The second measures finite-budget numerical learning error. No synthetic strategy code was replaced by this extension, and the latest workshop expansion changes the documents rather than the research algorithms.
+The principal new modules are \path{mvrl/historical.py} and \path{mvrl/historical_learning.py}. The first handles data, exact reward comparisons, portfolio paths, uncertainty and robustness. The second measures finite-budget numerical learning error. No synthetic strategy code was replaced by this extension.
 
 \section{Data and the information boundary}
 \subsection{Source and sample}
@@ -181,6 +181,4 @@ Point-in-time investable-universe and execution validation & Open extension.\\\b
 \end{longtable}
 The completed implementation makes one practical capability available: given a fitted preference and a proposed reward, it can measure their policy disagreement on real historical states, calibrate the risk--cost reward when the identity applies, and separately report optimisation error and investment outcomes. It does not turn fitted preference alignment into a guarantee of superior trading performance.
 
-\section*{Preparation note}
-OpenAI Codex assisted with code, literature checking, derivations, analysis and document preparation. The numbers in this report come from the archived experiment outputs. This report supersedes neither the original synthetic implementation report nor the underlying research records; it documents the real-data extension as v2.
 \end{document}

@@ -1,8 +1,8 @@
-# Final IAFM research and verification report
+# Research and verification report
 
-9 October 2026. Canonical submission: `submissions/iafm/paper.tex` and `paper.pdf`.
+9 October 2026. Manuscript: `manuscript/paper.tex` and `paper.pdf`.
 Title: **Certifying Reward Alignment in Portfolio Reinforcement Learning**.
-This report supersedes the five-seed pilot's conclusions where final results differ. Earlier finance experiments and pilot outputs remain available; the incoming paper is preserved in `archive/2026-10-09-before-final-rl/iafm/`.
+This report supersedes the five-seed pilot's conclusions where final results differ. Earlier finance experiments and pilot outputs remain available. Earlier manuscript versions are available in Git history.
 
 ## The final contribution
 
@@ -43,7 +43,7 @@ Distance improves by **33.3%** and deviation by **49.8%**. The paired distance d
 
 New finalisation code adds the PPO environment and trainer (`mvrl/ppo_alignment.py`), unchanged-protocol twenty-seed runner, PPO runner, final reconstruction/figure generator, and four PPO tests. The tests independently enumerate sampled continuation paths, check paired rewards, seed resets, terminal handling and critic-offset invariance, and run an actual PPO smoke training. Research dependencies are declared as optional extras; the installed final environment is saved.
 
-**78 tests passed**, including the 50 pre-extension tests. All 1,660 final neural/PPO records were reconstructed from saved actions and critics: maximum numerical discrepancy 4.44e−16, zero tested bound violations. The earlier 2,160 tabular records were also independently reconstructed in the preceding verification. The pre-extension tracked research files differ only in the intentionally revised canonical IAFM source/PDF; the tracked finance code and results are unchanged. This preservation check does not claim that later-created files existed in the earlier manifest.
+**78 tests passed**, including the 50 pre-extension tests. All 1,660 final neural/PPO records were reconstructed from saved actions and critics: maximum numerical discrepancy 4.44e−16, zero tested bound violations. The earlier 2,160 tabular records were also independently reconstructed in the preceding verification. The pre-extension tracked research files differ only in the intentionally revised canonical manuscript source/PDF; the tracked finance code and results are unchanged. This preservation check does not claim that later-created files existed in the earlier manifest.
 
 Reproduce using a scientific Python environment with the optional `research` and `test` extras. Exact tested package versions are in `results/rl-extension/final-environment.txt`. Commands from the project root:
 
@@ -57,12 +57,10 @@ python scripts/plot_final_covariance.py
 
 The runners reuse saved per-seed outputs; move the corresponding result directory to an archive in a separate research copy to retrain. No market oracle is passed to the neural/PPO training modules. Full replay against saved outputs is substantially faster than retraining. The paper is edited directly; the older covariance source builder now refuses to overwrite it.
 
-## Manuscript, literature and delivery
+## Manuscript and literature
 
 The final anonymous ACM manuscript has eight pages including references and appendices, 29 cited references, three figures and two tables. The ledger contains 39 primary-paper records, with publication metadata, actual inspected versions, exact comparison locations and project roles. PPO's original Eq. (7), Algorithm 1 and experimental setting are recorded; it is a standard optimiser reference, not a finance backtest comparator.
 
-Section 7 explains financial decision interpretation: distinguish altered opportunities (covariance), altered preferences (reward), and implementation error (actor/critic). It connects the certificate to faithful evaluation and model-risk validation, matching IAFM's subject without inventing an LLM contribution. The historical table retains dated source/role entries, finance controls, and a final bold joint-calibration row. The new RL table distinguishes matched experimental panels. The new audit figure shows the cost and conservatism of independent-data certification.
+Section 7 explains financial decision interpretation: distinguish altered opportunities (covariance), altered preferences (reward), and implementation error (actor/critic). It connects the certificate to faithful evaluation and model-risk validation. The historical table retains dated source/role entries, finance controls, and a final bold joint-calibration row. The new RL table distinguishes matched experimental panels. The new audit figure shows the cost and conservatism of independent-data certification.
 
-Official IAFM and central ICAIF workshop rules were checked on 9 October: double-blind ACM format, at most eight total pages including references/appendices; extended deadline **12 October 2026, 23:59 AoE**, notification 16 October. Primary rules: https://iafm-icaif.netlify.app/ and https://icaif2026.org/workshop.html. A saved official IAFM HTML snapshot is in `notes/rl-extension/`.
-
-The full-project compiler produces the delivery PDF. The native editor's single-file compiler cannot resolve external project inputs; this is an editor limitation, not a successful native compilation claim. Portable-source rebuilding, PDF anonymity, citations, layout and page count are checked separately. The private reproducibility ZIP is not an anonymous submission supplement. No submission or organiser contact has been made. The author remains responsible for required declarations and the submission portal.
+The manuscript contains the full principal proof and data-audit construction. Its eight-page PDF, bibliography and numerical inputs are checked by `scripts/check_manuscript.py`.

@@ -1,6 +1,6 @@
 # Primary-paper comparison ledger
 
-Updated 9 October 2026: 39 records. Versions and reading coverage are explicit. External reported results are not replications. RL extension is preliminary and separate from the frozen IAFM manuscript.
+Updated 9 October 2026: 39 records. Versions and reading coverage are explicit. External reported results are not replications. RL extension is preliminary and separate from the frozen manuscript.
 
 | ID | Verified citation | Access / version | Relation |
 |---|---|---|---|

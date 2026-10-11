@@ -1,0 +1,455 @@
+%%% -*-BibTeX-*-
+%%% Do NOT edit. File created by BibTeX with style
+%%% ACM-Reference-Format-Journals [18-Jan-2012].
+
+\begin{thebibliography}{29}
+
+%%% ====================================================================
+%%% NOTE TO THE USER: you can override these defaults by providing
+%%% customized versions of any of these macros before the \bibliography
+%%% command.  Each of them MUST provide its own final punctuation,
+%%% except for \shownote{} and \showURL{}.  The latter does
+%%% not use final punctuation, in order to avoid confusing it with
+%%% the Web address.
+%%%
+%%% To suppress output of a particular field, define its macro to expand
+%%% to an empty string, or better, \unskip, like this:
+%%%
+%%% \newcommand{\showURL}[1]{\unskip}   % LaTeX syntax
+%%%
+%%% \def \showURL #1{\unskip}           % plain TeX syntax
+%%%
+%%% ====================================================================
+
+\ifx \showCODEN    \undefined \def \showCODEN     #1{\unskip}     \fi
+\ifx \showISBNx    \undefined \def \showISBNx     #1{\unskip}     \fi
+\ifx \showISBNxiii \undefined \def \showISBNxiii  #1{\unskip}     \fi
+\ifx \showISSN     \undefined \def \showISSN      #1{\unskip}     \fi
+\ifx \showLCCN     \undefined \def \showLCCN      #1{\unskip}     \fi
+\ifx \shownote     \undefined \def \shownote      #1{#1}          \fi
+\ifx \showarticletitle \undefined \def \showarticletitle #1{#1}   \fi
+\ifx \showURL      \undefined \def \showURL       {\relax}        \fi
+% The following commands are used for tagged output and should be
+% invisible to TeX
+\providecommand\bibfield[2]{#2}
+\providecommand\bibinfo[2]{#2}
+\providecommand\natexlab[1]{#1}
+\providecommand\showeprint[2][]{arXiv:#2}
+\makeatletter
+\@ifundefined{NAT@parse@date}{}{\let\NAT@parse@date@orig\NAT@parse@date}
+\@ifundefined{NAT@parse@date}{}{\def\NAT@parse@date#1#2#3#4#5#6@@{\NAT@parse@date@orig#1#2#3#4#5#6@@\def\NAT@tempyear{0000}\def\NAT@tempexlab{{?}}\ifx\NAT@year\NAT@tempyear\ifx\NAT@exlab\NAT@tempexlab\def\NAT@date{[n.\,d.]}\else\edef\NAT@date{[n.\,d.]\NAT@exlab}\fi\fi}}
+\makeatother
+
+\bibitem[Basak and Chabakauri(2010)]%
+        {basak2010}
+\bibfield{author}{\bibinfo{person}{Suleyman Basak} {and}
+  \bibinfo{person}{Georgy Chabakauri}.} \bibinfo{year}{2010}\natexlab{}.
+\newblock \bibinfo{title}{{Dynamic Mean-Variance Asset Allocation}}.
+\newblock \bibinfo{howpublished}{The Review of Financial Studies 23(8),
+  2970--3016}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1093/rfs/hhq028}
+\showURL{%
+\tempurl}
+
+
+\bibitem[Bj{\"o}rk et~al\mbox{.}(2016)]%
+        {bkm2016}
+\bibfield{author}{\bibinfo{person}{Tomas Bj{\"o}rk}, \bibinfo{person}{Mariana
+  Khapko}, {and} \bibinfo{person}{Agatha Murgoci}.}
+  \bibinfo{year}{2016}\natexlab{}.
+\newblock \bibinfo{title}{{Time Inconsistent Stochastic Control in Continuous
+  Time: Theory and Examples}}.
+\newblock \bibinfo{howpublished}{arXiv preprint 1612.03650v1}.
+\newblock
+\urldef\tempurl%
+\url{https://arxiv.org/abs/1612.03650}
+\showURL{%
+\tempurl}
+
+
+\bibitem[Chen et~al\mbox{.}(2025)]%
+        {chen2025seminorm}
+\bibfield{author}{\bibinfo{person}{Zaiwei Chen}, \bibinfo{person}{Sheng Zhang},
+  \bibinfo{person}{Zhe Zhang}, \bibinfo{person}{Shaan~Ul Haque}, {and}
+  \bibinfo{person}{Siva~Theja Maguluri}.} \bibinfo{year}{2025}\natexlab{}.
+\newblock \bibinfo{title}{{A Non-Asymptotic Theory of Seminorm Lyapunov
+  Stability: From Deterministic to Stochastic Iterative Algorithms}}.
+\newblock \bibinfo{howpublished}{arXiv preprint 2502.14208v1}.
+\newblock
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2502.14208}
+\showURL{%
+\tempurl}
+
+
+\bibitem[Cong et~al\mbox{.}(2026)]%
+        {cong2026}
+\bibfield{author}{\bibinfo{person}{Lin~William Cong}, \bibinfo{person}{Ke
+  Tang}, {and} \bibinfo{person}{Jingyuan Wang}.}
+  \bibinfo{year}{2026}\natexlab{}.
+\newblock \bibinfo{title}{{AlphaPortfolio: Goal-Oriented Investment Management
+  Through Deep Reinforcement Learning}}.
+\newblock \bibinfo{howpublished}{NBER Working Paper 35195, May 2026}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.3386/w35195}
+\showURL{%
+\tempurl}
+
+
+\bibitem[Czichowsky(2013)]%
+        {czichowsky2013}
+\bibfield{author}{\bibinfo{person}{Christoph Czichowsky}.}
+  \bibinfo{year}{2013}\natexlab{}.
+\newblock \bibinfo{title}{{Time-consistent mean-variance portfolio selection in
+  discrete and continuous time}}.
+\newblock \bibinfo{howpublished}{Finance and Stochastics 17(2), 227--271}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1007/s00780-012-0189-9}
+\showURL{%
+\tempurl}
+
+
+\bibitem[Dai et~al\mbox{.}(2023)]%
+        {dai2023}
+\bibfield{author}{\bibinfo{person}{Min Dai}, \bibinfo{person}{Yuchao Dong},
+  {and} \bibinfo{person}{Yanwei Jia}.} \bibinfo{year}{2023}\natexlab{}.
+\newblock \bibinfo{title}{{Learning Equilibrium Mean-Variance Strategy}}.
+\newblock \bibinfo{howpublished}{Mathematical Finance 33(4), 1166--1212}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1111/mafi.12402}
+\showURL{%
+\tempurl}
+
+
+\bibitem[DeMiguel et~al\mbox{.}(2009)]%
+        {demiguel2009}
+\bibfield{author}{\bibinfo{person}{Victor DeMiguel}, \bibinfo{person}{Lorenzo
+  Garlappi}, {and} \bibinfo{person}{Raman Uppal}.}
+  \bibinfo{year}{2009}\natexlab{}.
+\newblock \showarticletitle{Optimal Versus Naive Diversification: How
+  Inefficient is the {1/N} Portfolio Strategy?}
+\newblock \bibinfo{journal}{\emph{The Review of Financial Studies}}
+  \bibinfo{volume}{22}, \bibinfo{number}{5} (\bibinfo{year}{2009}),
+  \bibinfo{pages}{1915--1953}.
+\newblock
+\href{https://doi.org/10.1093/rfs/hhm075}{doi:\nolinkurl{10.1093/rfs/hhm075}}
+
+
+\bibitem[DeMiguel et~al\mbox{.}(2024)]%
+        {demiguel2024}
+\bibfield{author}{\bibinfo{person}{Victor DeMiguel}, \bibinfo{person}{Alberto
+  Mart{\'i}n-Utrera}, {and} \bibinfo{person}{Raman Uppal}.}
+  \bibinfo{year}{2024}\natexlab{}.
+\newblock \showarticletitle{A Multifactor Perspective on Volatility-Managed
+  Portfolios}.
+\newblock \bibinfo{journal}{\emph{The Journal of Finance}}
+  \bibinfo{volume}{79}, \bibinfo{number}{6} (\bibinfo{year}{2024}),
+  \bibinfo{pages}{3859--3891}.
+\newblock
+\href{https://doi.org/10.1111/jofi.13395}{doi:\nolinkurl{10.1111/jofi.13395}}
+
+
+\bibitem[Fan et~al\mbox{.}(2008)]%
+        {fan2008}
+\bibfield{author}{\bibinfo{person}{Jianqing Fan}, \bibinfo{person}{Yingying
+  Fan}, {and} \bibinfo{person}{Jinchi Lv}.} \bibinfo{year}{2008}\natexlab{}.
+\newblock \bibinfo{title}{{High dimensional covariance matrix estimation using
+  a factor model}}.
+\newblock \bibinfo{howpublished}{Journal of Econometrics 147(1), 186--197}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1016/j.jeconom.2008.09.017}
+\showURL{%
+\tempurl}
+
+
+\bibitem[French(2026)]%
+        {french}
+\bibfield{author}{\bibinfo{person}{Kenneth~R. French}.}
+  \bibinfo{year}{2026}\natexlab{}.
+\newblock \bibinfo{title}{{Data Library: Industry Portfolios and Fama--French
+  Factors}}.
+\newblock \bibinfo{howpublished}{Tuck School of Business, Dartmouth College.
+  August 2026 data vintage; retrieved 26 September and 1 October 2026}.
+\newblock
+\urldef\tempurl%
+\url{https://mba.tuck.dartmouth.edu/pages/faculty/ken.french/data_library.html}
+\showURL{%
+\tempurl}
+
+
+\bibitem[G{\^a}rleanu and Pedersen(2013)]%
+        {garleanu2013}
+\bibfield{author}{\bibinfo{person}{Nicolae G{\^a}rleanu} {and}
+  \bibinfo{person}{Lasse~Heje Pedersen}.} \bibinfo{year}{2013}\natexlab{}.
+\newblock \showarticletitle{Dynamic Trading with Predictable Returns and
+  Transaction Costs}.
+\newblock \bibinfo{journal}{\emph{The Journal of Finance}}
+  \bibinfo{volume}{68}, \bibinfo{number}{6} (\bibinfo{year}{2013}),
+  \bibinfo{pages}{2309--2340}.
+\newblock
+\href{https://doi.org/10.1111/jofi.12080}{doi:\nolinkurl{10.1111/jofi.12080}}
+
+
+\bibitem[Gollart and Okhrin(2025)]%
+        {gollart2025}
+\bibfield{author}{\bibinfo{person}{Maximilian Gollart} {and}
+  \bibinfo{person}{Yarema Okhrin}.} \bibinfo{year}{2025}\natexlab{}.
+\newblock \bibinfo{title}{{A reinforcement learning approach to dynamic
+  portfolio optimization}}.
+\newblock \bibinfo{howpublished}{Annals of Operations Research; published
+  online 25 June 2025}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1007/s10479-025-06649-x}
+\showURL{%
+\tempurl}
+
+
+\bibitem[Guo et~al\mbox{.}(2026)]%
+        {guo2026}
+\bibfield{author}{\bibinfo{person}{Xin Guo}, \bibinfo{person}{Yijie Huang},
+  {and} \bibinfo{person}{Xiang Yu}.} \bibinfo{year}{2026}\natexlab{}.
+\newblock \bibinfo{title}{{Deterministic Policy Gradient for Learning
+  Equilibrium in Time-Inconsistent Control Problems}}.
+\newblock \bibinfo{howpublished}{arXiv preprint 2606.11798v1}.
+\newblock
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2606.11798}
+\showURL{%
+\tempurl}
+
+
+\bibitem[Habibnia and Soltanzadeh(2024)]%
+        {habibnia2024}
+\bibfield{author}{\bibinfo{person}{Ali Habibnia} {and} \bibinfo{person}{Mahdi
+  Soltanzadeh}.} \bibinfo{year}{2024}\natexlab{}.
+\newblock \bibinfo{title}{{Optimizing Portfolio with Two-Sided Transactions and
+  Lending: A Reinforcement Learning Framework}}.
+\newblock \bibinfo{howpublished}{arXiv:2408.05382v1}.
+\newblock
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2408.05382}
+\showURL{%
+\tempurl}
+
+
+\bibitem[Jiang et~al\mbox{.}(2024)]%
+        {jiang2024}
+\bibfield{author}{\bibinfo{person}{Yifu Jiang}, \bibinfo{person}{Jose Olmo},
+  {and} \bibinfo{person}{Majed Atwi}.} \bibinfo{year}{2024}\natexlab{}.
+\newblock \bibinfo{title}{{Deep reinforcement learning for portfolio
+  selection}}.
+\newblock \bibinfo{howpublished}{Global Finance Journal 62, 101016}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1016/j.gfj.2024.101016}
+\showURL{%
+\tempurl}
+
+
+\bibitem[Jiang et~al\mbox{.}(2025)]%
+        {jiang2025}
+\bibfield{author}{\bibinfo{person}{Yifu Jiang}, \bibinfo{person}{Jose Olmo},
+  {and} \bibinfo{person}{Majed Atwi}.} \bibinfo{year}{2025}\natexlab{}.
+\newblock \bibinfo{title}{{High-dimensional multi-period portfolio allocation
+  using deep reinforcement learning}}.
+\newblock \bibinfo{howpublished}{International Review of Economics and Finance
+  98, 103996}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1016/j.iref.2025.103996}
+\showURL{%
+\tempurl}
+
+
+\bibitem[Kolm and Ritter(2019)]%
+        {kolm2019}
+\bibfield{author}{\bibinfo{person}{Petter~N. Kolm} {and}
+  \bibinfo{person}{Gordon Ritter}.} \bibinfo{year}{2019}\natexlab{}.
+\newblock \bibinfo{title}{{Dynamic Replication and Hedging: A Reinforcement
+  Learning Approach}}.
+\newblock \bibinfo{howpublished}{The Journal of Financial Data Science 1(1),
+  159--171}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.3905/jfds.2019.1.1.159}
+\showURL{%
+\tempurl}
+
+
+\bibitem[Kolm and Ritter(2025)]%
+        {kolm2025}
+\bibfield{author}{\bibinfo{person}{Petter~N. Kolm} {and}
+  \bibinfo{person}{Gordon Ritter}.} \bibinfo{year}{2025}\natexlab{}.
+\newblock \bibinfo{title}{{Reinforcement Learning for Asset and Portfolio
+  Management}}.
+\newblock \bibinfo{howpublished}{The Journal of Portfolio Management 52(2),
+  81--95}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.3905/jpm.2025.1.782}
+\showURL{%
+\tempurl}
+
+
+\bibitem[Ledoit and Wolf(2004a)]%
+        {ledoit2004identity}
+\bibfield{author}{\bibinfo{person}{Olivier Ledoit} {and}
+  \bibinfo{person}{Michael Wolf}.} \bibinfo{year}{2004}\natexlab{a}.
+\newblock \bibinfo{title}{{A well-conditioned estimator for large-dimensional
+  covariance matrices}}.
+\newblock \bibinfo{howpublished}{Journal of Multivariate Analysis 88(2),
+  365--411}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1016/S0047-259X(03)00096-4}
+\showURL{%
+\tempurl}
+
+
+\bibitem[Ledoit and Wolf(2004b)]%
+        {ledoit2004correlation}
+\bibfield{author}{\bibinfo{person}{Olivier Ledoit} {and}
+  \bibinfo{person}{Michael Wolf}.} \bibinfo{year}{2004}\natexlab{b}.
+\newblock \bibinfo{title}{{Honey, I Shrunk the Sample Covariance Matrix}}.
+\newblock \bibinfo{howpublished}{The Journal of Portfolio Management 30(4),
+  110--119}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.3905/jpm.2004.110}
+\showURL{%
+\tempurl}
+
+
+\bibitem[Ledoit and Wolf(2017)]%
+        {ledoit2017}
+\bibfield{author}{\bibinfo{person}{Olivier Ledoit} {and}
+  \bibinfo{person}{Michael Wolf}.} \bibinfo{year}{2017}\natexlab{}.
+\newblock \showarticletitle{Nonlinear Shrinkage of the Covariance Matrix for
+  Portfolio Selection: {Markowitz} Meets {Goldilocks}}.
+\newblock \bibinfo{journal}{\emph{The Review of Financial Studies}}
+  \bibinfo{volume}{30}, \bibinfo{number}{12} (\bibinfo{year}{2017}),
+  \bibinfo{pages}{4349--4388}.
+\newblock
+\href{https://doi.org/10.1093/rfs/hhx052}{doi:\nolinkurl{10.1093/rfs/hhx052}}
+
+
+\bibitem[Lesmana and Pun(2025)]%
+        {lesmana2025}
+\bibfield{author}{\bibinfo{person}{Nixie~Sapphira Lesmana} {and}
+  \bibinfo{person}{Chi~Seng Pun}.} \bibinfo{year}{2025}\natexlab{}.
+\newblock \bibinfo{title}{{A Subgame Perfect Equilibrium Reinforcement Learning
+  Approach to Time-Inconsistent Problems}}.
+\newblock \bibinfo{howpublished}{SIAM Journal on Financial Mathematics 16(1),
+  68--122}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1137/23M1594510}
+\showURL{%
+\tempurl}
+
+
+\bibitem[Li and Ng(2000)]%
+        {ling2000}
+\bibfield{author}{\bibinfo{person}{Duan Li} {and} \bibinfo{person}{Wan-Lung
+  Ng}.} \bibinfo{year}{2000}\natexlab{}.
+\newblock \bibinfo{title}{{Optimal Dynamic Portfolio Selection: Multiperiod
+  Mean-Variance Formulation}}.
+\newblock \bibinfo{howpublished}{Mathematical Finance 10(3), 387--406}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1111/1467-9965.00100}
+\showURL{%
+\tempurl}
+
+
+\bibitem[Markowitz(1952)]%
+        {markowitz1952}
+\bibfield{author}{\bibinfo{person}{Harry Markowitz}.}
+  \bibinfo{year}{1952}\natexlab{}.
+\newblock \showarticletitle{Portfolio Selection}.
+\newblock \bibinfo{journal}{\emph{The Journal of Finance}} \bibinfo{volume}{7},
+  \bibinfo{number}{1} (\bibinfo{year}{1952}), \bibinfo{pages}{77--91}.
+\newblock
+\href{https://doi.org/10.1111/j.1540-6261.1952.tb01525.x}{doi:\nolinkurl{10.1111/j.1540-6261.1952.tb01525.x}}
+
+
+\bibitem[Maurer and Pontil(2009)]%
+        {maurer2009}
+\bibfield{author}{\bibinfo{person}{Andreas Maurer} {and}
+  \bibinfo{person}{Massimiliano Pontil}.} \bibinfo{year}{2009}\natexlab{}.
+\newblock \bibinfo{title}{{Empirical Bernstein Bounds and Sample Variance
+  Penalization}}.
+\newblock \bibinfo{howpublished}{Proceedings of COLT 2009}.
+\newblock
+\urldef\tempurl%
+\url{https://www.cs.mcgill.ca/~colt2009/papers/012.pdf}
+\showURL{%
+\tempurl}
+
+
+\bibitem[Sangadi et~al\mbox{.}(2025)]%
+        {sangadi2025}
+\bibfield{author}{\bibinfo{person}{Tejaram Sangadi}, \bibinfo{person}{Prashanth
+  L.A.}, {and} \bibinfo{person}{Krishna Jagannathan}.}
+  \bibinfo{year}{2025}\natexlab{}.
+\newblock \bibinfo{title}{{A Finite-Sample Analysis of an Actor-Critic
+  Algorithm for Mean-Variance Optimization in a Discounted MDP}}.
+\newblock \bibinfo{howpublished}{arXiv:2406.07892v2}.
+\newblock
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2406.07892}
+\showURL{%
+\tempurl}
+
+
+\bibitem[Schulman et~al\mbox{.}(2017)]%
+        {schulman2017}
+\bibfield{author}{\bibinfo{person}{John Schulman}, \bibinfo{person}{Filip
+  Wolski}, \bibinfo{person}{Prafulla Dhariwal}, \bibinfo{person}{Alec Radford},
+  {and} \bibinfo{person}{Oleg Klimov}.} \bibinfo{year}{2017}\natexlab{}.
+\newblock \bibinfo{title}{{Proximal Policy Optimization Algorithms}}.
+\newblock \bibinfo{howpublished}{arXiv:1707.06347v2}.
+\newblock
+\urldef\tempurl%
+\url{https://arxiv.org/abs/1707.06347}
+\showURL{%
+\tempurl}
+
+
+\bibitem[Simon et~al\mbox{.}(2026)]%
+        {simon2026}
+\bibfield{author}{\bibinfo{person}{Frederik Simon}, \bibinfo{person}{Sebastian
+  Weibels}, {and} \bibinfo{person}{Tom Zimmermann}.}
+  \bibinfo{year}{2026}\natexlab{}.
+\newblock \bibinfo{title}{{Deep Parametric Portfolio Policies}}.
+\newblock \bibinfo{howpublished}{Management Science, Articles in Advance,
+  1--19; published 3 June 2026}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1287/mnsc.2025.00721}
+\showURL{%
+\tempurl}
+
+
+\bibitem[Zhang et~al\mbox{.}(2021)]%
+        {zhang2021}
+\bibfield{author}{\bibinfo{person}{Shangtong Zhang}, \bibinfo{person}{Bo Liu},
+  {and} \bibinfo{person}{Shimon Whiteson}.} \bibinfo{year}{2021}\natexlab{}.
+\newblock \bibinfo{title}{{Mean-Variance Policy Iteration for Risk-Averse
+  Reinforcement Learning}}.
+\newblock \bibinfo{howpublished}{Proceedings of AAAI 35(12), 10905--10913}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1609/aaai.v35i12.17302}
+\showURL{%
+\tempurl}
+
+
+\end{thebibliography}

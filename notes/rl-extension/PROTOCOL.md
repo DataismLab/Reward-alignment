@@ -1,6 +1,6 @@
 # RL extension protocol — 9 October 2026
 
-Recorded before running the new experiments. Existing IAFM manuscript and financial
+Recorded before running the new experiments. Existing manuscript and financial
 results are frozen while this extension is investigated.
 
 ## Research question and priority boundary

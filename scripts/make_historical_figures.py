@@ -5,7 +5,7 @@ import pandas as pd
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
-ROOT=Path(__file__).resolve().parents[1];OUT=ROOT/'workshop/figures';OUT.mkdir(exist_ok=True)
+ROOT=Path(__file__).resolve().parents[1];OUT=ROOT/'results/historical/figures';OUT.mkdir(parents=True,exist_ok=True)
 plt.rcParams.update({'font.size':9,'axes.spines.top':False,'axes.spines.right':False,'pdf.fonttype':42})
 s=pd.DataFrame(json.loads((ROOT/'results/historical/summary.json').read_text())['summary']).set_index('method')
 names=['raw','scalar','penalty_only','joint','mvpi','log_variance','log'];labels=['Raw','Scalar','Risk only','Joint','MVPI','Log + risk','Log']

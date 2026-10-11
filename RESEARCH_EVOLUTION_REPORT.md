@@ -1,6 +1,6 @@
 # How the research changed: from covariance estimation to RL certification
 
-Prepared 9 October 2026. This report compares the project immediately before the covariance-estimator extension, the completed covariance/financing version, and the final IAFM paper. It describes substantive research changes rather than table formatting or editorial adjustments.
+Prepared 9 October 2026. This report compares the project immediately before the covariance-estimator extension, the completed covariance/financing version, and the final paper. It describes substantive research changes rather than table formatting or editorial adjustments.
 
 ## 1. Did the idea and contribution pivot?
 
@@ -31,7 +31,7 @@ The project already had a controlled terminal mean–variance benchmark, a resul
 
 The important limitation was that a conclusion about alignment was conditional on that one covariance construction. The earlier learning diagnostic also did not establish a shared sequential RL agent: statewise neural optimisation and a predictive multiperiod policy are different experiments. In the dependent-return construction, the correction relied on a supplied continuation quantity. These were the reasons to extend the finance side first and then the RL side.
 
-The preserved starting manuscript is `archive/2026-10-07-before-covariance-revision/iafm/paper.tex`. The complete finance version immediately before the RL rewrite is `archive/2026-10-09-before-final-rl/iafm/paper.tex`. Both used the title **When Portfolio Rewards Miss the Target: Exact Mismatch and Policy Alignment**. The final title is **Certifying Reward Alignment in Portfolio Reinforcement Learning**.
+The starting and pre-RL manuscript versions remain in Git history. Both used the title **When Portfolio Rewards Miss the Target: Exact Mismatch and Policy Alignment**. The final title is **Certifying Reward Alignment in Portfolio Reinforcement Learning**.
 
 ## 3. What the covariance-estimator extension added
 
@@ -129,7 +129,7 @@ A restricted assetwise positive/negative PnL score depends on marginal returns a
 
 The literature made the argument more precise and ruled out several overbroad claims.
 
-The user-supplied Kolm–Ritter 2025 journal article was read in full: all 15 pages, exhibits and references. It already identifies mandate-aligned reward design as important and discusses validation against known policies. It is a conceptual overview rather than a new empirical strategy, so there is no legitimate “our returns versus Kolm–Ritter 2025 returns” comparison to invent. Its contribution to our work is motivation and positioning.
+The Kolm–Ritter 2025 journal article was read in full: all 15 pages, exhibits and references. It already identifies mandate-aligned reward design as important and discusses validation against known policies. It is a conceptual overview rather than a new empirical strategy, so there is no legitimate “our returns versus Kolm–Ritter 2025 returns” comparison to invent. Its contribution to our work is motivation and positioning.
 
 The recent RL readings showed that equilibrium RL, backward policy iteration, modified rewards, auxiliary critics and finite-sample mean–variance actor–critic analysis already exist. Critic centring and seminorm geometry also have precedents. Consequently, neither “we used actor–critic for mean–variance” nor “we learned an auxiliary reward” is a defensible standalone novelty claim.
 
@@ -223,7 +223,7 @@ This is not yet a certified audit of a single dependent historical return series
 
 ## 11. What happened to the real-data findings?
 
-They were retained, not replaced by better-looking synthetic results. The final RL phase did not rerun historical finance results with tuned parameters to improve their ranking. The recorded preservation check covers 31 pre-extension files; only the intentionally rewritten canonical IAFM source/PDF changed among those tracked files.
+They were retained, not replaced by better-looking synthetic results. The final RL phase did not rerun historical finance results with tuned parameters to improve their ranking. The recorded preservation check covers 31 pre-extension files; only the intentionally rewritten canonical manuscript source/PDF changed among those tracked files.
 
 The historical conclusions are still mixed in an economically meaningful way. Joint calibration closely matches the fitted target, but its realised MV is below raw reward in all eighteen configurations. Minimum variance has the highest realised MV among the quadratic comparators in those configurations. All fifteen covariance-target comparisons against fixed diagonal have paired 95% intervals containing zero; simultaneous bands also contain zero.
 
@@ -259,13 +259,13 @@ The eight-page limit required changing the allocation of space. Research preserv
 
 The bibliography grows from 24 cited references in the finance version to **29** in the final paper. The project ledger grows from 33 records to **39**. The difference is intentional: the ledger records more inspected literature than the paper can use directly. Six RL/learning references were added to the final citation set, while the earlier Chaouki reference is no longer cited there. It remains in the project literature record.
 
-## 13. How Section 7 and the workshop fit changed
+## 13. Financial decision interpretation
 
 The finance version's Section 7 explained changes to estimated risk, financial preferences and numerical accuracy. The final Section 7 retains that structure and makes learned-agent errors explicit.
 
 Its interpretation is at the level of decisions: did the portfolio change because the covariance model changed, because the reward represents a different trade-off, or because actor/critic learning has not implemented the specified decision criterion accurately? A constant critic offset should not trigger the same interpretation as a state-dependent continuation error that changes hedging.
 
-This fits IAFM through **financial decision interpretation, objective alignment, faithful evaluation and model validation**. It does not claim neural-feature attribution, an investor user study, causal explanations of market returns, or formal regulatory approval. The practical output is an auditable statement of assumptions, data access, acceptable deviation and remaining error.
+The connection to model validation rests on **financial decision interpretation, objective alignment, faithful evaluation and model validation**. It does not claim neural-feature attribution, an investor user study, causal explanations of market returns, or formal regulatory approval. The practical output is an auditable statement of assumptions, data access, acceptable deviation and remaining error.
 
 The shift strengthens the RL relevance of the paper because the main result now applies to a trained policy rather than only to the optimum of a supplied reward. The tractable benchmark still has an analytical solution for evaluation, and direct optimisation remains sensible where it solves the problem. We do not need to pretend RL is necessary for the benchmark in order to use the benchmark to test an RL audit.
 
@@ -328,7 +328,7 @@ The target-policy requirement also changes. Direct policy-distance evaluation ne
 | Historical investment evidence | Substantial covariance/cost audit, with no established superiority | Same historical evidence; new RL learners not historically backtested | No improvement on this criterion |
 | Breadth and accessibility of the proof | Narrow exact mismatch law and familiar calibration arguments | Broader vector/convex-action residual statement under restrictive dynamics | A useful expansion, with a more demanding explanation |
 | Evidence of publication novelty | Specific exact-law candidate, with acknowledged prior identities | Specific certification candidate, with substantial prior components | Neither has exhaustive priority certification |
-| Fit with IAFM | Financial preference interpretation and model validation | Retains these and adds an explicit learned-policy validation criterion | Stronger fit by reasoned assessment, not guaranteed acceptance |
+| Decision validation | Financial preference interpretation and model validation | Retains these and adds an explicit learned-policy validation criterion | Adds a quantitative criterion for learned policies |
 
 ### Why this is not simply moving away from disappointing backtests
 
@@ -379,9 +379,7 @@ That is a stronger, more specifically RL contribution than calibration alone. It
 
 ## 17. Where to inspect the evidence
 
-- Starting paper: `archive/2026-10-07-before-covariance-revision/iafm/paper.tex`.
-- Completed finance paper before the pivot: `archive/2026-10-09-before-final-rl/iafm/paper.tex`.
-- Final paper: `submissions/iafm/paper.tex`.
+- Final paper: `manuscript/paper.tex`.
 - Finance methods and full results: [COVARIANCE_RESEARCH_REPORT.md](COVARIANCE_RESEARCH_REPORT.md).
 - Finance proofs: [FINITE_CALIBRATION_AND_ESTIMATION.md](notes/FINITE_CALIBRATION_AND_ESTIMATION.md).
 - Full Kolm–Ritter reading: [KOLM_RITTER_2025_FULLTEXT_REVIEW.md](notes/KOLM_RITTER_2025_FULLTEXT_REVIEW.md).

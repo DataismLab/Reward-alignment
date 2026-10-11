@@ -18,4 +18,4 @@ jobs:
           MPLCONFIGDIR: /tmp/mvrl-matplotlib
         run: python -m pytest -q
       - name: Check current submission
-        run: python scripts/check_current_submission.py
+        run: python scripts/check_manuscript.py

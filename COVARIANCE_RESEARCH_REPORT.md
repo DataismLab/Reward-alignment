@@ -1,6 +1,6 @@
 # Covariance estimation, reward alignment and financing: research revision
 
-7 October 2026; full-text integration updated 9 October. This report describes the substantive extension to the IAFM manuscript, not editorial changes. The incoming version is preserved in `archive/2026-10-07-before-covariance-revision/iafm/`. Earlier proposal, implementation reports and other workshop papers describe earlier stages.
+7 October 2026; full-text integration updated 9 October. This report describes the substantive extension to the manuscript, not editorial changes. Earlier manuscript versions are available in Git history.
 
 ## What changed in the research question
 
@@ -71,13 +71,13 @@ Under that restriction, positive/negative assetwise PnL is linear in long-only w
 
 A separate controlled financing experiment permits shorting, borrowing and cash. Across fifty six-asset states, scaling all deterministic costs gives mean allocation discrepancy 1.51e−7; scaling turnover alone while leaving financing penalties unchanged gives 0.00997. Thirty-seven target portfolios borrow and all fifty short, so the relevant terms are active. This validates the general cost identity in an expanded feasible set; it is not real-data crypto evidence.
 
-## Literature and IAFM Section 7
+## Literature and financial interpretation
 
 The paper now cites 24 references; the complete project ledger has 33 records. New sources include both original Ledoit–Wolf linear-shrinkage papers, Fan–Fan–Lv on observed-factor covariance, Kolm–Ritter's 2025 JPM overview, and Habibnia–Soltanzadeh's 2024 framework. Kolm–Ritter's 2019 reward formulation is also explicitly cited in the updated comparison. Earlier Journal of Finance and Review of Financial Studies references remain: Markowitz, DeMiguel–Garlappi–Uppal, Gârleanu–Pedersen, DeMiguel–Martín-Utrera–Uppal and nonlinear shrinkage.
 
-**Update, 9 October:** the user supplied the complete 15-page Kolm–Ritter JPM article. All pages, three exhibits and references have now been read. The introduction, related work and Section 7 use its actual discussion of reward design and mandate alignment (pp. 90–91), workflow (Exhibit 2, p. 84), known-policy comparisons (p. 87), inverse RL (p. 88), scalability (pp. 88/90) and forecasts versus decisions (p. 91). It is an equation-free overview with no new empirical strategy, so no numerical benchmark row was invented. The earlier abstract-only access limitation is resolved. The separately read CFA chapter remains a different source. See `notes/KOLM_RITTER_2025_FULLTEXT_REVIEW.md` for the complete reading and comparison record.
+**Update, 9 October:** the complete 15-page Kolm–Ritter JPM article became available. All pages, three exhibits and references have now been read. The introduction, related work and Section 7 use its actual discussion of reward design and mandate alignment (pp. 90–91), workflow (Exhibit 2, p. 84), known-policy comparisons (p. 87), inverse RL (p. 88), scalability (pp. 88/90) and forecasts versus decisions (p. 91). It is an equation-free overview with no new empirical strategy, so no numerical benchmark row was invented. The earlier abstract-only access limitation is resolved. The separately read CFA chapter remains a different source. See `notes/KOLM_RITTER_2025_FULLTEXT_REVIEW.md` for the complete reading and comparison record.
 
-Section 7 now explains model changes using three distinct interventions: change the covariance model, change the reward's financial preference, or change numerical accuracy. It uses the covariance displacement bound, financing experiment, approximate-anchor budget and downside counterexample as concrete mechanisms. This fits IAFM's financial-semantic explanations, faithful evaluation, robustness and model-validation topics. We do not claim a human interpretability study, neural representation analysis or a causal explanation of market returns. Workshop topics and the eight-page format are based on the archived official call already collected; current submission availability has not been reconfirmed.
+Section 7 now explains model changes using three distinct interventions: change the covariance model, change the reward's financial preference, or change numerical accuracy. It uses the covariance displacement bound, financing experiment, approximate-anchor budget and downside counterexample as concrete mechanisms. These interventions connect financial interpretation with model validation. We do not claim a human interpretability study, neural representation analysis or a causal explanation of market returns.
 
 ## Verification and reproducibility
 
@@ -105,7 +105,7 @@ python scripts/summarise_covariance_audit.py
 python scripts/make_covariance_outputs.py
 ```
 
-Runners preserve completed result files. For a fresh rerun, copy the project and move those cached result files aside in that copy. `add_one_step_covariance.py` exists to extend pre-one-step caches without recomputing old decisions; the main runner now includes that comparator directly. Compile the current `submissions/iafm/paper.tex` with its supplied class, bibliography, table inputs and figure assets. Do not use legacy manuscript generators: they describe earlier versions.
+Runners preserve completed result files. For a fresh rerun, copy the project and move those cached result files aside in that copy. `add_one_step_covariance.py` exists to extend pre-one-step caches without recomputing old decisions; the main runner now includes that comparator directly. Compile the current `manuscript/paper.tex` with its supplied class, bibliography, table inputs and figure assets. Do not use legacy manuscript generators: they describe earlier versions.
 
 ## Status and remaining scope
 

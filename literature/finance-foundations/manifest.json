@@ -1,0 +1,32 @@
+[
+  {
+    "file": "markowitz1952.pdf",
+    "source": "https://traders.berkeley.edu/papers/Markowitz.pdf",
+    "sha256": "27d23c2700f5fd3d32341026bf7146c870d8926fe818c68ac653ff09af781e90",
+    "retrieved": "2026-10-01"
+  },
+  {
+    "file": "demiguel2009.pdf",
+    "source": "https://www.dropbox.com/scl/fi/pvlyufe5lor9y2vpgamx8/DGU-RFS-Final.pdf?rlkey=qstawf38a38n33ytj67bh5ffn&dl=1",
+    "sha256": "7107aff1d94092c959d8a5f8a0faaa31d24b9151a6d68a5cfc984da5e379b5c6",
+    "retrieved": "2026-10-01"
+  },
+  {
+    "file": "ledoit2017.pdf",
+    "source": "https://www.ledoit.net/Goldilocks_RFS_2017.pdf",
+    "sha256": "4a27216f666292a48f95242b645bbdd5518832abd800a0944611187a7704fc44",
+    "retrieved": "2026-10-01"
+  },
+  {
+    "file": "garleanu2013.pdf",
+    "source": "https://docs.lhpedersen.com/DynamicTrading.pdf",
+    "sha256": "b9b01f48bd7ff0ce0431615d88b76f8a076b6593cc1d7765bd6ec2eb617473ab",
+    "retrieved": "2026-10-01"
+  },
+  {
+    "key": "demiguel2024",
+    "source": "https://onlinelibrary.wiley.com/doi/full/10.1111/jofi.13395",
+    "retrieved": "2026-10-01",
+    "format": "Publisher HTML read with web tool; not a locally saved PDF."
+  }
+]
