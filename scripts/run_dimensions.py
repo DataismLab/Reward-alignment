@@ -1,4 +1,4 @@
-"""Run the fixed dimension extension. See notes/DIMENSION_PROTOCOL.md."""
+"""Run the fixed dimension extension. See the fixed settings below."""
 import hashlib,json
 from mvrl.historical import ROOT,data,run,summary,bootstrap
 out=ROOT/'results/historical/dimensions';out.mkdir(parents=True,exist_ok=True)

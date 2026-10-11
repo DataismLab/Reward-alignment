@@ -183,7 +183,7 @@ if __name__=='__main__':
     p=argparse.ArgumentParser();p.add_argument('--robust',action='store_true');args=p.parse_args()
     out=ROOT/'results/historical';out.mkdir(exist_ok=True)
     primary=json.loads((out/'primary.json').read_text()) if (out/'primary.json').exists() else run();(out/'primary.json').write_text(json.dumps(primary,indent=2));s=summary(primary)
-    result=dict(summary=s,bootstrap=[bootstrap(primary,base=k) for k in ['raw','scalar','penalty_only','mvpi']],protocol='notes/REAL_DATA_PROTOCOL.md')
+    result=dict(summary=s,bootstrap=[bootstrap(primary,base=k) for k in ['raw','scalar','penalty_only','mvpi']],protocol='historical walk-forward: settings in mvrl/historical.py')
     for lo,hi in [(199001,200712),(200801,201512),(201601,202512)]:result[str(lo)+'-'+str(hi)]=summary([x for x in primary if lo<=x['date']<=hi])
     (out/'summary.json').write_text(json.dumps(result,indent=2));print(json.dumps(s,indent=2),flush=True)
     if args.robust:

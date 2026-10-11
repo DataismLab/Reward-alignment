@@ -1,29 +1,12 @@
 # Certifying Reward Alignment in Portfolio Reinforcement Learning
 
-This repository studies whether a portfolio reward and the policy learned from it implement a specified financial objective. It contains the mathematical analysis, learning algorithms, historical allocation experiments and saved outputs used in the paper.
+Reference implementation and experiment outputs for auditing whether a portfolio reward and its learned policy implement a terminal mean–variance objective.
 
-[Paper](manuscript/paper.pdf) · [LaTeX source](manuscript/paper.tex) · [Research report](FINAL_RESEARCH_REPORT.md) · [Findings](FINDINGS.md) · [Literature](literature/LITERATURE_LEDGER.md)
+The implementation separates reward-design error, learning error and covariance-estimation error. It includes exact policy benchmarks, continuation-aware actor–critic and PPO experiments, residual-based deviation certificates, and historical allocation comparisons with trading costs.
 
-## Research question
+## Installation
 
-Optimising a reward accurately does not ensure that it represents an investor's intended trade-off between return, risk and costs. We measure this discrepancy against a terminal mean–variance equilibrium and derive a bound on the gain from changing one decision while retaining the learned policy thereafter.
-
-The bound separates actor, reward and continuation-critic errors. It uses differences between critic values across states, so a constant critic offset does not affect the certificate. Under the stated finite-state assumptions, it can be evaluated without solving for the equilibrium policy. The independent-sample version requires a fixed policy, independent conditional observations and known return bounds.
-
-## Results
-
-| Experiment | Main finding |
-|---|---|
-| Neural actor–critic: nine markets, twenty seeds | Continuation correction with a centred critic reduces mean policy distance by **59.2%** and maximum deviation gain by **81.4%** relative to the matched myopic learner. |
-| Clipped PPO: two markets, ten seeds | The continuation correction reduces distance by **33.3%** and maximum feasible deviation gain by **49.8%**. |
-| Historical allocation: six covariance estimators, 10/30/49 industries | Joint risk-and-cost calibration preserves the fitted target in all eighteen configurations; mean allocation distance is below **1.60e−7**. |
-| Verification | **78 tests pass**. All 1,660 final neural/PPO records reconstruct to a maximum discrepancy of **4.44e−16**, with no tested certificate violations. |
-
-Learning budgets are matched within each experiment. The historical audit evaluates fitted allocation rules; it is not a backtest of the new RL learners. Better alignment did not establish better realised investment performance. The method builds on existing equilibrium learning, mean auxiliaries and critic centring; its contribution is the financial deviation certificate and the accompanying controlled tests.
-
-## Install and test
-
-Use Python 3.10 or newer in a virtual environment. The full research extras include PyTorch, Gymnasium, Stable-Baselines3, pandas, plotting and covariance-validation dependencies:
+Python 3.10 or newer is required. Use a virtual environment:
 
 ```bash
 python -m venv .venv
@@ -32,81 +15,83 @@ python -m pip install -e '.[research,test]'
 python -m pytest -q
 ```
 
-The exact environment used for the final RL runs is recorded in [final-environment.txt](results/rl-extension/final-environment.txt). It is an evidence record of the original run; the package metadata declares supported minimum dependencies.
+The core package depends on NumPy and SciPy. The `research` extra adds pandas, Matplotlib, scikit-learn, PyTorch, Gymnasium and Stable-Baselines3. The complete test suite requires these extras. Package versions used for the final learning experiments are recorded in `results/rl-extension/final-environment.txt`.
 
-The core package requires only NumPy/SciPy. Running the **complete** suite requires the research extras; a lightweight installation can skip optional PPO tests or lack historical/covariance dependencies.
+## Experiments
 
-## Reproduce and verify the current results
+| Study | Configuration | Saved outputs |
+|---|---|---|
+| Exact reward benchmarks | Independent and observed-regime returns; scalar calibration, terminal-unit rewards and constrained comparisons | `results/experiments.json` |
+| Tabular learning | Nine markets × four sample budgets × twenty seeds × three methods | `results/rl-extension/tabular_runs.csv` |
+| Neural actor–critic | Nine markets × twenty seeds × three methods; checkpoints at 250, 1,000 and 3,000 updates | `results/rl-extension/neural-final/` |
+| PPO reward intervention | Two markets × ten seeds × two reward arms; 32,768 environment steps per run | `results/rl-extension/ppo-final/` |
+| Historical allocation | Six covariance estimators × 10, 30 and 49 industry portfolios; 432 evaluation months | `results/historical/covariance/` |
+| Known-covariance simulation | 2,160 fitted problems; dimensions 10, 49 and 100; two estimation windows and two residual structures | `results/covariance_simulation/` |
 
-Run commands from the repository root. Original fixed protocols are in [notes/rl-extension](notes/rl-extension) and [COVARIANCE_PROTOCOL.md](notes/COVARIANCE_PROTOCOL.md). Runners reuse completed cached outputs. To retrain, work in a separate copy and move the corresponding output directory aside; do not mix partially changed settings with existing caches.
+The final neural comparison reduces mean policy distance by 59.2% relative to the matched myopic-reward learner; the separate PPO comparison reduces it by 33.3%. Budgets are matched within each experiment. These are controlled-market alignment results, not evidence of superior historical investment returns.
 
-### RL evidence
+Historical joint calibration preserves its fitted target across all eighteen estimator/universe configurations. It does not establish better realised mean–variance performance. The historical allocation study is separate from the new RL learners.
 
-```bash
-# Reconstruct every final saved neural/PPO policy; regenerate numbers and figures.
-python scripts/finalise_rl_results.py
+## Verify the saved results
 
-# Reuse caches or train the unchanged final protocols.
-python scripts/run_neural_final.py
-python scripts/run_ppo_alignment.py
-
-# Earlier tabular study and independent-data audit/refinement.
-python scripts/run_equilibrium_audit.py
-python scripts/run_certificate_refinement.py
-```
-
-The final neural outputs contain 540 runs × three checkpoints = 1,620 records. PPO adds 40 runs. [final_summary.json](results/rl-extension/final_summary.json) records all means, paired seed-bootstrap intervals and reconstruction checks. Saved actions and critics are included; optional SB3 model ZIPs are excluded and can be regenerated by retraining.
-
-The five-seed neural pilot remains under `results/rl-extension/neural/`; the final twenty-seed study is under `neural-final/`. The final paper reports the twenty-seed results.
-
-### Historical and covariance evidence
+Run commands from the repository root:
 
 ```bash
+python scripts/check_outputs.py
 python scripts/check_historical.py
 python scripts/verify_dimensions.py
 python scripts/verify_covariance_audit.py
 python scripts/verify_covariance_simulation.py
+python scripts/finalise_rl_results.py
+```
 
-# Reuse caches or calculate all six estimators for each universe.
+These checks reconstruct quantities from raw returns and saved policies. They cover 4,320 primary historical decisions, 9,072 dimension-study decisions, 58,320 covariance-study decisions, 2,160 known-covariance problems and 1,660 final neural/PPO records. The final learning reconstruction has maximum discrepancy 4.44e−16 and no tested certificate violations.
+
+`finalise_rl_results.py` also writes numerical tables and figures to `results/paper_assets/`. `plot_final_covariance.py` generates the corresponding historical comparison figure. These are generated research outputs; manuscript and submission-preparation files are maintained separately.
+
+## Run experiments
+
+```bash
+# Final learning comparisons.
+python scripts/run_neural_final.py
+python scripts/run_ppo_alignment.py
+
+# Tabular study and independent-data certificates.
+python scripts/run_equilibrium_audit.py
+python scripts/run_certificate_refinement.py
+
+# Historical covariance comparisons.
 python scripts/run_covariance_audit.py --assets 10
 python scripts/run_covariance_audit.py --assets 30
 python scripts/run_covariance_audit.py --assets 49
+
+# Known-covariance and financing experiments.
 python scripts/run_covariance_simulation.py
 python scripts/run_financing_audit.py
-
-# Render the final covariance figure from saved results.
-python scripts/plot_final_covariance.py
 ```
 
-The checks reconstruct 58,320 covariance-study decisions and 2,160 known-covariance fitted problems. Historical estimates use the previous 120 monthly observations; evaluation runs from January 1990 through December 2025. The public input ZIPs in `data/raw/` are the archived August 2026 Kenneth French vintage. These revised research portfolios are not a point-in-time investable stock universe. Source information and hashes are retained in the historical manifests.
+The final neural, PPO and historical covariance runners reuse saved outputs when present; other runners may recompute and overwrite their outputs. For a fresh experiment, use a separate checkout and move the relevant output directory aside. Do not reuse old caches after changing a protocol. Seeds and numerical settings are specified in the runners. The five-seed neural pilot is retained in `results/rl-extension/neural/`; the paper's final results use `neural-final/`.
 
-## Manuscript
+Saved actions, critics and metrics are included. Optional Stable-Baselines3 model ZIPs can be regenerated by retraining. Source-hash and environment records describe the original runs; later documentation and output-path changes do not change those recorded experiments.
 
-```bash
-cd manuscript
-tectonic paper.tex --keep-logs
-cd ..
-python -m pip install pypdf
-python scripts/check_manuscript.py
-```
+## Data and evaluation
 
-The source uses the supplied ACM class and bibliography style. The checker verifies page count, anonymous author fields, references, figures, tables and numerical macros. Reproduction scripts generate the paper's numerical inputs and figures from saved policies.
+`data/raw/` contains the archived August 2026 vintage of Kenneth French's monthly industry portfolios and market, size and value factors. Data provenance is recorded in `results/september26_downloads.json` and the historical manifests. The main historical comparisons estimate moments from the preceding 120 months and evaluate January 1990 through December 2025, with a long-only simplex constraint and 10-basis-point proportional turnover costs. The archived research portfolios are not a point-in-time investable stock universe.
 
-## Repository structure
+Policy distance, financial deviation gain, fitted-objective loss and optimisation certificates are evaluated separately from realised returns and Sharpe ratios. Paired learning comparisons resample seed averages. Historical uncertainty uses shared circular twelve-month blocks conditional on the realised strategy paths.
 
-| Path | Contents |
+## Code layout
+
+| Path | Purpose |
 |---|---|
-| `mvrl/` | Market models, allocation methods, RL learners and deviation certificates |
-| `tests/` | Analytical, numerical, data-accounting and learning tests |
-| `scripts/` | Experiment runners, reconstruction checks and figure generation |
-| `data/raw/` | Archived public monthly industry-portfolio and factor data |
-| `results/` | Saved experiment outputs, policies, critics and verification records |
-| `notes/` | Derivations, experiment protocols and reading notes |
-| `literature/` | Primary-paper comparison ledger and source records |
-| `manuscript/` | Paper, bibliography, tables and figures |
-
-The [covariance report](COVARIANCE_RESEARCH_REPORT.md) documents the finance experiments. The [evolution report](RESEARCH_EVOLUTION_REPORT.md) explains the transition from calibration of a known optimum to certification of a learned policy. The [worklog](WORKLOG.md) records the research milestones; earlier document versions remain in their original folders and Git history. The current research entry point is `manuscript/`.
+| `mvrl/` | Market models, analytic references, allocation solvers, covariance estimators, learners and certificates |
+| `tests/` | Independent mathematical, numerical, data-accounting and learning checks |
+| `scripts/` | Fixed experiment runners, output reconstruction and scientific figures |
+| `data/raw/` | Archived public input data |
+| `results/` | Experiment records, policies, critics and verification outputs |
+| `figures/` | Generated figures for the original benchmark |
+| `archive/` | Historical Python implementations, retained for provenance and excluded from current experiments |
 
 ## Scope
 
-The certificate concerns one-step equilibrium deviations, not global-policy regret. The learned-policy experiments use one risky asset and two observed regimes. Multi-asset neural learning, hidden regimes, chronological historical RL, dependent audit samples and broader architecture comparisons remain extensions. Assumptions, limitations and the status of each result are recorded in [FINDINGS.md](FINDINGS.md).
+The certificate bounds the gain from a one-step deviation under the stated finite exogenous-state assumptions; it is not global-policy regret. Its independent-data version requires a fixed policy and critic, independent conditional observations and known return bounds. A nonpositive variance lower bound yields no finite certificate. The current neural experiments use one risky asset and two observed regimes. Multi-asset neural learning, dependent historical audit samples and a chronological real-data RL backtest remain outside the reported implementation.

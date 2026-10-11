@@ -1,7 +1,0 @@
-{
-  "pytest": "31 passed in 29.94s",
-  "legacy_verification": "10 checks passed",
-  "historical_reconstruction": "4320 decisions, 17 settings, 60 learning records passed",
-  "research_modules_changed": false,
-  "date": "2026-09-28"
-}

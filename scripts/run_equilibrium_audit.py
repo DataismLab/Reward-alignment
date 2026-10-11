@@ -46,8 +46,8 @@ def main():
             shift_bound_difference=float(np.max(np.abs(exact['bound']-shifted['bound']))),
             shifted_uniform_bound=shifted['uniform_bound'].max(),audit_observations=ar.size))
     (dest/'independent_audit.json').write_text(json.dumps(diagnostic,indent=2))
-    protocol=Path('notes/rl-extension/PROTOCOL.md')
-    meta=dict(protocol_sha256=hashlib.sha256(protocol.read_bytes()).hexdigest(),
+    protocol=Path(__file__)
+    meta=dict(runner_sha256=hashlib.sha256(protocol.read_bytes()).hexdigest(),
         numpy=np.__version__,python=platform.python_version(),rows=len(rows),
         seconds=time.time()-start,seed_count=20,training_uses_oracle=False,
         date='2026-10-09',stage='A, controlled simulation, preliminary research')

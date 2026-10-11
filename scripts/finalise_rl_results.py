@@ -12,7 +12,8 @@ from mvrl.equilibrium_audit import exact_audit
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / 'results/rl-extension'
-PAPER = ROOT / 'manuscript'
+PAPER = ROOT / 'results/paper_assets'
+(PAPER/'figures').mkdir(parents=True,exist_ok=True)
 
 
 def main():

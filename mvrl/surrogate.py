@@ -1,6 +1,6 @@
 """Exact additive quadratic-increment optimisation on independent returns.
 The legacy name varpen denotes a SECOND-MOMENT penalty, not variance.
-Signed J differences are not nonnegative regret. See notes/PROOFS.md.
+Signed J differences are not nonnegative regret. See the accompanying paper.
 """
 
 from __future__ import annotations

@@ -1,4 +1,4 @@
-"""Legacy calibration helpers. Corrected proofs and scope: notes/PROOFS.md.
+"""Legacy calibration helpers. Corrected proofs and scope: the accompanying paper.
 Use design.horizon_constant for every fixed horizon >=2.
 """
 
@@ -68,7 +68,7 @@ def main():
     print('General-horizon coefficient, proved for fixed T and small |s-1|')
     for T in [2,3,4,6,10,16]:
         print(T, horizon_constant(demo_market(1.,T),1.))
-    print('Scope, exceptions and exact redesign: notes/PROOFS.md')
+    print('Scope, exceptions and exact redesign: the accompanying paper')
 
 if __name__ == '__main__': main()
 

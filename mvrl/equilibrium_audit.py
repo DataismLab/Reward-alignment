@@ -1,7 +1,7 @@
 """One-step equilibrium audits for wealth-independent finite-regime policies.
 
 Exact-model functions are EVALUATION ONLY. The independent-sample certificate
-does not access a market object. See notes/rl-extension/RESIDUAL_CERTIFICATE.md.
+does not access a market object. See the accompanying paper.
 """
 import numpy as np
 

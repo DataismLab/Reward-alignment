@@ -65,7 +65,7 @@ def main() -> None:
 
     # ------------------------------------------------------------------ (1)
     print("=" * 74)
-    print("1.  The most common reward in the literature has no optimum at all")
+    print("1.  Plain return is unbounded when positions are unconstrained")
     print("=" * 74)
     print("""The plain-return reward r_t = x_{t+1} - x_t carries no risk term, so
 the additive objective rewards unbounded leverage.  Along a ray of increasing
@@ -74,12 +74,9 @@ position size:""")
     for scale, value in unboundedness_evidence(market, x0):
         print(f"{scale:16d} {value:22.4f}")
     print("""
-It diverges.  The mean-variance problem this reward is meant to stand in for is
-perfectly well posed and has the bounded solution computed below; the surrogate
-does not.  A practitioner running an algorithm on this reward is not solving a
-badly-conditioned version of the right problem, but a problem with no answer,
-and what they obtain instead is whatever their leverage constraints and early
-stopping happen to produce.""")
+Expected cumulative return grows along this unconstrained leverage ray.
+The mean-variance reference below includes a risk penalty. Adding portfolio
+constraints would define a different optimisation problem.""")
 
     # ------------------------------------------------------------------ (2)
     print("\n" + "=" * 74)
@@ -109,20 +106,16 @@ stopping happen to produce.""")
     print(f"  distance(pi_r, pi_pre) = {policy_distance(market, policy_star, precommitted, x0):9.6f}")
 
     print("""
-Three things follow.  The surrogate optimum is not the equilibrium policy: the
-distance is small but not zero, and no choice of kappa closes it.  It is not the
-pre-committed policy either, and it is far from it.  And eps_surr is negative
-here, so the additive surrogate is not simply a degraded version of the
-equilibrium policy; it is a third object, which is the point.
-
-Note also that the natural choice kappa = phi, setting the reward's risk penalty
-equal to one's actual risk aversion, is not optimal.""")
-    print(f"  best achievable kappa* = {kappa_star:.6f}, not phi = {phi}")
+The selected surrogate policy differs from both reference policies. The signed
+financial-value difference against equilibrium is negative in this example;
+it is not a nonnegative optimisation regret. The bounded search selects a risk
+penalty different from phi.""")
+    print(f"  bounded-search kappa* = {kappa_star:.6f}, not phi = {phi}")
     print(f"  cost of the natural choice = {j_star - j_natural:.9f}")
 
     # ------------------------------------------------------------------ (3)
     print("\n" + "=" * 74)
-    print("3.  A backtest statistic ranks these policies in the wrong order")
+    print("3.  Sharpe and mean-variance rankings differ")
     print("=" * 74)
 
     print(f"\n  {'policy':<20}{'E[x_T]':>10}{'sd':>10}{'Sharpe':>10}{'J':>14}")
@@ -156,10 +149,8 @@ equal to one's actual risk aversion, is not optimal.""")
   and the LOWER mean-variance objective
       {natural_row[2]:.6f} against {equilibrium_row[2]:.6f}.
 
-  So the two orderings disagree.  A study comparing these policies by reported
-  Sharpe ratio, which is the standard practice the surveys describe, would
-  conclude that the surrogate policy is the better one on exactly the criterion
-  it is worse on.""")
+  The two metrics rank this pair differently. A higher Sharpe ratio does not
+  establish a higher mean-variance objective for the specified risk aversion.""")
 
     print('This example shows ranking disagreement. It is not a claim against Sharpe as a different objective.')
 

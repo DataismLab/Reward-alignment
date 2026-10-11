@@ -3,7 +3,7 @@
 The two Ledoit--Wolf intensities use centred ML covariance and fourth moments;
 their final estimates are multiplied by L/(L-1) to match the existing study.
 Observed-factor fits include an intercept and residual degrees-of-freedom
-correction. See notes/COVARIANCE_PROTOCOL.md for exact adaptation boundaries.
+correction. See the accompanying paper for exact adaptation boundaries.
 """
 import numpy as np
 

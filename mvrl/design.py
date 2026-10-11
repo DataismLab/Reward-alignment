@@ -1,4 +1,4 @@
-"""Reward calibration with explicit scope; proofs in notes/PROOFS.md."""
+"""Reward calibration with explicit scope; proofs in the accompanying paper."""
 from dataclasses import dataclass
 import numpy as np
 from .market import Market
