@@ -11,8 +11,8 @@ w=ROOT/'results/paper_assets';out=ROOT/'results/historical/covariance'
 (w/'figures').mkdir(parents=True,exist_ok=True)
 report=json.loads((out/'summary.json').read_text());cases={(r['n_assets'],r['estimator']):r for r in report['results']}
 def summary(n,e,method):return next(r for r in cases[n,e]['summary'] if r['method']==method)
-names={'sample':'Sample','diag10':'Fixed diagonal','lw_identity':'LW identity','lw_correlation':'LW correlation','market':'Market factor','ff3':'Three factors'}
-order=['sample','diag10','lw_identity','lw_correlation','market','ff3']
+names={'sample':'Sample','diag10':'Fixed diagonal','lw_identity':'LW identity','lw_correlation':'LW correlation','market':'Market factor','ff3':'Three factors','lw_nonlinear':'LW nonlinear'}
+order=['sample','diag10','lw_identity','lw_correlation','market','ff3','lw_nonlinear']
 
 # All Table 1 distances use the SAME original-diagonal target common states.
 # Covariance-model changes are explicitly different from within-estimator gaps.
@@ -32,6 +32,7 @@ add('MV, LW correlation','Ledoit--Wolf (2004)',estimator='lw_correlation')
 add('MV, market factor','Fan et al. (2008)',estimator='market')
 add('MV, three factors','Fan et al. (2008)',estimator='ff3')
 add('Equal weight','DeMiguel et al. (2009)',method='equal')
+add('MV, LW nonlinear','Ledoit--Wolf (2017)',estimator='lw_nonlinear')
 add('Raw second moment','Kolm--Ritter (2019)',method='raw')
 add('MVPI adaptation','Zhang et al. (2021)',method='mvpi')
 old['one_step_mvpi']=summary(10,'diag10','one_step_mvpi')
@@ -63,27 +64,4 @@ $N$ & Covariance & Raw distance & Scalar distance & \textbf{Joint (ours)} & \sho
 (w/'covariance_table.tex').write_text(table)
 pd.DataFrame([dict(n_assets=n,estimator=e,**s) for (n,e),r in cases.items() for s in r['summary']]).to_csv(out/'all_methods.csv',index=False)
 
-plt.rcParams.update({'font.family':'DejaVu Sans','font.size':9,'axes.spines.top':False,'axes.spines.right':False,'pdf.fonttype':42})
-fig,axes=plt.subplots(1,2,figsize=(9.8,3.1),layout='constrained')
-x=np.arange(6)
-for offset,key,label,color in [(-.23,'cross','Covariance-model change','#555555'),(0,'raw','Raw reward discrepancy','#cf7c22'),(.23,'joint','Joint discrepancy','#197a68')]:
-    vals=[cases[49,e]['cross_target_distance'] if key=='cross' else summary(49,e,key)['distance'] for e in order]
-    axes[0].bar(x+offset,np.maximum(vals,1e-9),.22,label=label,color=color)
-axes[0].set_yscale('log');axes[0].set_ylim(1e-9,1);axes[0].set_xticks(x,['Sample','Fixed\ndiagonal','LW\nidentity','LW\ncorr.','Market','Three\nfactors']);axes[0].set_ylabel('Mean allocation distance');axes[0].set_title('(a) What changes the 49-industry allocation?');axes[0].legend(fontsize=7,loc='upper left')
-comps={r['estimator']:r for r in report['estimator_comparisons'] if r['n_assets']==49};es=[e for e in order if e!='diag10']
-for i,e in enumerate(es):
-    r=comps[e];v=r['delta']*1e4;lo,hi=np.array(r['ci95'])*1e4
-    axes[1].plot([lo,hi],[i,i],color='#197a68',linewidth=2);axes[1].plot(v,i,'o',color='#197a68',markersize=5)
-axes[1].axvline(0,color='.6',ls='--',lw=1);axes[1].set_yticks(range(5),[names[e] for e in es]);axes[1].invert_yaxis();axes[1].set_xlabel('Monthly realised MV difference (bp)');axes[1].set_title('(b) Target versus fixed diagonal, N=49');axes[1].text(.98,.04,'Paired 95% path intervals',transform=axes[1].transAxes,ha='right',fontsize=8)
-fig.savefig(w/'figures/covariance.pdf');fig.savefig(w/'figures/covariance.png',dpi=180);plt.close(fig)
-
-df=pd.read_csv(ROOT/'results/covariance_simulation/summary.csv');df=df[(df.n_assets==100)&(df.window==120)]
-fig,ax=plt.subplots(1,2,figsize=(9.8,2.55),layout='constrained')
-for i,(metric,title) in enumerate([('covariance_relative_error','(a) Covariance error'),('target_true_gap','(b) Population MV regret (bp)')]):
-    for shift,design,color in [(-.18,'diagonal','#197a68'),(.18,'correlated','#cf7c22')]:
-        vals=[float(df[(df.estimator==e)&(df.design==design)][metric].iloc[0])*(1e4 if i else 1) for e in order]
-        ax[i].bar(x+shift,vals,.35,label=design.capitalize()+' residuals',color=color)
-    ax[i].set_xticks(x,['Sample','Fixed\ndiagonal','LW\nidentity','LW\ncorr.','Market','Three\nfactors']);ax[i].set_title(title);ax[i].set_ylim(bottom=0)
-ax[0].set_ylabel('Relative Frobenius error');ax[1].set_ylabel('Mean regret');ax[0].legend(fontsize=8)
-fig.savefig(w/'figures/covariance_simulation.pdf');fig.savefig(w/'figures/covariance_simulation.png',dpi=180);plt.close(fig)
-print('Tables and figures generated from saved results')
+print('Tables generated from saved results; use plot_final_covariance.py for the final figure')

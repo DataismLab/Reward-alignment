@@ -14,7 +14,7 @@ for f in sorted(out.glob('[0-9]*_*.json')):
         mean_condition=float(np.mean([s['condition'] for s in d['states']])),
         mean_shrinkage=float(np.mean([s['shrinkage'] for s in d['states']])) if 'shrinkage' in d['states'][0] else None,
         mean_gaussian_score=float(np.mean([s['gaussian_score'] for s in d['states']])),subperiods=d['subperiods']))
-assert len(results)==18
+assert len(results)==21
 keys=[k for k in series if k[1]!='diag10'];rng=np.random.default_rng(8128)
 score=lambda x:x.mean(-1)-5*x.var(-1,ddof=1)
 est=np.array([score(series[k])-score(series[k[0],'diag10']) for k in keys]);boot=[]
@@ -44,7 +44,7 @@ for (n,L,design),g in sf.groupby(['n_assets','window','design']):
         se=z.std(ddof=1)/np.sqrt(len(z));hw=float(t.ppf(.975,len(z)-1)*se)
         sim_pairs.append(dict(n_assets=int(n),window=int(L),design=design,estimator=name,mean=float(z.mean()),ci95=[float(z.mean()-hw),float(z.mean()+hw)]))
 (ROOT/'results/covariance_simulation/paired.json').write_text(json.dumps(sim_pairs,indent=2))
-print('18 cases; estimator comparisons with simultaneous path bands; 2160 simulated fitted problems')
+print('21 cases; estimator comparisons with simultaneous path bands; 2160 simulated fitted problems')
 for r in results:
     s={v['method']:v for v in r['summary']}
     print(r['n_assets'],r['estimator'],'covD',round(r['cross_target_distance'],5),'rawD',round(s['raw']['distance'],5),'jointD',f"{s['joint']['distance']:.3g}")

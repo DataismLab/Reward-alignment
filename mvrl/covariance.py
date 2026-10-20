@@ -3,14 +3,15 @@
 The two Ledoit--Wolf intensities use centred ML covariance and fourth moments;
 their final estimates are multiplied by L/(L-1) to match the existing study.
 Observed-factor fits include an intercept and residual degrees-of-freedom
-correction. See the accompanying paper for exact adaptation boundaries.
+correction. The historical study holds constraints, costs and evaluation windows fixed.
 """
 import numpy as np
 
-ESTIMATORS = ('sample', 'diag10', 'lw_identity', 'lw_correlation', 'market', 'ff3')
+PRIMARY_ESTIMATORS = ('sample', 'diag10', 'lw_identity', 'lw_correlation', 'market', 'ff3')
+ESTIMATORS = PRIMARY_ESTIMATORS + ('lw_nonlinear',)
 
 
-def estimate_covariance(history, estimator, factors=None):
+def estimate_covariance(history, estimator, factors=None, cache_dir=None):
     x = np.asarray(history, dtype=float)
     if x.ndim != 2 or len(x) < 3 or not np.isfinite(x).all():
         raise ValueError('finite two-dimensional history with >=3 rows required')
@@ -48,6 +49,10 @@ def estimate_covariance(history, estimator, factors=None):
         alpha = float(np.clip((pi.sum()-rho)/(t*gamma), 0, 1)) if gamma > 1e-30 else 1.
         v = ((1-alpha)*s+alpha*target)*t/(t-1)
         info.update(shrinkage=alpha, mean_correlation=float(rbar))
+    elif estimator == 'lw_nonlinear':
+        from .nonlinear import nonlinear_covariance
+        v, details = nonlinear_covariance(x, cache_dir)
+        info.update(details)
     elif estimator in ('market', 'ff3'):
         f = np.asarray(factors, dtype=float)
         k = 1 if estimator == 'market' else 3

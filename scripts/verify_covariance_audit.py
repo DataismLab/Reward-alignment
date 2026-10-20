@@ -20,7 +20,7 @@ for path in sorted(out.glob('[0-9]*_*.json')):
         rows=group[int(date)];state=bydate[int(date)]
         assert state['fit_start']==int(dates[t-120]) and state['fit_end']==int(dates[t-1])
         x=R[t-120:t]-rf[t-120:t,None]
-        m,v,info=estimate_covariance(x,est,factors[t-120:t]);target=np.array(rows['target']['audit_weights'])
+        m,v,info=estimate_covariance(x,est,factors[t-120:t],cache_dir=out/'quest_cache');target=np.array(rows['target']['audit_weights'])
         common=np.array(rows['target']['common_prev']);assert np.max(abs(common-prev['target']))<1e-12
         A=1+10*m@target;M=v+np.outer(m,m)
         F=lambda w:float(m@w-5*w@v@w-.001*abs(w-common).sum())
@@ -66,6 +66,6 @@ for path in sorted(out.glob('[0-9]*_*.json')):
         max_transfer_bound_violation=bound_violation,max_anchor_bound_violation=anchor_violation,
         sha256=hashlib.sha256(path.read_bytes()).hexdigest()))
     print(path.name,count,'PASS',flush=True)
-assert len(report)==18
+assert len(report)==21
 (out/'verification.json').write_text(json.dumps(report,indent=2))
 print('TOTAL',sum(r['decisions'] for r in report),'decisions independently reconstructed')

@@ -1,0 +1,5 @@
+QuEST Python implementation from https://github.com/donn-majidi/LedoitWolf-QuEST
+Upstream Git tree SHA: ca8ac3a00399361b45554e4f4af8f840d63fb335
+Retrieved 12 October 2026. Included modules are unmodified. GPL-3.0 license retained in LICENSE.
+Original QuEST algorithms: copyright Olivier Ledoit and Michael Wolf (2013-2016). Original MATLAB code inspected from Michael Wolf's University of Zurich publication page, QuEST_v027.zip.
+This project supplies its own normalized SLSQP fitting wrapper; it does not use upstream estimate.py or substitute analytical nonlinear shrinkage.

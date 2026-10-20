@@ -14,4 +14,7 @@ requires = ["setuptools>=61"]
 build-backend = "setuptools.build_meta"
 
 [tool.setuptools]
-packages = ["mvrl"]
+packages = ["mvrl", "mvrl._vendor", "mvrl._vendor.quest"]
+
+[tool.setuptools.package-data]
+"mvrl._vendor.quest" = ["LICENSE", "NOTICE.txt"]

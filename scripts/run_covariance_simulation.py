@@ -2,7 +2,7 @@
 import json,time
 import numpy as np
 from mvrl.historical import ROOT, solve_quadratic, objective
-from mvrl.covariance import ESTIMATORS, estimate_covariance
+from mvrl.covariance import PRIMARY_ESTIMATORS as ESTIMATORS, estimate_covariance
 
 out=ROOT/'results/covariance_simulation';out.mkdir(exist_ok=True)
 for n in (10,49,100):

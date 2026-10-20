@@ -36,7 +36,7 @@ def run_case(n,estimator):
     records=[];states=[]; anchors=[];start=time.time()
     for t,date in enumerate(dates):
         if date<199001:continue
-        hist=R[t-120:t]; x=hist-rf[t-120:t,None];m,v,info=estimate_covariance(x,estimator,factors[t-120:t])
+        hist=R[t-120:t]; x=hist-rf[t-120:t,None];m,v,info=estimate_covariance(x,estimator,factors[t-120:t],cache_dir=OUT/'quest_cache')
         _,base_v=moments(x);common=prev['target'].copy()
         audit,ai=solve_family(m,v,5.,common,.001,NAMES)
         one_A=1+10*m@common
