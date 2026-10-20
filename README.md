@@ -1,4 +1,6 @@
-# Certifying Reward Alignment in Portfolio Reinforcement Learning
+# Reward Alignment
+
+**Certifying Reward Alignment in Portfolio Reinforcement Learning**
 
 Reference implementation and experiment outputs for auditing whether a portfolio reward and its learned policy implement a terminal mean–variance objective.
 
@@ -25,12 +27,14 @@ The core package depends on NumPy and SciPy. The `research` extra adds pandas, M
 | Tabular learning | Nine markets × four sample budgets × twenty seeds × three methods | `results/rl-extension/tabular_runs.csv` |
 | Neural actor–critic | Nine markets × twenty seeds × three methods; checkpoints at 250, 1,000 and 3,000 updates | `results/rl-extension/neural-final/` |
 | PPO reward intervention | Two markets × ten seeds × two reward arms; 32,768 environment steps per run | `results/rl-extension/ppo-final/` |
-| Historical allocation | Six covariance estimators × 10, 30 and 49 industry portfolios; 432 evaluation months | `results/historical/covariance/` |
+| Historical allocation | Seven covariance estimators × 10, 30 and 49 industry portfolios; 432 evaluation months | `results/historical/covariance/` |
 | Known-covariance simulation | 2,160 fitted problems; dimensions 10, 49 and 100; two estimation windows and two residual structures | `results/covariance_simulation/` |
 
 The final neural comparison reduces mean policy distance by 59.2% relative to the matched myopic-reward learner; the separate PPO comparison reduces it by 33.3%. Budgets are matched within each experiment. These are controlled-market alignment results, not evidence of superior historical investment returns.
 
-Historical joint calibration preserves its fitted target across all eighteen estimator/universe configurations. It does not establish better realised mean–variance performance. The historical allocation study is separate from the new RL learners.
+The covariance comparison includes sample covariance, fixed diagonal shrinkage, Ledoit–Wolf identity and constant-correlation linear shrinkage, the 2017 QuEST nonlinear estimator, and market/three-factor models. The known-covariance simulation retains its original six estimators; nonlinear shrinkage was added to the historical study separately.
+
+Historical joint calibration preserves its fitted target across all twenty-one estimator/universe configurations. It does not establish better realised mean–variance performance. The historical allocation study is separate from the new RL learners.
 
 ## Verify the saved results
 
@@ -42,10 +46,11 @@ python scripts/check_historical.py
 python scripts/verify_dimensions.py
 python scripts/verify_covariance_audit.py
 python scripts/verify_covariance_simulation.py
+python scripts/verify_quest_grid.py
 python scripts/finalise_rl_results.py
 ```
 
-These checks reconstruct quantities from raw returns and saved policies. They cover 4,320 primary historical decisions, 9,072 dimension-study decisions, 58,320 covariance-study decisions, 2,160 known-covariance problems and 1,660 final neural/PPO records. The final learning reconstruction has maximum discrepancy 4.44e−16 and no tested certificate violations.
+These checks reconstruct quantities from raw returns and saved policies. They cover 4,320 primary historical decisions, 9,072 dimension-study decisions, 67,392 covariance-study decisions, 2,160 known-covariance problems and 1,660 final neural/PPO records. The final learning reconstruction has maximum discrepancy 4.44e−16 and no tested certificate violations.
 
 `finalise_rl_results.py` also writes numerical tables and figures to `results/paper_assets/`. `plot_final_covariance.py` generates the corresponding historical comparison figure. These are generated research outputs; manuscript and submission-preparation files are maintained separately.
 
@@ -69,6 +74,8 @@ python scripts/run_covariance_audit.py --assets 49
 python scripts/run_covariance_simulation.py
 python scripts/run_financing_audit.py
 ```
+
+Nonlinear covariance fits are cached by source-and-input hash in `results/historical/covariance/quest_cache/`. The included 1,296 past-window fits allow the historical reconstruction to run without repeating the nonlinear optimisations. `scripts/verify_quest_grid.py` checks six fixed endpoint windows against a finer integration grid. `scripts/verify_quest_optimizer.py --upstream /path/to/LedoitWolf-QuEST` optionally compares fits with the upstream optimiser; the pinned upstream tree is recorded in `mvrl/_vendor/quest/NOTICE.txt`.
 
 The final neural, PPO and historical covariance runners reuse saved outputs when present; other runners may recompute and overwrite their outputs. For a fresh experiment, use a separate checkout and move the relevant output directory aside. Do not reuse old caches after changing a protocol. Seeds and numerical settings are specified in the runners. The five-seed neural pilot is retained in `results/rl-extension/neural/`; the paper's final results use `neural-final/`.
 
@@ -95,3 +102,7 @@ Policy distance, financial deviation gain, fitted-objective loss and optimisatio
 ## Scope
 
 The certificate bounds the gain from a one-step deviation under the stated finite exogenous-state assumptions; it is not global-policy regret. Its independent-data version requires a fixed policy and critic, independent conditional observations and known return bounds. A nonpositive variance lower bound yields no finite certificate. The current neural experiments use one risky asset and two observed regimes. Multi-asset neural learning, dependent historical audit samples and a chronological real-data RL backtest remain outside the reported implementation.
+
+## Third-party code
+
+The vendored QuEST implementation is distributed under GPL-3.0; its licence and provenance are retained in `mvrl/_vendor/quest/LICENSE` and `NOTICE.txt`. The fitted covariance wrapper implements the 2017 Ledoit–Wolf nonlinear estimator; it does not reproduce their original CRSP backtest.
