@@ -1,0 +1,32 @@
+[
+  {
+    "n": 10,
+    "date": 199001,
+    "relative_spectrum_difference": 7.688065508568288e-06
+  },
+  {
+    "n": 10,
+    "date": 202512,
+    "relative_spectrum_difference": 3.290796014250462e-05
+  },
+  {
+    "n": 30,
+    "date": 199001,
+    "relative_spectrum_difference": 3.9609885046278784e-05
+  },
+  {
+    "n": 30,
+    "date": 202512,
+    "relative_spectrum_difference": 0.00019184182769118897
+  },
+  {
+    "n": 49,
+    "date": 199001,
+    "relative_spectrum_difference": 0.00024027346537536603
+  },
+  {
+    "n": 49,
+    "date": 202512,
+    "relative_spectrum_difference": 0.0007186172768909961
+  }
+]

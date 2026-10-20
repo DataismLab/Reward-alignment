@@ -1,0 +1,22 @@
+\begin{tabular}{@{}p{.235\textwidth}p{.25\textwidth}rrrr@{}}\toprule
+Method & Source / role & \shortstack{Allocation\\distance} & \shortstack{Reference gap\\(bp)} & \shortstack{Excess\\Sharpe} & \shortstack{Realised MV\\(bp)}\\\midrule
+Fitted MV reference & Markowitz (1952) & 0.00000 & 0.0000 & 0.570 & -8.497 \\
+Minimum variance & Markowitz (1952) & 0.23843 & 9.0252 & 0.645 & 5.274 \\
+MV, LW identity & Ledoit--Wolf (2004) & 0.00538 & 0.0055 & 0.572 & -8.442 \\
+MV, LW correlation & Ledoit--Wolf (2004) & 0.02196 & 0.1158 & 0.547 & -11.917 \\
+MV, market factor & Fan et al. (2008) & 0.05711 & 1.0487 & 0.585 & -4.738 \\
+MV, three factors & Fan et al. (2008) & 0.04881 & 0.6407 & 0.555 & -8.532 \\
+Equal weight & DeMiguel et al. (2009) & 0.43495 & 46.2626 & 0.622 & -11.893 \\
+MV, LW nonlinear & Ledoit--Wolf (2017) & 0.01119 & 0.0209 & 0.559 & -9.578 \\
+Raw second moment & Kolm--Ritter (2019) & 0.00843 & 0.0148 & 0.573 & -7.182 \\
+MVPI adaptation & Zhang et al. (2021) & 0.00000 & 0.0000 & 0.570 & -8.497 \\
+One MVPI step & Zhang et al. (2021) & 0.00014 & 0.0000 & 0.570 & -8.442 \\
+Assetwise PnL, restricted & Habibnia--Soltanzadeh (2024) & 0.79645 & 40.2554 & 0.449 & -23.619 \\
+Log minus variance & Jiang et al. (2025) & 0.01286 & 0.0287 & 0.572 & -7.123 \\
+MV, sample covariance & Sample control (2026) & 0.01449 & 0.0356 & 0.555 & -10.114 \\
+Log utility & Log-utility control (2026) & 0.54848 & 39.7855 & 0.344 & -133.295 \\
+Unconstrained scalar & Analytical control (2026) & 0.00540 & 0.0043 & 0.568 & -8.882 \\
+Risk-only calibration & Calibration ablation (2026) & 0.00510 & 0.0033 & 0.571 & -8.365 \\
+\midrule
+\textbf{Joint calibration (ours)} & \textbf{This study (2026)} & \textbf{0.00000} & \textbf{0.0000} & \textbf{0.570} & \textbf{-8.497} \\
+\bottomrule\end{tabular}

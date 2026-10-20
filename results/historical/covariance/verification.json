@@ -68,6 +68,23 @@
     "sha256": "2b42fdfe53819726094632d0da0129312d29e65e47ff5d42aec4e8383d599844"
   },
   {
+    "file": "10_lw_nonlinear.json",
+    "decisions": 3024,
+    "states": 432,
+    "errors": {
+      "return_net": 0.0,
+      "turnover": 0.0,
+      "distance": 0.0,
+      "target_gap": 0.0,
+      "identity": 4.7704895589362195e-18,
+      "drift": 0.0,
+      "gaussian_score": 0.0
+    },
+    "max_transfer_bound_violation": 0.0,
+    "max_anchor_bound_violation": 0.0,
+    "sha256": "079f5c785d39a9110bb29aa5b3df71f146387e307d4b23f6f94af751fdae749b"
+  },
+  {
     "file": "10_market.json",
     "decisions": 3024,
     "states": 432,
@@ -170,6 +187,23 @@
     "sha256": "46ef7f137128173f28a04b902db086475905ce0da2b864f46661ac16f3d86c57"
   },
   {
+    "file": "30_lw_nonlinear.json",
+    "decisions": 3024,
+    "states": 432,
+    "errors": {
+      "return_net": 0.0,
+      "turnover": 0.0,
+      "distance": 0.0,
+      "target_gap": 0.0,
+      "identity": 6.938893903907228e-18,
+      "drift": 0.0,
+      "gaussian_score": 0.0
+    },
+    "max_transfer_bound_violation": 0.0,
+    "max_anchor_bound_violation": 0.0,
+    "sha256": "88ebbe123fb77424c8f2b5eb518c82308fc888398a4b78bd7488bf93de4fabc0"
+  },
+  {
     "file": "30_market.json",
     "decisions": 3024,
     "states": 432,
@@ -270,6 +304,23 @@
     "max_transfer_bound_violation": 0.0,
     "max_anchor_bound_violation": 0.0,
     "sha256": "8673405920a143d1d87abd31ecc3fb5be5f6425d5b6e13085ae75dde7f4f8de5"
+  },
+  {
+    "file": "49_lw_nonlinear.json",
+    "decisions": 3024,
+    "states": 432,
+    "errors": {
+      "return_net": 0.0,
+      "turnover": 0.0,
+      "distance": 0.0,
+      "target_gap": 0.0,
+      "identity": 6.938893903907228e-18,
+      "drift": 0.0,
+      "gaussian_score": 0.0
+    },
+    "max_transfer_bound_violation": 0.0,
+    "max_anchor_bound_violation": 0.0,
+    "sha256": "a1bb7011aedfe978456990cd17596ef951ac7a8f2d21644ace27d7c22c7b11f1"
   },
   {
     "file": "49_market.json",

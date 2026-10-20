@@ -1,0 +1,56 @@
+[
+  {
+    "n": 10,
+    "date": 199001,
+    "reference_success": true,
+    "reference_optimality": 8.082188167983389e-07,
+    "relative_covariance_difference": 7.842044487574914e-08,
+    "mse": 3.084998929676269e-05,
+    "reference_mse": 3.0849989246492335e-05
+  },
+  {
+    "n": 10,
+    "date": 202512,
+    "reference_success": true,
+    "reference_optimality": 6.830506376816724e-07,
+    "relative_covariance_difference": 2.3813612630249772e-07,
+    "mse": 1.7085553091530908e-05,
+    "reference_mse": 1.708555288906181e-05
+  },
+  {
+    "n": 30,
+    "date": 199001,
+    "reference_success": true,
+    "reference_optimality": 8.260635937278044e-07,
+    "relative_covariance_difference": 2.3699205700996744e-05,
+    "mse": 4.280152163211494e-05,
+    "reference_mse": 4.2801368627370076e-05
+  },
+  {
+    "n": 30,
+    "date": 202512,
+    "reference_success": true,
+    "reference_optimality": 88.3196963740883,
+    "relative_covariance_difference": 0.0004608963459939807,
+    "mse": 0.0006196551865109073,
+    "reference_mse": 0.0006190907933396048
+  },
+  {
+    "n": 49,
+    "date": 199001,
+    "reference_success": true,
+    "reference_optimality": 7.822211490754511e-07,
+    "relative_covariance_difference": 9.86044673802949e-05,
+    "mse": 5.313216586879903e-05,
+    "reference_mse": 5.3126304119775776e-05
+  },
+  {
+    "n": 49,
+    "date": 202512,
+    "reference_success": true,
+    "reference_optimality": 5.692711435054726e-07,
+    "relative_covariance_difference": 2.9180953482153738e-05,
+    "mse": 0.000281017985311803,
+    "reference_mse": 0.00028101694724610044
+  }
+]
