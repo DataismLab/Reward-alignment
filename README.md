@@ -6,18 +6,25 @@ Reference implementation and experiment outputs for auditing whether a portfolio
 
 The implementation separates reward-design error, learning error and covariance-estimation error. It includes exact policy benchmarks, continuation-aware actor–critic and PPO experiments, residual-based deviation certificates, and historical allocation comparisons with trading costs.
 
-## Installation
+## Start here
 
-Python 3.10 or newer is required. Use a virtual environment:
+Python 3.10 or newer is required. From the repository root, install the research and test dependencies, check the saved benchmark outputs, and reconstruct the reported neural and PPO comparisons from saved policies:
 
 ```bash
 python -m venv .venv
 source .venv/bin/activate
 python -m pip install -e '.[research,test]'
-python -m pytest -q
+python scripts/check_outputs.py
+python scripts/finalise_rl_results.py
 ```
 
-The core package depends on NumPy and SciPy. The `research` extra adds pandas, Matplotlib, scikit-learn, PyTorch, Gymnasium and Stable-Baselines3. The complete test suite requires these extras. Package versions used for the final learning experiments are recorded in `results/rl-extension/final-environment.txt`.
+The last command checks 1,660 saved neural and PPO records and writes `results/rl-extension/final_summary.json`, numerical tables, and figures. It does not retrain the policies. Run `python -m pytest -q` for the complete test suite. The core package depends on NumPy and SciPy; the `research` extra adds pandas, Matplotlib, scikit-learn, PyTorch, Gymnasium and Stable-Baselines3. Package versions used for the final learning experiments are recorded in `results/rl-extension/final-environment.txt`.
+
+## Findings and interpretation
+
+In controlled-market comparisons, the final neural learner reduces mean policy distance by 59.2% relative to its matched myopic-reward learner; the separate PPO comparison reduces it by 33.3%. Budgets are matched within each experiment. These results concern reward alignment and do not establish superior historical investment returns.
+
+In the historical allocation study, joint calibration preserves its fitted target across all twenty-one estimator/universe configurations. This does not establish better realised mean–variance performance. The historical allocation study is separate from the neural and PPO learning experiments.
 
 ## Experiments
 
@@ -30,11 +37,7 @@ The core package depends on NumPy and SciPy. The `research` extra adds pandas, M
 | Historical allocation | Seven covariance estimators × 10, 30 and 49 industry portfolios; 432 evaluation months | `results/historical/covariance/` |
 | Known-covariance simulation | 2,160 fitted problems; dimensions 10, 49 and 100; two estimation windows and two residual structures | `results/covariance_simulation/` |
 
-The final neural comparison reduces mean policy distance by 59.2% relative to the matched myopic-reward learner; the separate PPO comparison reduces it by 33.3%. Budgets are matched within each experiment. These are controlled-market alignment results, not evidence of superior historical investment returns.
-
 The covariance comparison includes sample covariance, fixed diagonal shrinkage, Ledoit–Wolf identity and constant-correlation linear shrinkage, the 2017 QuEST nonlinear estimator, and market/three-factor models. The known-covariance simulation retains its original six estimators; nonlinear shrinkage was added to the historical study separately.
-
-Historical joint calibration preserves its fitted target across all twenty-one estimator/universe configurations. It does not establish better realised mean–variance performance. The historical allocation study is separate from the new RL learners.
 
 ## Verify the saved results
 
